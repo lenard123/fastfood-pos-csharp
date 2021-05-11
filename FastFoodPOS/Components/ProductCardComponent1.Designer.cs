@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.ButtonAddProduct = new Guna.UI2.WinForms.Guna2Button();
+            this.LabelName = new System.Windows.Forms.Label();
+            this.LabelPrice = new System.Windows.Forms.Label();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -42,15 +42,56 @@
             this.guna2Panel1.BackColor = System.Drawing.Color.White;
             this.guna2Panel1.BorderColor = System.Drawing.Color.Silver;
             this.guna2Panel1.BorderThickness = 1;
-            this.guna2Panel1.Controls.Add(this.guna2Button5);
-            this.guna2Panel1.Controls.Add(this.label8);
-            this.guna2Panel1.Controls.Add(this.label9);
+            this.guna2Panel1.Controls.Add(this.ButtonAddProduct);
+            this.guna2Panel1.Controls.Add(this.LabelName);
+            this.guna2Panel1.Controls.Add(this.LabelPrice);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox2);
             this.guna2Panel1.Location = new System.Drawing.Point(5, 5);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(265, 140);
             this.guna2Panel1.TabIndex = 0;
+            // 
+            // ButtonAddProduct
+            // 
+            this.ButtonAddProduct.Animated = true;
+            this.ButtonAddProduct.BorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonAddProduct.BorderThickness = 1;
+            this.ButtonAddProduct.CheckedState.Parent = this.ButtonAddProduct;
+            this.ButtonAddProduct.CustomImages.Parent = this.ButtonAddProduct;
+            this.ButtonAddProduct.FillColor = System.Drawing.Color.White;
+            this.ButtonAddProduct.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonAddProduct.ForeColor = System.Drawing.Color.DimGray;
+            this.ButtonAddProduct.HoverState.Parent = this.ButtonAddProduct;
+            this.ButtonAddProduct.Location = new System.Drawing.Point(10, 93);
+            this.ButtonAddProduct.Name = "ButtonAddProduct";
+            this.ButtonAddProduct.ShadowDecoration.Parent = this.ButtonAddProduct;
+            this.ButtonAddProduct.Size = new System.Drawing.Size(240, 36);
+            this.ButtonAddProduct.TabIndex = 4;
+            this.ButtonAddProduct.Text = "Add This Product";
+            this.ButtonAddProduct.Click += new System.EventHandler(this.ButtonAddProduct_Click);
+            // 
+            // LabelName
+            // 
+            this.LabelName.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.LabelName.Location = new System.Drawing.Point(86, 14);
+            this.LabelName.Name = "LabelName";
+            this.LabelName.Size = new System.Drawing.Size(164, 45);
+            this.LabelName.TabIndex = 3;
+            this.LabelName.Text = "WcFloat";
+            this.LabelName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // LabelPrice
+            // 
+            this.LabelPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.LabelPrice.AutoSize = true;
+            this.LabelPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.LabelPrice.ForeColor = System.Drawing.Color.Maroon;
+            this.LabelPrice.Location = new System.Drawing.Point(87, 59);
+            this.LabelPrice.Name = "LabelPrice";
+            this.LabelPrice.Size = new System.Drawing.Size(91, 21);
+            this.LabelPrice.TabIndex = 2;
+            this.LabelPrice.Text = "200.25PHP";
             // 
             // guna2PictureBox2
             // 
@@ -62,46 +103,6 @@
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox2.TabIndex = 1;
             this.guna2PictureBox2.TabStop = false;
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.label8.Location = new System.Drawing.Point(86, 14);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(164, 45);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "WcFloat";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label9.ForeColor = System.Drawing.Color.Maroon;
-            this.label9.Location = new System.Drawing.Point(87, 59);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(91, 21);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "200.25PHP";
-            // 
-            // guna2Button5
-            // 
-            this.guna2Button5.Animated = true;
-            this.guna2Button5.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.BorderThickness = 1;
-            this.guna2Button5.CheckedState.Parent = this.guna2Button5;
-            this.guna2Button5.CustomImages.Parent = this.guna2Button5;
-            this.guna2Button5.FillColor = System.Drawing.Color.White;
-            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button5.ForeColor = System.Drawing.Color.DimGray;
-            this.guna2Button5.HoverState.Parent = this.guna2Button5;
-            this.guna2Button5.Location = new System.Drawing.Point(10, 93);
-            this.guna2Button5.Name = "guna2Button5";
-            this.guna2Button5.ShadowDecoration.Parent = this.guna2Button5;
-            this.guna2Button5.Size = new System.Drawing.Size(240, 36);
-            this.guna2Button5.TabIndex = 4;
-            this.guna2Button5.Text = "Add This Product";
             // 
             // ProductCardComponent1
             // 
@@ -123,8 +124,8 @@
 
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private Guna.UI2.WinForms.Guna2Button guna2Button5;
+        private System.Windows.Forms.Label LabelName;
+        private System.Windows.Forms.Label LabelPrice;
+        private Guna.UI2.WinForms.Guna2Button ButtonAddProduct;
     }
 }

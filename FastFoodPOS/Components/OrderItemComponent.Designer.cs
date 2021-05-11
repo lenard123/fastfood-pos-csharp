@@ -28,104 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label9 = new System.Windows.Forms.Label();
+            this.LabelSubtotal = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.LabelQuantity = new System.Windows.Forms.Label();
+            this.ButtonAdd = new Guna.UI2.WinForms.Guna2Button();
+            this.ButtonMinus = new Guna.UI2.WinForms.Guna2Button();
+            this.LabelName = new System.Windows.Forms.Label();
+            this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             this.panel6.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label9
+            // LabelSubtotal
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label9.ForeColor = System.Drawing.Color.Maroon;
-            this.label9.Location = new System.Drawing.Point(302, 3);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(95, 33);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "500.00PHP";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+            this.LabelSubtotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelSubtotal.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.LabelSubtotal.ForeColor = System.Drawing.Color.Maroon;
+            this.LabelSubtotal.Location = new System.Drawing.Point(302, 3);
+            this.LabelSubtotal.Name = "LabelSubtotal";
+            this.LabelSubtotal.Size = new System.Drawing.Size(95, 33);
+            this.LabelSubtotal.TabIndex = 3;
+            this.LabelSubtotal.Text = "500.00PHP";
+            this.LabelSubtotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel6
             // 
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.Controls.Add(this.guna2Panel1);
-            this.panel6.Controls.Add(this.guna2Button6);
-            this.panel6.Controls.Add(this.guna2Button5);
+            this.panel6.Controls.Add(this.ButtonAdd);
+            this.panel6.Controls.Add(this.ButtonMinus);
             this.panel6.Location = new System.Drawing.Point(188, 5);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(118, 31);
             this.panel6.TabIndex = 4;
             // 
-            // guna2Button6
-            // 
-            this.guna2Button6.BorderColor = System.Drawing.Color.Gray;
-            this.guna2Button6.CheckedState.Parent = this.guna2Button6;
-            this.guna2Button6.CustomBorderColor = System.Drawing.Color.LightGray;
-            this.guna2Button6.CustomBorderThickness = new System.Windows.Forms.Padding(0, 1, 1, 1);
-            this.guna2Button6.CustomImages.Parent = this.guna2Button6;
-            this.guna2Button6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2Button6.FillColor = System.Drawing.Color.White;
-            this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button6.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button6.HoverState.Parent = this.guna2Button6;
-            this.guna2Button6.Location = new System.Drawing.Point(81, 0);
-            this.guna2Button6.Name = "guna2Button6";
-            this.guna2Button6.ShadowDecoration.Parent = this.guna2Button6;
-            this.guna2Button6.Size = new System.Drawing.Size(37, 31);
-            this.guna2Button6.TabIndex = 1;
-            this.guna2Button6.Text = "+";
-            // 
-            // guna2Button5
-            // 
-            this.guna2Button5.BorderColor = System.Drawing.Color.Gray;
-            this.guna2Button5.CheckedState.Parent = this.guna2Button5;
-            this.guna2Button5.CustomBorderColor = System.Drawing.Color.LightGray;
-            this.guna2Button5.CustomBorderThickness = new System.Windows.Forms.Padding(1, 1, 0, 1);
-            this.guna2Button5.CustomImages.Parent = this.guna2Button5;
-            this.guna2Button5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2Button5.FillColor = System.Drawing.Color.White;
-            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button5.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button5.HoverState.Parent = this.guna2Button5;
-            this.guna2Button5.Location = new System.Drawing.Point(0, 0);
-            this.guna2Button5.Name = "guna2Button5";
-            this.guna2Button5.ShadowDecoration.Parent = this.guna2Button5;
-            this.guna2Button5.Size = new System.Drawing.Size(39, 31);
-            this.guna2Button5.TabIndex = 0;
-            this.guna2Button5.Text = "-";
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label8.Location = new System.Drawing.Point(3, 5);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(179, 31);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Customer Order";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // guna2Separator2
-            // 
-            this.guna2Separator2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2Separator2.Location = new System.Drawing.Point(7, 39);
-            this.guna2Separator2.Name = "guna2Separator2";
-            this.guna2Separator2.Size = new System.Drawing.Size(390, 10);
-            this.guna2Separator2.TabIndex = 8;
-            // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.guna2Panel1.Controls.Add(this.label1);
+            this.guna2Panel1.Controls.Add(this.LabelQuantity);
             this.guna2Panel1.CustomBorderColor = System.Drawing.Color.LightGray;
             this.guna2Panel1.CustomBorderThickness = new System.Windows.Forms.Padding(0, 1, 0, 1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -135,17 +76,77 @@
             this.guna2Panel1.Size = new System.Drawing.Size(42, 31);
             this.guna2Panel1.TabIndex = 2;
             // 
-            // label1
+            // LabelQuantity
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 31);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "3";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LabelQuantity.BackColor = System.Drawing.Color.Transparent;
+            this.LabelQuantity.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LabelQuantity.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LabelQuantity.Location = new System.Drawing.Point(0, 0);
+            this.LabelQuantity.Name = "LabelQuantity";
+            this.LabelQuantity.Size = new System.Drawing.Size(42, 31);
+            this.LabelQuantity.TabIndex = 0;
+            this.LabelQuantity.Text = "3";
+            this.LabelQuantity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ButtonAdd
+            // 
+            this.ButtonAdd.BorderColor = System.Drawing.Color.Gray;
+            this.ButtonAdd.CheckedState.Parent = this.ButtonAdd;
+            this.ButtonAdd.CustomBorderColor = System.Drawing.Color.LightGray;
+            this.ButtonAdd.CustomBorderThickness = new System.Windows.Forms.Padding(0, 1, 1, 1);
+            this.ButtonAdd.CustomImages.Parent = this.ButtonAdd;
+            this.ButtonAdd.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ButtonAdd.FillColor = System.Drawing.Color.White;
+            this.ButtonAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonAdd.ForeColor = System.Drawing.Color.Black;
+            this.ButtonAdd.HoverState.Parent = this.ButtonAdd;
+            this.ButtonAdd.Location = new System.Drawing.Point(81, 0);
+            this.ButtonAdd.Name = "ButtonAdd";
+            this.ButtonAdd.ShadowDecoration.Parent = this.ButtonAdd;
+            this.ButtonAdd.Size = new System.Drawing.Size(37, 31);
+            this.ButtonAdd.TabIndex = 1;
+            this.ButtonAdd.Text = "+";
+            this.ButtonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
+            // 
+            // ButtonMinus
+            // 
+            this.ButtonMinus.BorderColor = System.Drawing.Color.Gray;
+            this.ButtonMinus.CheckedState.Parent = this.ButtonMinus;
+            this.ButtonMinus.CustomBorderColor = System.Drawing.Color.LightGray;
+            this.ButtonMinus.CustomBorderThickness = new System.Windows.Forms.Padding(1, 1, 0, 1);
+            this.ButtonMinus.CustomImages.Parent = this.ButtonMinus;
+            this.ButtonMinus.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ButtonMinus.FillColor = System.Drawing.Color.White;
+            this.ButtonMinus.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonMinus.ForeColor = System.Drawing.Color.Black;
+            this.ButtonMinus.HoverState.Parent = this.ButtonMinus;
+            this.ButtonMinus.Location = new System.Drawing.Point(0, 0);
+            this.ButtonMinus.Name = "ButtonMinus";
+            this.ButtonMinus.ShadowDecoration.Parent = this.ButtonMinus;
+            this.ButtonMinus.Size = new System.Drawing.Size(39, 31);
+            this.ButtonMinus.TabIndex = 0;
+            this.ButtonMinus.Text = "-";
+            this.ButtonMinus.Click += new System.EventHandler(this.ButtonMinus_Click);
+            // 
+            // LabelName
+            // 
+            this.LabelName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelName.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.LabelName.Location = new System.Drawing.Point(3, 5);
+            this.LabelName.Name = "LabelName";
+            this.LabelName.Size = new System.Drawing.Size(179, 31);
+            this.LabelName.TabIndex = 5;
+            this.LabelName.Text = "Customer Order";
+            this.LabelName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // guna2Separator2
+            // 
+            this.guna2Separator2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2Separator2.Location = new System.Drawing.Point(7, 39);
+            this.guna2Separator2.Name = "guna2Separator2";
+            this.guna2Separator2.Size = new System.Drawing.Size(390, 10);
+            this.guna2Separator2.TabIndex = 8;
             // 
             // OrderItemComponent
             // 
@@ -153,9 +154,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.guna2Separator2);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.LabelName);
             this.Controls.Add(this.panel6);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.LabelSubtotal);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "OrderItemComponent";
@@ -168,13 +169,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label LabelSubtotal;
         private System.Windows.Forms.Panel panel6;
-        private Guna.UI2.WinForms.Guna2Button guna2Button6;
-        private Guna.UI2.WinForms.Guna2Button guna2Button5;
-        private System.Windows.Forms.Label label8;
+        private Guna.UI2.WinForms.Guna2Button ButtonAdd;
+        private Guna.UI2.WinForms.Guna2Button ButtonMinus;
+        private System.Windows.Forms.Label LabelName;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LabelQuantity;
     }
 }

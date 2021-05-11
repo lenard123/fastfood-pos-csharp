@@ -28,6 +28,22 @@ namespace FastFoodPOS.Models
             }
         }
 
+        public static Product Find(int id)
+        {
+            Product result = null;
+            using (var cmd = new OleDbCommand("SELECT * FROM [products] WHERE [id]=?", Database.GetConnection()))
+            {
+                Database.BindParameters(cmd, id);
+                Database.GetConnection().Open();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read()) result = ConvertReaderToProduct(reader);
+                }
+                Database.GetConnection().Close();
+            }
+            return result;
+        }
+
         public static List<Product> GetAllProducts()
         {
             List<Product> result = new List<Product>();
