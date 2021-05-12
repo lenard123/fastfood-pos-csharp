@@ -107,6 +107,7 @@
             this.ButtonAdd.TabIndex = 1;
             this.ButtonAdd.Text = "+";
             this.ButtonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
+            this.ButtonAdd.DoubleClick += new System.EventHandler(this.ButtonAdd_Click);
             // 
             // ButtonMinus
             // 
@@ -127,6 +128,7 @@
             this.ButtonMinus.TabIndex = 0;
             this.ButtonMinus.Text = "-";
             this.ButtonMinus.Click += new System.EventHandler(this.ButtonMinus_Click);
+            this.ButtonMinus.DoubleClick += new System.EventHandler(this.ButtonMinus_Click);
             // 
             // LabelName
             // 

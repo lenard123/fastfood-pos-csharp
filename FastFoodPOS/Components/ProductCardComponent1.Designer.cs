@@ -70,6 +70,7 @@
             this.ButtonAddProduct.TabIndex = 4;
             this.ButtonAddProduct.Text = "Add This Product";
             this.ButtonAddProduct.Click += new System.EventHandler(this.ButtonAddProduct_Click);
+            this.ButtonAddProduct.DoubleClick += new System.EventHandler(this.ButtonAddProduct_Click);
             // 
             // LabelName
             // 

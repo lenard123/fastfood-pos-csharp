@@ -18,6 +18,8 @@ namespace FastFoodPOS.Models
         public string Image { get; set; }
         public bool IsDeleted{get;set;}
 
+        public static User CurrentUser;
+
         private static User GetUser(string email)
         {
             User result = null;
@@ -34,6 +36,11 @@ namespace FastFoodPOS.Models
             return result;
         }
 
+        public static bool IsAdmin()
+        {
+            return CurrentUser != null && CurrentUser.Role == "Administrator";
+        }
+
         public static User Login(string email, string password)
         {
             User user = GetUser(email);
@@ -45,6 +52,8 @@ namespace FastFoodPOS.Models
             //Verify password
             if (!Util.VerifyHash(password, user.Password))
                 throw new Level1Exception("Wrong Password");
+
+            CurrentUser = user;
 
             return user;
         }

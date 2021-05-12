@@ -13,47 +13,46 @@ using Guna.UI2.WinForms;
 
 namespace FastFoodPOS.Forms
 {
-    public partial class FormCashierPanel : BaseForm
+    partial class FormCashierPanel : BaseForm
     {
 
         List<Product> AllProducts;
-        List<OrderItemComponent> OrderComponents;
-        BindingList<Order> Orders;
-        decimal Total = 0;
+        public BindingList<OrderItemComponent> OrderComponents;
+        //public BindingList<Order> Orders;
+
         public FormCashierPanel()
         {
             InitializeComponent();
             
             AllProducts = Product.GetAllProducts();
-            Orders = new BindingList<Order>();
-            OrderComponents = new List<OrderItemComponent>();
+            //Orders = new BindingList<Order>();
+            OrderComponents = new BindingList<OrderItemComponent>();
 
-            Orders.ListChanged += Orders_ListChanged;
+            OrderComponents.ListChanged += Orders_ListChanged;
 
             ButtonFoods.PerformClick();
         }
 
         void Orders_ListChanged(object sender, ListChangedEventArgs e)
         {
-            AddComponentIfNotExists();
-            OrderComponents.ForEach((OrderItemComponent oc) => oc.UpdateData());
+            decimal Total = 0;
+            foreach (OrderItemComponent oc in OrderComponents)
+            {
+                oc.UpdateData();
+                Total += oc._Order.Subtotal;
+            }
+            LabelTotal.Text = Total.ToString() + "PHP";
         }
 
-        private void AddComponentIfNotExists()
+        public void AddOrderComponent(Product item)
         {
-            Total = 0;
-            foreach (Order order in Orders)
-            {
-                if (!OrderComponents.Any((OrderItemComponent oc) => oc._Order == order))
-                {
-                    OrderItemComponent oic = new OrderItemComponent(Orders, order);
-                    OrderComponents.Add(oic);
-                    PanelOrders.Controls.Add(oic);
-                }
-                Total += order.Subtotal;
-            }
-            LabelTotal.Text = Total + "PHP";
+            Order order = new Order(item);
+            OrderItemComponent oic = new OrderItemComponent(OrderComponents, order);
+            OrderComponents.Add(oic);
+            PanelOrders.Controls.Add(oic);
+            //Orders.Add(order);
         }
+
 
         private void ButtonLogout_Click(object sender, EventArgs e)
         {
@@ -67,7 +66,7 @@ namespace FastFoodPOS.Forms
             AllProducts.ForEach((Product product) =>
             {
                 if (product.Category.Equals(filter))
-                    PanelProducts.Controls.Add(new ProductCardComponent1(Orders, product));
+                    PanelProducts.Controls.Add(new ProductCardComponent1(this, product));
             });
         }
 

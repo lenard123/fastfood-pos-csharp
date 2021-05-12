@@ -13,10 +13,10 @@ using Guna.UI2.WinForms;
 
 namespace FastFoodPOS.Forms.AdminForms
 {
-    public partial class FormManageProducts : UserControl
+    partial class FormManageProducts : UserControl, IKeepable
     {
         List<Product> AllProducts;
-
+        
         public FormManageProducts()
         {
             InitializeComponent();
@@ -31,9 +31,40 @@ namespace FastFoodPOS.Forms.AdminForms
             AllProducts.ForEach((Product product) =>
             {
                 if (product.Category.Equals(button.Tag))
-                    flowLayoutPanel1.Controls.Add(new ProductCardComponent(product));
+                {
+                    ProductCardComponent pcc = new ProductCardComponent(product);
+                    pcc.ButtonUpdateClick += pcc_ButtonUpdateClick;
+                    pcc.ButtonRemoveClick += pcc_ButtonRemoveClick;
+                    flowLayoutPanel1.Controls.Add(pcc);
+                }
             });
         }
+
+        void pcc_ButtonRemoveClick(object sender, ProductCardComponent e)
+        {
+            if (User.IsAdmin())
+            {
+                DialogResult result = MessageBox.Show("Are you sure to remove this product?", "Confirm", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    e.product.Remove();
+                    MessageBox.Show("Product removed successfully");
+                    AllProducts.Remove(e.product);
+                    e.Dispose();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Only Administrator can remove a data");
+            }
+        }
+
+        void pcc_ButtonUpdateClick(object sender, ProductCardComponent e)
+        {
+            ShouldKeepForm = true;
+            FormAdminPanel.Instance.LoadFormControl(new FormUpdateProduct(this, e));
+        }
+
 
         private void DisposePanelContent()
         {
@@ -43,5 +74,17 @@ namespace FastFoodPOS.Forms.AdminForms
             }
         }
 
+
+        public bool ShouldKeepForm { get; set; }
+
+        public void OnMounted()
+        {
+
+        }
+
+        public void OnUnMounted()
+        {
+
+        }
     }
 }

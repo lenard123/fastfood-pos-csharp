@@ -87,12 +87,19 @@
     <Compile Include="Forms\AdminForms\FormTransactions.Designer.cs">
       <DependentUpon>FormTransactions.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AdminForms\FormUpdateProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminForms\FormUpdateProduct.Designer.cs">
+      <DependentUpon>FormUpdateProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AdminForms\FormUsers.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\AdminForms\FormUsers.Designer.cs">
       <DependentUpon>FormUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AdminForms\IKeepable.cs" />
     <Compile Include="Forms\BaseForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -127,6 +134,11 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Util.cs" />
     <EmbeddedResource Include="Components\OrderItemComponent.resx">
       <DependentUpon>OrderItemComponent.cs</DependentUpon>
@@ -146,6 +158,9 @@
     <EmbeddedResource Include="Forms\AdminForms\FormTransactions.resx">
       <DependentUpon>FormTransactions.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminForms\FormUpdateProduct.resx">
+      <DependentUpon>FormUpdateProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminForms\FormUsers.resx">
       <DependentUpon>FormUsers.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,14 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\DataSources\FastFoodPOS.Forms.AdminForms.TransactionModel.datasource" />
     <None Include="Properties\DataSources\FastFoodPOS.Forms.AdminForms.UserModel.datasource" />
     <None Include="Properties\DataSources\FastFoodPOS.Models.Transaction.datasource" />
@@ -195,15 +205,22 @@
     <None Include="Resources\mcdonalds.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\user_default.png" />
+    <None Include="Resources\user_default.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\FastFoodDatabase.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\CashierForms\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product_default.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -17,11 +17,16 @@ namespace FastFoodPOS.Forms
     {
         User LoggedInUser = null;
 
-        public FormAdminPanel(User LoggedInUser)
+        public static FormAdminPanel Instance;
+
+
+        public FormAdminPanel(User _LoggedInUser)
         {
             InitializeComponent();
-            
-            this.LoggedInUser = LoggedInUser;
+
+            Instance = this;
+            LoggedInUser = _LoggedInUser;
+
             LabelUserName.Text = LoggedInUser.Fullname;
             LabelUserRole.Text = LoggedInUser.Role;
 
@@ -52,14 +57,36 @@ namespace FastFoodPOS.Forms
 
         }
 
-        private void LoadFormControl(UserControl uc)
+        public void LoadFormControl(UserControl uc)
+        {
+            DisposeAdminForm();
+
+            IKeepable ucKeepable = uc as IKeepable;
+            
+            uc.Dock = DockStyle.Fill;
+            panel5.Controls.Add(uc);
+
+            if (ucKeepable != null) ((IKeepable)uc).OnMounted();
+        }
+
+        private void DisposeAdminForm()
         {
             while (panel5.Controls.Count >= 1)
             {
-                panel5.Controls[0].Dispose();
+                IKeepable ucToRemove = panel5.Controls[0] as IKeepable;
+                if (ucToRemove != null)
+                {
+                    ucToRemove.OnUnMounted();
+                    if (ucToRemove.ShouldKeepForm)
+                        panel5.Controls.RemoveAt(0);
+                    else
+                        panel5.Controls[0].Dispose();
+                }
+                else
+                {
+                    panel5.Controls[0].Dispose();
+                }
             }
-            uc.Dock = DockStyle.Fill;
-            panel5.Controls.Add(uc);
         }
 
         private void ButtonLogout_Click(object sender, EventArgs e)

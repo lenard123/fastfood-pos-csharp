@@ -1,6 +1,6 @@
 ﻿namespace FastFoodPOS.Forms.AdminForms
 {
-    partial class FormAddProduct
+    partial class FormUpdateProduct
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,59 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddProduct));
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUpdateProduct));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.ButtonReset = new Guna.UI2.WinForms.Guna2Button();
+            this.ButtonBack = new Guna.UI2.WinForms.Guna2Button();
             this.ButtonSave = new Guna.UI2.WinForms.Guna2Button();
             this.ButtonChangeImage = new Guna.UI2.WinForms.Guna2Button();
+            this.PictureProductImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.ToggleAvailability = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.ComboBoxType = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.TextPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.TextName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.OpenFileDialogChangeImage = new System.Windows.Forms.OpenFileDialog();
-            this.PictureProductImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureProductImage)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(184, 30);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Add New Product";
             // 
             // guna2Panel1
             // 
             this.guna2Panel1.BorderColor = System.Drawing.Color.LightGray;
             this.guna2Panel1.BorderThickness = 1;
             this.guna2Panel1.Controls.Add(this.ButtonReset);
+            this.guna2Panel1.Controls.Add(this.ButtonBack);
             this.guna2Panel1.Controls.Add(this.ButtonSave);
             this.guna2Panel1.Controls.Add(this.ButtonChangeImage);
             this.guna2Panel1.Controls.Add(this.PictureProductImage);
             this.guna2Panel1.Controls.Add(this.label7);
-            this.guna2Panel1.Controls.Add(this.ToggleAvailability);
             this.guna2Panel1.Controls.Add(this.ComboBoxType);
             this.guna2Panel1.Controls.Add(this.label3);
             this.guna2Panel1.Controls.Add(this.label4);
-            this.guna2Panel1.Controls.Add(this.label6);
             this.guna2Panel1.Controls.Add(this.label5);
             this.guna2Panel1.Controls.Add(this.TextPrice);
             this.guna2Panel1.Controls.Add(this.TextName);
-            this.guna2Panel1.Location = new System.Drawing.Point(35, 85);
+            this.guna2Panel1.Location = new System.Drawing.Point(35, 96);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(712, 418);
-            this.guna2Panel1.TabIndex = 3;
+            this.guna2Panel1.TabIndex = 5;
             // 
             // ButtonReset
             // 
@@ -96,10 +84,29 @@
             this.ButtonReset.Location = new System.Drawing.Point(303, 355);
             this.ButtonReset.Name = "ButtonReset";
             this.ButtonReset.ShadowDecoration.Parent = this.ButtonReset;
-            this.ButtonReset.Size = new System.Drawing.Size(180, 45);
+            this.ButtonReset.Size = new System.Drawing.Size(115, 45);
             this.ButtonReset.TabIndex = 7;
             this.ButtonReset.Text = "Reset";
             this.ButtonReset.Click += new System.EventHandler(this.ButtonReset_Click);
+            // 
+            // ButtonBack
+            // 
+            this.ButtonBack.Animated = true;
+            this.ButtonBack.BorderColor = System.Drawing.Color.LightGray;
+            this.ButtonBack.BorderThickness = 1;
+            this.ButtonBack.CheckedState.Parent = this.ButtonBack;
+            this.ButtonBack.CustomImages.Parent = this.ButtonBack;
+            this.ButtonBack.FillColor = System.Drawing.Color.White;
+            this.ButtonBack.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.ButtonBack.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ButtonBack.HoverState.Parent = this.ButtonBack;
+            this.ButtonBack.Location = new System.Drawing.Point(437, 355);
+            this.ButtonBack.Name = "ButtonBack";
+            this.ButtonBack.ShadowDecoration.Parent = this.ButtonBack;
+            this.ButtonBack.Size = new System.Drawing.Size(116, 45);
+            this.ButtonBack.TabIndex = 7;
+            this.ButtonBack.Text = "Back";
+            this.ButtonBack.Click += new System.EventHandler(this.ButtonBack_Click);
             // 
             // ButtonSave
             // 
@@ -110,10 +117,10 @@
             this.ButtonSave.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.ButtonSave.ForeColor = System.Drawing.Color.White;
             this.ButtonSave.HoverState.Parent = this.ButtonSave;
-            this.ButtonSave.Location = new System.Drawing.Point(507, 355);
+            this.ButtonSave.Location = new System.Drawing.Point(571, 355);
             this.ButtonSave.Name = "ButtonSave";
             this.ButtonSave.ShadowDecoration.Parent = this.ButtonSave;
-            this.ButtonSave.Size = new System.Drawing.Size(180, 45);
+            this.ButtonSave.Size = new System.Drawing.Size(116, 45);
             this.ButtonSave.TabIndex = 7;
             this.ButtonSave.Text = "Save";
             this.ButtonSave.Click += new System.EventHandler(this.ButtonSave_Click);
@@ -137,6 +144,20 @@
             this.ButtonChangeImage.Text = "Change Image";
             this.ButtonChangeImage.Click += new System.EventHandler(this.ButtonChangeImage_Click);
             // 
+            // PictureProductImage
+            // 
+            this.PictureProductImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PictureProductImage.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.PictureProductImage.ImageLocation = "";
+            this.PictureProductImage.InitialImage = ((System.Drawing.Image)(resources.GetObject("PictureProductImage.InitialImage")));
+            this.PictureProductImage.Location = new System.Drawing.Point(18, 64);
+            this.PictureProductImage.Name = "PictureProductImage";
+            this.PictureProductImage.ShadowDecoration.Parent = this.PictureProductImage;
+            this.PictureProductImage.Size = new System.Drawing.Size(239, 185);
+            this.PictureProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureProductImage.TabIndex = 5;
+            this.PictureProductImage.TabStop = false;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -146,26 +167,6 @@
             this.label7.Size = new System.Drawing.Size(112, 21);
             this.label7.TabIndex = 4;
             this.label7.Text = "Image Preview";
-            // 
-            // ToggleAvailability
-            // 
-            this.ToggleAvailability.Animated = true;
-            this.ToggleAvailability.Checked = true;
-            this.ToggleAvailability.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ToggleAvailability.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ToggleAvailability.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.ToggleAvailability.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.ToggleAvailability.CheckedState.Parent = this.ToggleAvailability;
-            this.ToggleAvailability.Location = new System.Drawing.Point(400, 307);
-            this.ToggleAvailability.Name = "ToggleAvailability";
-            this.ToggleAvailability.ShadowDecoration.Parent = this.ToggleAvailability;
-            this.ToggleAvailability.Size = new System.Drawing.Size(35, 20);
-            this.ToggleAvailability.TabIndex = 3;
-            this.ToggleAvailability.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.ToggleAvailability.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.ToggleAvailability.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.ToggleAvailability.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.ToggleAvailability.UncheckedState.Parent = this.ToggleAvailability;
             // 
             // ComboBoxType
             // 
@@ -201,7 +202,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(299, 125);
+            this.label3.Location = new System.Drawing.Point(299, 137);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(104, 21);
             this.label3.TabIndex = 1;
@@ -211,21 +212,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(299, 216);
+            this.label4.Location = new System.Drawing.Point(299, 228);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 21);
             this.label4.TabIndex = 1;
             this.label4.Text = "Price:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(299, 306);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 21);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Is Available?";
             // 
             // label5
             // 
@@ -289,26 +280,22 @@
             this.TextName.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.TextName.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(30, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(165, 30);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Update Product";
+            // 
             // OpenFileDialogChangeImage
             // 
             this.OpenFileDialogChangeImage.Filter = "JPG(*.JPG)|*.jpg";
             this.OpenFileDialogChangeImage.RestoreDirectory = true;
             // 
-            // PictureProductImage
-            // 
-            this.PictureProductImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PictureProductImage.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.PictureProductImage.ImageLocation = "";
-            this.PictureProductImage.InitialImage = ((System.Drawing.Image)(resources.GetObject("PictureProductImage.InitialImage")));
-            this.PictureProductImage.Location = new System.Drawing.Point(18, 64);
-            this.PictureProductImage.Name = "PictureProductImage";
-            this.PictureProductImage.ShadowDecoration.Parent = this.PictureProductImage;
-            this.PictureProductImage.Size = new System.Drawing.Size(239, 185);
-            this.PictureProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureProductImage.TabIndex = 5;
-            this.PictureProductImage.TabStop = false;
-            // 
-            // FormAddProduct
+            // FormUpdateProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -316,8 +303,8 @@
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "FormAddProduct";
-            this.Size = new System.Drawing.Size(786, 740);
+            this.Name = "FormUpdateProduct";
+            this.Size = new System.Drawing.Size(788, 542);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureProductImage)).EndInit();
@@ -328,20 +315,19 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Button ButtonBack;
+        private Guna.UI2.WinForms.Guna2Button ButtonSave;
+        private Guna.UI2.WinForms.Guna2Button ButtonChangeImage;
+        private Guna.UI2.WinForms.Guna2PictureBox PictureProductImage;
+        private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2ComboBox ComboBoxType;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private Guna.UI2.WinForms.Guna2TextBox TextPrice;
-        private Guna.UI2.WinForms.Guna2PictureBox PictureProductImage;
-        private System.Windows.Forms.Label label7;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch ToggleAvailability;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private Guna.UI2.WinForms.Guna2TextBox TextPrice;
         private Guna.UI2.WinForms.Guna2TextBox TextName;
-        private Guna.UI2.WinForms.Guna2Button ButtonChangeImage;
-        private Guna.UI2.WinForms.Guna2Button ButtonSave;
+        private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button ButtonReset;
         private System.Windows.Forms.OpenFileDialog OpenFileDialogChangeImage;
     }

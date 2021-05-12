@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace FastFoodPOS
 {
@@ -31,6 +33,34 @@ namespace FastFoodPOS
         public static bool VerifyHash(string text, string hashedtext)
         {
             return GetHashSHA256(text).Equals(hashedtext);
+        }
+
+        public static string CopyImage(string source, string filename)
+        {
+            CreateImageDirectory();
+            filename = Path.GetFileName(filename);
+            string destination = Path.Combine("images", filename);
+            if (File.Exists(destination))
+            {
+                File.Replace(source, destination, destination+".bak");
+            }
+            else
+            {
+                File.Copy(source, destination);
+            }
+            return destination;
+        }
+
+        public static string GetFullPath(string path)
+        {
+            return Path.Combine(Application.StartupPath, path);
+        }
+
+        private static void CreateImageDirectory()
+        {
+            if(!Directory.Exists("images")){
+                Directory.CreateDirectory("images");
+            }
         }
     }
 }

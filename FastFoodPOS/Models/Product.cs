@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Data.OleDb;
 using System.Linq;
@@ -17,15 +18,82 @@ namespace FastFoodPOS.Models
         public string Image { get; set; }
         public bool IsDeleted { get; set; }
 
+        public static readonly string DEFAULT_IMAGE_PATH = "Resources\\product_default.png";
+
         public void Save()
         {
             using (var cmd = new OleDbCommand("INSERT INTO [products]([name], [category], [price], [is_available], [image]) VALUES (?, ?, ?, ?, ?)", Database.GetConnection()))
             {
-                Database.BindParameters(cmd, Name, Category, Price, IsAvailable, "images/default-image.jpg");
+                Database.BindParameters(cmd, Name, Category, Price, IsAvailable, GetUploadedImagePath());
                 Database.GetConnection().Open();
                 cmd.ExecuteNonQuery();
                 Database.GetConnection().Close();
             }
+        }
+
+        public void ToggleAvailability()
+        {
+            Update(
+                Name,
+                Category,
+                Price,
+                Image,
+                !IsAvailable
+                );
+        }
+
+        public void Remove()
+        {
+            Update(Name, Category, Price, Image, IsAvailable, true);
+        }
+
+        public void Update(string newName, string newCategory, decimal newPrice, string newImage)
+        {
+            Update(newName, newCategory, newPrice, newImage, IsAvailable, IsDeleted);
+        }
+
+        public void Update(string newName, string newCategory, decimal newPrice, string newImage, bool isAvailable)
+        {
+            Update(newName, newCategory, newPrice, newImage, isAvailable, IsDeleted);
+        }
+
+        public void Update(string newName, string newCategory, decimal newPrice, string newImage, bool isAvailable, bool isDeleted)
+        {
+            string uploadedImage = GetUploadedImagePath(newImage);
+            using (var cmd = new OleDbCommand("UPDATE [products] SET [name]=?, [category]=?, [price]=?, [image]=?, [is_available]=?, [is_deleted]=? WHERE [id]=?", Database.GetConnection()))
+            {
+                Database.BindParameters(cmd, newName, newCategory, newPrice, uploadedImage, isAvailable, isDeleted, Id);
+                Database.GetConnection().Open();
+                cmd.ExecuteNonQuery();
+                Database.GetConnection().Close();
+            }
+            Name = newName;
+            Category = newCategory;
+            Price = newPrice;
+            this.IsAvailable = isAvailable;
+            this.IsDeleted = isDeleted;
+            Image = uploadedImage;
+
+        }
+
+        private string GetUploadedImagePath(string source)
+        {
+            string filename = Image;
+            if (source.Equals(DEFAULT_IMAGE_PATH)) return DEFAULT_IMAGE_PATH;
+            if (source.Equals(Image)) return Image;
+
+            if (Image.Equals(DEFAULT_IMAGE_PATH))
+                filename = "product-"+ DateTime.Now.Ticks+".jpg";
+
+            return Util.CopyImage(source, filename);
+        }
+        
+        private string GetUploadedImagePath()
+        {
+            string filename = "product-" + DateTime.Now.Ticks + ".jpg";
+            if( DEFAULT_IMAGE_PATH.Equals(Image))
+                return DEFAULT_IMAGE_PATH;
+            return Util.CopyImage(Image, filename);
         }
 
         public static Product Find(int id)

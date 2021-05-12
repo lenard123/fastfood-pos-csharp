@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.ButtonSetAvailability = new Guna.UI2.WinForms.Guna2Button();
+            this.ButtonRemove = new Guna.UI2.WinForms.Guna2Button();
+            this.ButtonUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.LabelPrice = new System.Windows.Forms.Label();
             this.LabelProductName = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.PictureProductImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureProductImage)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -46,9 +46,9 @@
             this.guna2Panel1.BackColor = System.Drawing.Color.White;
             this.guna2Panel1.BorderColor = System.Drawing.Color.LightGray;
             this.guna2Panel1.BorderThickness = 1;
-            this.guna2Panel1.Controls.Add(this.guna2Button3);
-            this.guna2Panel1.Controls.Add(this.guna2Button2);
-            this.guna2Panel1.Controls.Add(this.guna2Button1);
+            this.guna2Panel1.Controls.Add(this.ButtonSetAvailability);
+            this.guna2Panel1.Controls.Add(this.ButtonRemove);
+            this.guna2Panel1.Controls.Add(this.ButtonUpdate);
             this.guna2Panel1.Controls.Add(this.panel1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
@@ -56,63 +56,62 @@
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(247, 287);
             this.guna2Panel1.TabIndex = 0;
-            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
-            // guna2Button3
+            // ButtonSetAvailability
             // 
-            this.guna2Button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.ButtonSetAvailability.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Button3.BorderColor = System.Drawing.Color.LightGray;
-            this.guna2Button3.BorderThickness = 1;
-            this.guna2Button3.CheckedState.Parent = this.guna2Button3;
-            this.guna2Button3.CustomImages.Parent = this.guna2Button3;
-            this.guna2Button3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(15)))), ((int)(((byte)(25)))));
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.HoverState.Parent = this.guna2Button3;
-            this.guna2Button3.Location = new System.Drawing.Point(21, 231);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
-            this.guna2Button3.Size = new System.Drawing.Size(204, 37);
-            this.guna2Button3.TabIndex = 1;
-            this.guna2Button3.Text = "Availability: Available";
-            this.guna2Button3.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.ButtonSetAvailability.BorderColor = System.Drawing.Color.LightGray;
+            this.ButtonSetAvailability.BorderThickness = 1;
+            this.ButtonSetAvailability.CheckedState.Parent = this.ButtonSetAvailability;
+            this.ButtonSetAvailability.CustomImages.Parent = this.ButtonSetAvailability;
+            this.ButtonSetAvailability.FillColor = System.Drawing.Color.Gray;
+            this.ButtonSetAvailability.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonSetAvailability.ForeColor = System.Drawing.Color.White;
+            this.ButtonSetAvailability.HoverState.Parent = this.ButtonSetAvailability;
+            this.ButtonSetAvailability.Location = new System.Drawing.Point(21, 231);
+            this.ButtonSetAvailability.Name = "ButtonSetAvailability";
+            this.ButtonSetAvailability.ShadowDecoration.Parent = this.ButtonSetAvailability;
+            this.ButtonSetAvailability.Size = new System.Drawing.Size(204, 37);
+            this.ButtonSetAvailability.TabIndex = 1;
+            this.ButtonSetAvailability.Text = "Availability: Available";
+            this.ButtonSetAvailability.Click += new System.EventHandler(this.ButtonSetAvailability_Click);
             // 
-            // guna2Button2
+            // ButtonRemove
             // 
-            this.guna2Button2.BorderColor = System.Drawing.Color.LightGray;
-            this.guna2Button2.BorderThickness = 1;
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(133, 181);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(92, 37);
-            this.guna2Button2.TabIndex = 1;
-            this.guna2Button2.Text = "Remove";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.ButtonRemove.BorderColor = System.Drawing.Color.LightGray;
+            this.ButtonRemove.BorderThickness = 1;
+            this.ButtonRemove.CheckedState.Parent = this.ButtonRemove;
+            this.ButtonRemove.CustomImages.Parent = this.ButtonRemove;
+            this.ButtonRemove.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.ButtonRemove.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonRemove.ForeColor = System.Drawing.Color.Black;
+            this.ButtonRemove.HoverState.Parent = this.ButtonRemove;
+            this.ButtonRemove.Location = new System.Drawing.Point(133, 181);
+            this.ButtonRemove.Name = "ButtonRemove";
+            this.ButtonRemove.ShadowDecoration.Parent = this.ButtonRemove;
+            this.ButtonRemove.Size = new System.Drawing.Size(92, 37);
+            this.ButtonRemove.TabIndex = 1;
+            this.ButtonRemove.Text = "Remove";
+            this.ButtonRemove.Click += new System.EventHandler(this.ButtonRemove_Click);
             // 
-            // guna2Button1
+            // ButtonUpdate
             // 
-            this.guna2Button1.BorderColor = System.Drawing.Color.LightGray;
-            this.guna2Button1.BorderThickness = 1;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(21, 181);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(92, 37);
-            this.guna2Button1.TabIndex = 1;
-            this.guna2Button1.Text = "Update";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.ButtonUpdate.BorderColor = System.Drawing.Color.LightGray;
+            this.ButtonUpdate.BorderThickness = 1;
+            this.ButtonUpdate.CheckedState.Parent = this.ButtonUpdate;
+            this.ButtonUpdate.CustomImages.Parent = this.ButtonUpdate;
+            this.ButtonUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.ButtonUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonUpdate.ForeColor = System.Drawing.Color.Black;
+            this.ButtonUpdate.HoverState.Parent = this.ButtonUpdate;
+            this.ButtonUpdate.Location = new System.Drawing.Point(21, 181);
+            this.ButtonUpdate.Name = "ButtonUpdate";
+            this.ButtonUpdate.ShadowDecoration.Parent = this.ButtonUpdate;
+            this.ButtonUpdate.Size = new System.Drawing.Size(92, 37);
+            this.ButtonUpdate.TabIndex = 1;
+            this.ButtonUpdate.Text = "Update";
+            this.ButtonUpdate.Click += new System.EventHandler(this.ButtonUpdate_Click);
             // 
             // panel1
             // 
@@ -121,12 +120,11 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.panel1.Controls.Add(this.LabelPrice);
             this.panel1.Controls.Add(this.LabelProductName);
-            this.panel1.Controls.Add(this.guna2PictureBox1);
+            this.panel1.Controls.Add(this.PictureProductImage);
             this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(243, 174);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // LabelPrice
             // 
@@ -150,18 +148,18 @@
             this.LabelProductName.Text = "ABCD EFGH HUGH LMNK";
             this.LabelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // guna2PictureBox1
+            // PictureProductImage
             // 
-            this.guna2PictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.PictureProductImage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2PictureBox1.Image = global::FastFoodPOS.Properties.Resources.icon_placeholder;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(22, 13);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(203, 100);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
+            this.PictureProductImage.Image = global::FastFoodPOS.Properties.Resources.icon_placeholder;
+            this.PictureProductImage.Location = new System.Drawing.Point(22, 13);
+            this.PictureProductImage.Name = "PictureProductImage";
+            this.PictureProductImage.ShadowDecoration.Parent = this.PictureProductImage;
+            this.PictureProductImage.Size = new System.Drawing.Size(203, 100);
+            this.PictureProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureProductImage.TabIndex = 0;
+            this.PictureProductImage.TabStop = false;
             // 
             // ProductCardComponent
             // 
@@ -172,11 +170,10 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "ProductCardComponent";
             this.Size = new System.Drawing.Size(247, 287);
-            this.Load += new System.EventHandler(this.ProductCardComponent_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureProductImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -185,11 +182,11 @@
 
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2PictureBox PictureProductImage;
+        private Guna.UI2.WinForms.Guna2Button ButtonUpdate;
         private System.Windows.Forms.Label LabelPrice;
         private System.Windows.Forms.Label LabelProductName;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button ButtonSetAvailability;
+        private Guna.UI2.WinForms.Guna2Button ButtonRemove;
     }
 }

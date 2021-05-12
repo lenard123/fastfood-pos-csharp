@@ -16,9 +16,9 @@ namespace FastFoodPOS.Components
 
         public Order _Order;
 
-        private BindingList<Order> Orders;
+        private BindingList<OrderItemComponent> Orders;
 
-        public OrderItemComponent(BindingList<Order> Orders, Order order)
+        public OrderItemComponent(BindingList<OrderItemComponent> Orders, Order order)
         {
             InitializeComponent();
             _Order = order;
@@ -47,7 +47,8 @@ namespace FastFoodPOS.Components
             }
             else
             {
-                Orders.Remove(_Order);
+                _Order = null;
+                Orders.Remove(this);
                 Dispose();
             }
         }
