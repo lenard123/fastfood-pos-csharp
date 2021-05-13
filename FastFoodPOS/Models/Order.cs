@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.OleDb;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +28,22 @@ namespace FastFoodPOS.Models
             this.Quantity = 1;
         }
 
+        public Order()
+        {
+            // TODO: Complete member initialization
+        }
+
+        public void Save(string transaction_id)
+        {
+            using (var cmd = new OleDbCommand("INSERT INTO [orders]([product_id], [transaction_id], [quantity]) VALUES (?, ?, ?)", Database.GetConnection()))
+            {
+                Database.BindParameters(cmd, ProductId, transaction_id, Quantity);
+                Database.GetConnection().Open();
+                cmd.ExecuteNonQuery();
+                Database.GetConnection().Close();
+            }
+        }
+        
         public Product GetProduct()
         {
             if (product == null)
@@ -34,6 +51,34 @@ namespace FastFoodPOS.Models
                 product = Product.Find(Id);
             }
             return product;
+        }
+
+        public static List<Order> GetAll(string id)
+        {
+            var result = new List<Order>();
+            using (var cmd = new OleDbCommand("SELECT * FROM [orders] WHERE [transaction_id]=?", Database.GetConnection()))
+            {
+                Database.BindParameters(cmd, id);
+                Database.GetConnection().Open();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read()) 
+                        result.Add(ConvertReaderToOrder(reader));
+                }
+                Database.GetConnection().Close();
+            }
+            return result;
+        }
+
+        private static Order ConvertReaderToOrder(OleDbDataReader reader)
+        {
+            var result = new Order
+            {
+                Id = reader.GetInt32(0),
+                ProductId = reader.GetInt32(1),
+                Quantity = reader.GetInt32(2)
+            };
+            return result;
         }
 
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace FastFoodPOS.Forms.AdminForms
 {
@@ -10,6 +11,6 @@ namespace FastFoodPOS.Forms.AdminForms
     {
         bool ShouldKeepForm { get; set; }
         void OnMounted();
-        void OnUnMounted();
+        void OnUnMounted(ref UserControl next);
     }
 }

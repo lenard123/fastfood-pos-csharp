@@ -59,7 +59,7 @@ namespace FastFoodPOS.Forms
 
         public void LoadFormControl(UserControl uc)
         {
-            DisposeAdminForm();
+            DisposeAdminForm(ref uc);
 
             IKeepable ucKeepable = uc as IKeepable;
             
@@ -69,14 +69,14 @@ namespace FastFoodPOS.Forms
             if (ucKeepable != null) ((IKeepable)uc).OnMounted();
         }
 
-        private void DisposeAdminForm()
+        private void DisposeAdminForm(ref UserControl next)
         {
             while (panel5.Controls.Count >= 1)
             {
                 IKeepable ucToRemove = panel5.Controls[0] as IKeepable;
                 if (ucToRemove != null)
                 {
-                    ucToRemove.OnUnMounted();
+                    ucToRemove.OnUnMounted(ref next);
                     if (ucToRemove.ShouldKeepForm)
                         panel5.Controls.RemoveAt(0);
                     else

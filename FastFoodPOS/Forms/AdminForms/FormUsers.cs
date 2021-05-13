@@ -8,53 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FastFoodPOS.Models;
+using FastFoodPOS.Components;
 
 namespace FastFoodPOS.Forms.AdminForms
 {
     public partial class FormUsers : UserControl
     {
+        List<User> AllUsers;
         public FormUsers()
         {
             InitializeComponent();
-            List<UserModel> list = new List<UserModel>();
-            User.fakeData().ForEach((User user) => { list.Add(new UserModel(user)); });
-            userModelBindingSource.DataSource = list;
-        }
-    }
-
-    class UserModel
-    {
-        public int UserID
-        {
-            get;
-            set;
+            AllUsers = User.GetAll();
+            AllUsers.ForEach((User user) =>
+            {
+                PanelUsers.Controls.Add(new UserCardComponent(user));
+            });
         }
 
-        public string Fullname
+        private void ButtonAddUser_Click(object sender, EventArgs e)
         {
-            get;
-            set;
-        }
-
-
-        public string Email
-        {
-            get;
-            set;
-        }
-
-        public string Role
-        {
-            get;
-            set;
-        }
-
-        public UserModel(User user)
-        {
-            UserID = user.Id;
-            Fullname = user.Fullname;
-            Email = user.Email;
-            Role = user.Role;
+            FormAdminPanel.Instance.LoadFormControl(new FormAddUser());
         }
     }
 }

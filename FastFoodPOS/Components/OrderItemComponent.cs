@@ -18,9 +18,12 @@ namespace FastFoodPOS.Components
 
         private BindingList<OrderItemComponent> Orders;
 
+        public event EventHandler<OrderItemComponent> OnOrderIncrement;
+
         public OrderItemComponent(BindingList<OrderItemComponent> Orders, Order order)
         {
             InitializeComponent();
+            Dock = DockStyle.Top;
             _Order = order;
             this.Orders = Orders;
             LabelName.Text = order.GetProduct().Name;
@@ -34,12 +37,17 @@ namespace FastFoodPOS.Components
 
         private void ButtonAdd_Click(object sender, EventArgs e)
         {
+            if (OnOrderIncrement != null) OnOrderIncrement(1, this);
+            /*
             _Order.Quantity++;
             Orders.ResetBindings();
+             */
         }
 
         private void ButtonMinus_Click(object sender, EventArgs e)
         {
+            if (OnOrderIncrement != null) OnOrderIncrement(-1, this);
+            /*
             if (_Order.Quantity > 1)
             {
                 _Order.Quantity--;
@@ -50,7 +58,7 @@ namespace FastFoodPOS.Components
                 _Order = null;
                 Orders.Remove(this);
                 Dispose();
-            }
+            }*/
         }
 
     }

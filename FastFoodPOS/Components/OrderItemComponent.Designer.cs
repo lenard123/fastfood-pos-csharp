@@ -45,11 +45,11 @@
             this.LabelSubtotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelSubtotal.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.LabelSubtotal.ForeColor = System.Drawing.Color.Maroon;
-            this.LabelSubtotal.Location = new System.Drawing.Point(302, 3);
+            this.LabelSubtotal.Location = new System.Drawing.Point(292, 3);
             this.LabelSubtotal.Name = "LabelSubtotal";
-            this.LabelSubtotal.Size = new System.Drawing.Size(95, 33);
+            this.LabelSubtotal.Size = new System.Drawing.Size(105, 33);
             this.LabelSubtotal.TabIndex = 3;
-            this.LabelSubtotal.Text = "500.00PHP";
+            this.LabelSubtotal.Text = "5000.00PHP";
             this.LabelSubtotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel6
@@ -58,7 +58,7 @@
             this.panel6.Controls.Add(this.guna2Panel1);
             this.panel6.Controls.Add(this.ButtonAdd);
             this.panel6.Controls.Add(this.ButtonMinus);
-            this.panel6.Location = new System.Drawing.Point(188, 5);
+            this.panel6.Location = new System.Drawing.Point(170, 5);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(118, 31);
             this.panel6.TabIndex = 4;
@@ -137,13 +137,15 @@
             this.LabelName.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.LabelName.Location = new System.Drawing.Point(3, 5);
             this.LabelName.Name = "LabelName";
-            this.LabelName.Size = new System.Drawing.Size(179, 31);
+            this.LabelName.Size = new System.Drawing.Size(161, 31);
             this.LabelName.TabIndex = 5;
             this.LabelName.Text = "Customer Order";
             this.LabelName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // guna2Separator2
             // 
+            this.guna2Separator2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Separator2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.guna2Separator2.Location = new System.Drawing.Point(7, 39);
             this.guna2Separator2.Name = "guna2Separator2";

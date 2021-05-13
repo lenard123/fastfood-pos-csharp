@@ -19,13 +19,50 @@ namespace FastFoodPOS.Models
         public bool IsDeleted{get;set;}
 
         public static User CurrentUser;
+        public static readonly string DEFAULT_IMAGE_PATH = "Resources\\user_default.png";
 
-        private static User GetUser(string email)
+        public void Save()
+        {
+            if (Find(Email) != null) throw new Level1Exception("Email already exists");
+            using (var cmd = new OleDbCommand("INSERT INTO [users]([fullname], [email], [role], [password], [image]) VALUES (?, ?, ?, ?, ?)", Database.GetConnection()))
+            {
+                Database.BindParameters(cmd, Fullname, Email, Role, Password, GetUploadedImagePath());
+                Database.GetConnection().Open();
+                cmd.ExecuteNonQuery();
+                Database.GetConnection().Close();
+            }
+        }
+
+        private string GetUploadedImagePath()
+        {
+            string filename = "user-" + DateTime.Now.Ticks + ".jpg";
+            if (DEFAULT_IMAGE_PATH.Equals(Image))
+                return DEFAULT_IMAGE_PATH;
+            return Util.CopyImage(Image, filename);
+        }
+
+        private static User Find(string email)
         {
             User result = null;
-            using(var cmd = new OleDbCommand("SELECT * FROM [users] WHERE [email] = ?", Database.GetConnection()))
+            using (var cmd = new OleDbCommand("SELECT * FROM [users] WHERE [email] = ?", Database.GetConnection()))
             {
                 Database.BindParameters(cmd, email);
+                Database.GetConnection().Open();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read()) result = ConvertReaderToUser(reader);
+                }
+                Database.GetConnection().Close();
+            }
+            return result;
+        }
+
+        public static User Find(int id)
+        {
+            User result = null;
+            using (var cmd = new OleDbCommand("SELECT * FROM [users] WHERE [id] = ?", Database.GetConnection()))
+            {
+                Database.BindParameters(cmd, id);
                 Database.GetConnection().Open();
                 using (var reader = cmd.ExecuteReader())
                 {
@@ -43,7 +80,7 @@ namespace FastFoodPOS.Models
 
         public static User Login(string email, string password)
         {
-            User user = GetUser(email);
+            User user = Find(email);
 
             //Check if the user exists
             if (user == null || user.IsDeleted)
@@ -58,12 +95,17 @@ namespace FastFoodPOS.Models
             return user;
         }
 
-        public static List<User> fakeData()
+        public static List<User> GetAll()
         {
             List<User> result = new List<User>();
-            for (int i = 1; i < 10; i++)
+            using (var cmd = new OleDbCommand("SELECT * FROM [users] WHERE [is_deleted] = false", Database.GetConnection()))
             {
-                result.Add(new User { Id = i, Fullname = "John Doe", Role = "Cashier", Email = "john@pos.com"});
+                Database.GetConnection().Open();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read()) result.Add(ConvertReaderToUser(reader));
+                }
+                Database.GetConnection().Close();
             }
             return result;
         }

@@ -48,14 +48,14 @@
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.PanelOrders = new System.Windows.Forms.FlowLayoutPanel();
+            this.PanelOrders = new System.Windows.Forms.Panel();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.ButtonClear = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.ButtonProccess = new Guna.UI2.WinForms.Guna2Button();
+            this.ButtonCalculateChange = new Guna.UI2.WinForms.Guna2Button();
+            this.TextPayment = new Guna.UI2.WinForms.Guna2TextBox();
+            this.LabelChange = new System.Windows.Forms.Label();
             this.LabelTotal = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -393,7 +393,7 @@
             this.guna2Panel2.BorderThickness = 1;
             this.guna2Panel2.Controls.Add(this.panel4);
             this.guna2Panel2.Controls.Add(this.guna2Separator1);
-            this.guna2Panel2.Controls.Add(this.guna2Button2);
+            this.guna2Panel2.Controls.Add(this.ButtonClear);
             this.guna2Panel2.Controls.Add(this.panel2);
             this.guna2Panel2.Controls.Add(this.guna2PictureBox1);
             this.guna2Panel2.Controls.Add(this.label1);
@@ -418,6 +418,7 @@
             // PanelOrders
             // 
             this.PanelOrders.AutoSize = true;
+            this.PanelOrders.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.PanelOrders.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelOrders.Location = new System.Drawing.Point(0, 0);
             this.PanelOrders.Name = "PanelOrders";
@@ -431,31 +432,32 @@
             this.guna2Separator1.Size = new System.Drawing.Size(429, 10);
             this.guna2Separator1.TabIndex = 6;
             // 
-            // guna2Button2
+            // ButtonClear
             // 
-            this.guna2Button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(10, 244);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(439, 40);
-            this.guna2Button2.TabIndex = 5;
-            this.guna2Button2.Text = "Clear Order";
+            this.ButtonClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ButtonClear.CheckedState.Parent = this.ButtonClear;
+            this.ButtonClear.CustomImages.Parent = this.ButtonClear;
+            this.ButtonClear.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.ButtonClear.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonClear.ForeColor = System.Drawing.Color.Black;
+            this.ButtonClear.HoverState.Parent = this.ButtonClear;
+            this.ButtonClear.Location = new System.Drawing.Point(10, 244);
+            this.ButtonClear.Margin = new System.Windows.Forms.Padding(0);
+            this.ButtonClear.Name = "ButtonClear";
+            this.ButtonClear.ShadowDecoration.Parent = this.ButtonClear;
+            this.ButtonClear.Size = new System.Drawing.Size(439, 40);
+            this.ButtonClear.TabIndex = 5;
+            this.ButtonClear.Text = "Clear Order";
+            this.ButtonClear.Click += new System.EventHandler(this.ButtonClear_Click);
             // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.guna2Button4);
-            this.panel2.Controls.Add(this.guna2Button3);
-            this.panel2.Controls.Add(this.guna2TextBox2);
-            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.ButtonProccess);
+            this.panel2.Controls.Add(this.ButtonCalculateChange);
+            this.panel2.Controls.Add(this.TextPayment);
+            this.panel2.Controls.Add(this.LabelChange);
             this.panel2.Controls.Add(this.LabelTotal);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
@@ -465,79 +467,81 @@
             this.panel2.Size = new System.Drawing.Size(439, 153);
             this.panel2.TabIndex = 2;
             // 
-            // guna2Button4
+            // ButtonProccess
             // 
-            this.guna2Button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.guna2Button4.CheckedState.Parent = this.guna2Button4;
-            this.guna2Button4.CustomImages.Parent = this.guna2Button4;
-            this.guna2Button4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(15)))), ((int)(((byte)(25)))));
-            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.HoverState.Parent = this.guna2Button4;
-            this.guna2Button4.Location = new System.Drawing.Point(0, 113);
-            this.guna2Button4.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
-            this.guna2Button4.Size = new System.Drawing.Size(439, 40);
-            this.guna2Button4.TabIndex = 6;
-            this.guna2Button4.Text = "Process Order";
+            this.ButtonProccess.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ButtonProccess.CheckedState.Parent = this.ButtonProccess;
+            this.ButtonProccess.CustomImages.Parent = this.ButtonProccess;
+            this.ButtonProccess.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(15)))), ((int)(((byte)(25)))));
+            this.ButtonProccess.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonProccess.ForeColor = System.Drawing.Color.White;
+            this.ButtonProccess.HoverState.Parent = this.ButtonProccess;
+            this.ButtonProccess.Location = new System.Drawing.Point(0, 113);
+            this.ButtonProccess.Margin = new System.Windows.Forms.Padding(0);
+            this.ButtonProccess.Name = "ButtonProccess";
+            this.ButtonProccess.ShadowDecoration.Parent = this.ButtonProccess;
+            this.ButtonProccess.Size = new System.Drawing.Size(439, 40);
+            this.ButtonProccess.TabIndex = 6;
+            this.ButtonProccess.Text = "Process Order";
+            this.ButtonProccess.Click += new System.EventHandler(this.ButtonProccess_Click);
             // 
-            // guna2Button3
+            // ButtonCalculateChange
             // 
-            this.guna2Button3.Animated = true;
-            this.guna2Button3.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.BorderThickness = 1;
-            this.guna2Button3.CheckedState.Parent = this.guna2Button3;
-            this.guna2Button3.CustomImages.Parent = this.guna2Button3;
-            this.guna2Button3.FillColor = System.Drawing.Color.White;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button3.ForeColor = System.Drawing.Color.DimGray;
-            this.guna2Button3.HoverState.Parent = this.guna2Button3;
-            this.guna2Button3.Location = new System.Drawing.Point(314, 37);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
-            this.guna2Button3.Size = new System.Drawing.Size(122, 36);
-            this.guna2Button3.TabIndex = 2;
-            this.guna2Button3.Text = "Calculate Change";
+            this.ButtonCalculateChange.Animated = true;
+            this.ButtonCalculateChange.BorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonCalculateChange.BorderThickness = 1;
+            this.ButtonCalculateChange.CheckedState.Parent = this.ButtonCalculateChange;
+            this.ButtonCalculateChange.CustomImages.Parent = this.ButtonCalculateChange;
+            this.ButtonCalculateChange.FillColor = System.Drawing.Color.White;
+            this.ButtonCalculateChange.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonCalculateChange.ForeColor = System.Drawing.Color.DimGray;
+            this.ButtonCalculateChange.HoverState.Parent = this.ButtonCalculateChange;
+            this.ButtonCalculateChange.Location = new System.Drawing.Point(314, 37);
+            this.ButtonCalculateChange.Name = "ButtonCalculateChange";
+            this.ButtonCalculateChange.ShadowDecoration.Parent = this.ButtonCalculateChange;
+            this.ButtonCalculateChange.Size = new System.Drawing.Size(122, 36);
+            this.ButtonCalculateChange.TabIndex = 2;
+            this.ButtonCalculateChange.Text = "Calculate Change";
+            this.ButtonCalculateChange.Click += new System.EventHandler(this.ButtonCalculateChange_Click);
             // 
-            // guna2TextBox2
+            // TextPayment
             // 
-            this.guna2TextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.FocusedState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2TextBox2.ForeColor = System.Drawing.Color.Red;
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.HoverState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Location = new System.Drawing.Point(95, 37);
-            this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PasswordChar = '\0';
-            this.guna2TextBox2.PlaceholderText = "";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.ShadowDecoration.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Size = new System.Drawing.Size(172, 36);
-            this.guna2TextBox2.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.guna2TextBox2.TabIndex = 1;
+            this.TextPayment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.TextPayment.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextPayment.DefaultText = "";
+            this.TextPayment.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TextPayment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TextPayment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextPayment.DisabledState.Parent = this.TextPayment;
+            this.TextPayment.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextPayment.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextPayment.FocusedState.Parent = this.TextPayment;
+            this.TextPayment.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.TextPayment.ForeColor = System.Drawing.Color.Red;
+            this.TextPayment.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextPayment.HoverState.Parent = this.TextPayment;
+            this.TextPayment.Location = new System.Drawing.Point(95, 37);
+            this.TextPayment.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.TextPayment.Name = "TextPayment";
+            this.TextPayment.PasswordChar = '\0';
+            this.TextPayment.PlaceholderText = "";
+            this.TextPayment.SelectedText = "";
+            this.TextPayment.ShadowDecoration.Parent = this.TextPayment;
+            this.TextPayment.Size = new System.Drawing.Size(172, 36);
+            this.TextPayment.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.TextPayment.TabIndex = 1;
             // 
-            // label7
+            // LabelChange
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(91, 80);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 21);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "10PHP";
+            this.LabelChange.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.LabelChange.AutoSize = true;
+            this.LabelChange.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.LabelChange.ForeColor = System.Drawing.Color.Red;
+            this.LabelChange.Location = new System.Drawing.Point(91, 80);
+            this.LabelChange.Name = "LabelChange";
+            this.LabelChange.Size = new System.Drawing.Size(51, 21);
+            this.LabelChange.TabIndex = 0;
+            this.LabelChange.Text = "0PHP";
             // 
             // LabelTotal
             // 
@@ -658,17 +662,17 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label LabelTotal;
         private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private Guna.UI2.WinForms.Guna2Button ButtonClear;
+        private Guna.UI2.WinForms.Guna2Button ButtonCalculateChange;
+        private Guna.UI2.WinForms.Guna2TextBox TextPayment;
         private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
-        private System.Windows.Forms.Label label7;
+        private Guna.UI2.WinForms.Guna2Button ButtonProccess;
+        private System.Windows.Forms.Label LabelChange;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.FlowLayoutPanel PanelProducts;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.FlowLayoutPanel PanelOrders;
+        private System.Windows.Forms.Panel PanelOrders;
     }
 }

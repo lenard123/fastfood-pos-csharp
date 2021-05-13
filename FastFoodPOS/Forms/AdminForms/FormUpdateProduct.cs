@@ -72,9 +72,18 @@ namespace FastFoodPOS.Forms.AdminForms
 
         }
 
-        public void OnUnMounted()
+        public void OnUnMounted(ref UserControl next)
         {
             context.ShouldKeepForm = false;
+            if (next is FormManageProducts && next != context)
+            {
+                next.Dispose();
+                next = context;
+            }
+            else if (next != context)
+            {
+                context.Dispose();
+            }
         }
     }
 }

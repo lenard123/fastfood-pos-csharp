@@ -141,7 +141,6 @@
             // 
             // ButtonDesserts
             // 
-            this.ButtonDesserts.Animated = true;
             this.ButtonDesserts.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.ButtonDesserts.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
             this.ButtonDesserts.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -167,7 +166,6 @@
             // 
             // ButtonPackages
             // 
-            this.ButtonPackages.Animated = true;
             this.ButtonPackages.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.ButtonPackages.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
             this.ButtonPackages.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -193,7 +191,6 @@
             // 
             // ButtonSnacks
             // 
-            this.ButtonSnacks.Animated = true;
             this.ButtonSnacks.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.ButtonSnacks.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
             this.ButtonSnacks.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -219,7 +216,6 @@
             // 
             // ButtonFoods
             // 
-            this.ButtonFoods.Animated = true;
             this.ButtonFoods.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.ButtonFoods.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
             this.ButtonFoods.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -245,7 +241,6 @@
             // 
             // ButtonDrinks
             // 
-            this.ButtonDrinks.Animated = true;
             this.ButtonDrinks.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.ButtonDrinks.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
             this.ButtonDrinks.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));

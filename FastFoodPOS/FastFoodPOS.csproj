@@ -11,6 +11,21 @@
     <AssemblyName>FastFoodPOS</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,15 +46,20 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>mcdonalds.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Guna.UI2">
       <HintPath>../Assets/Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -68,12 +88,25 @@
     <Compile Include="Components\ProductCardComponent1.Designer.cs">
       <DependentUpon>ProductCardComponent1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\ReceiptTemplate.cs" />
+    <Compile Include="Components\UserCardComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\UserCardComponent.Designer.cs">
+      <DependentUpon>UserCardComponent.cs</DependentUpon>
+    </Compile>
     <Compile Include="ErrorHandler\Level1Exception.cs" />
     <Compile Include="Forms\AdminForms\FormAddProduct.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\AdminForms\FormAddProduct.Designer.cs">
       <DependentUpon>FormAddProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminForms\FormAddUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminForms\FormAddUser.Designer.cs">
+      <DependentUpon>FormAddUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AdminForms\FormManageProducts.cs">
       <SubType>UserControl</SubType>
@@ -102,6 +135,12 @@
     <Compile Include="Forms\AdminForms\IKeepable.cs" />
     <Compile Include="Forms\BaseForm.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\CashierForms\ProcessOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\CashierForms\ProcessOrder.Designer.cs">
+      <DependentUpon>ProcessOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormAdminLogin.cs">
       <SubType>UserControl</SubType>
@@ -149,8 +188,14 @@
     <EmbeddedResource Include="Components\ProductCardComponent1.resx">
       <DependentUpon>ProductCardComponent1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\UserCardComponent.resx">
+      <DependentUpon>UserCardComponent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminForms\FormAddProduct.resx">
       <DependentUpon>FormAddProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminForms\FormAddUser.resx">
+      <DependentUpon>FormAddUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminForms\FormManageProducts.resx">
       <DependentUpon>FormManageProducts.cs</DependentUpon>
@@ -163,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminForms\FormUsers.resx">
       <DependentUpon>FormUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CashierForms\ProcessOrder.resx">
+      <DependentUpon>ProcessOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAdminLogin.resx">
       <DependentUpon>FormAdminLogin.cs</DependentUpon>
@@ -181,10 +229,6 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Properties\DataSources\FastFoodPOS.Forms.AdminForms.TransactionModel.datasource" />
-    <None Include="Properties\DataSources\FastFoodPOS.Forms.AdminForms.UserModel.datasource" />
-    <None Include="Properties\DataSources\FastFoodPOS.Models.Transaction.datasource" />
-    <None Include="Properties\DataSources\FastFoodPOS.Models.TransactionModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -214,13 +258,31 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\CashierForms\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\product_default.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="mcdonalds.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

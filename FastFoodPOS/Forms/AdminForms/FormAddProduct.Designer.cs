@@ -194,7 +194,6 @@
             this.ComboBoxType.ShadowDecoration.Parent = this.ComboBoxType;
             this.ComboBoxType.Size = new System.Drawing.Size(384, 36);
             this.ComboBoxType.StartIndex = 0;
-            this.ComboBoxType.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.ComboBoxType.TabIndex = 2;
             // 
             // label3
@@ -260,7 +259,6 @@
             this.TextPrice.SelectedText = "";
             this.TextPrice.ShadowDecoration.Parent = this.TextPrice;
             this.TextPrice.Size = new System.Drawing.Size(384, 36);
-            this.TextPrice.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.TextPrice.TabIndex = 0;
             // 
             // TextName
@@ -286,7 +284,6 @@
             this.TextName.SelectedText = "";
             this.TextName.ShadowDecoration.Parent = this.TextName;
             this.TextName.Size = new System.Drawing.Size(384, 36);
-            this.TextName.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.TextName.TabIndex = 0;
             // 
             // OpenFileDialogChangeImage

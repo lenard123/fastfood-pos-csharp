@@ -136,7 +136,7 @@
             // 
             this.TextEmail.BorderThickness = 0;
             this.TextEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TextEmail.DefaultText = "lenard.mangayayam@gmail.com";
+            this.TextEmail.DefaultText = "lenard123@pos.com";
             this.TextEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.TextEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.TextEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
