@@ -29,5 +29,18 @@ namespace FastFoodPOS.Models
                 cmd.Parameters.AddWithValue("p" + i, parameters[i]);
             }
         }
+
+        public static bool IsExist(string table, string column, object value)
+        {
+            bool result = false;
+            using (var cmd = new OleDbCommand("SELECT COUNT(*) FROM " + table + " WHERE " + column + " = ?", GetConnection()))
+            {
+                BindParameters(cmd, value);
+                GetConnection().Open();
+                result = int.Parse(cmd.ExecuteScalar().ToString()) > 0;
+                GetConnection().Close();
+            }
+            return result;
+        }
     }
 }

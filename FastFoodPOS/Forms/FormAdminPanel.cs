@@ -30,9 +30,7 @@ namespace FastFoodPOS.Forms
             LabelUserName.Text = LoggedInUser.Fullname;
             LabelUserRole.Text = LoggedInUser.Role;
 
-            UserControl manageProducts = new FormUsers();
-            manageProducts.Dock = DockStyle.Fill;
-            panel5.Controls.Add(manageProducts);
+            ButtonDashboard.PerformClick();
         }
 
         private void ButtonMenu_Click(object sender, EventArgs e)
@@ -41,6 +39,9 @@ namespace FastFoodPOS.Forms
 
             switch (Convert.ToInt16(ButtonMenu.Tag))
             {
+                case 1:
+                    LoadFormControl(new FormDashboard());
+                    break;
                 case 2:
                     LoadFormControl(new FormAddProduct());
                     break;
@@ -49,6 +50,9 @@ namespace FastFoodPOS.Forms
                     break;
                 case 4:
                     LoadFormControl(new FormTransactions());
+                    break;
+                case 5:
+                    LoadFormControl(new FormSalesReport());
                     break;
                 case 6:
                     LoadFormControl(new FormUsers());

@@ -13,41 +13,34 @@ namespace FastFoodPOS.Forms.AdminForms
 {
     public partial class FormTransactions : UserControl
     {
-        BindingList<TransactionModel> list;
+        Dictionary<int, User> Users;
         public FormTransactions()
         {
             InitializeComponent();
-            list = new BindingList<TransactionModel>();
-            Transaction.fakeData().ForEach((Transaction t) => { list.Add(new TransactionModel(t)); });
-            transactionModelBindingSource.DataSource = list;
-        }
-    }
-
-    class TransactionModel
-    {
-        public string TransactionId
-        {
-            get;
-            set;
+            Users = new Dictionary<int, User>();
+            User.GetAll(true).ForEach((User user) => Users.Add(user.Id, user));
+            DateTimeSpecifier.MaxDate = DateTime.Now;
+            DateTimeSpecifier.Value = DateTimeSpecifier.MaxDate;
         }
 
-        public string Date
+        void RefreshTransactions(DateTime date)
         {
-            get;
-            set;
+            var Transactions = Transaction.GetTransactions(date);
+            DataGridViewTransaction.Rows.Clear();
+            Transactions.ForEach((Transaction transaction) =>
+            {
+                DataGridViewTransaction.Rows.Add(
+                    "#" + transaction.Id,
+                    transaction.Date.ToShortTimeString(),
+                    Users[transaction.CashierId].Fullname,
+                    transaction.Total + "PHP"
+                );
+            });
         }
 
-        public string Total
+        private void DateTimeSpecifier_ValueChanged(object sender, EventArgs e)
         {
-            get;
-            set;
-        }
-
-        public TransactionModel(Transaction t)
-        {
-            TransactionId = "#" + t.Id;
-            Date = t.Date.ToString();
-            Total = t.Total + "PHP";
+            RefreshTransactions(DateTimeSpecifier.Value);
         }
     }
 }

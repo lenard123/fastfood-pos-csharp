@@ -53,13 +53,29 @@
     <Reference Include="Guna.UI2">
       <HintPath>../Assets/Guna.UI2.dll</HintPath>
     </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -68,6 +84,8 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Components\OrderItemComponent.cs">
@@ -95,6 +113,7 @@
     <Compile Include="Components\UserCardComponent.Designer.cs">
       <DependentUpon>UserCardComponent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\Validator.cs" />
     <Compile Include="ErrorHandler\Level1Exception.cs" />
     <Compile Include="Forms\AdminForms\FormAddProduct.cs">
       <SubType>UserControl</SubType>
@@ -108,11 +127,23 @@
     <Compile Include="Forms\AdminForms\FormAddUser.Designer.cs">
       <DependentUpon>FormAddUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AdminForms\FormDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminForms\FormDashboard.Designer.cs">
+      <DependentUpon>FormDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AdminForms\FormManageProducts.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\AdminForms\FormManageProducts.Designer.cs">
       <DependentUpon>FormManageProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminForms\FormSalesReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminForms\FormSalesReport.Designer.cs">
+      <DependentUpon>FormSalesReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AdminForms\FormTransactions.cs">
       <SubType>UserControl</SubType>
@@ -169,6 +200,7 @@
     <Compile Include="Models\Database.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Sale.cs" />
     <Compile Include="Models\Transaction.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
@@ -197,8 +229,14 @@
     <EmbeddedResource Include="Forms\AdminForms\FormAddUser.resx">
       <DependentUpon>FormAddUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminForms\FormDashboard.resx">
+      <DependentUpon>FormDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminForms\FormManageProducts.resx">
       <DependentUpon>FormManageProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminForms\FormSalesReport.resx">
+      <DependentUpon>FormSalesReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminForms\FormTransactions.resx">
       <DependentUpon>FormTransactions.cs</DependentUpon>
@@ -229,6 +267,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -266,6 +305,31 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="mcdonalds.ico" />
+    <None Include="Resources\burger_soda_black.png" />
+    <None Include="Resources\icecream.png" />
+    <None Include="Resources\burger.png" />
+    <None Include="Resources\glass.png" />
+    <None Include="Resources\soup.png" />
+    <None Include="Resources\sign_out_right_white.png" />
+    <None Include="Resources\sign_out_gray.png" />
+    <None Include="Resources\burger_soda_plus_white.png" />
+    <None Include="Resources\burger_soda_plus_gray.png" />
+    <None Include="Resources\receipt_white.png" />
+    <None Include="Resources\receipt_gray.png" />
+    <None Include="Resources\burger_soda_white.png" />
+    <None Include="Resources\burger_soda_gray.png" />
+    <None Include="Resources\archive_white.png" />
+    <None Include="Resources\archive_gray.png" />
+    <None Include="Resources\users_white.png" />
+    <None Include="Resources\users_gray.png" />
+    <None Include="Resources\sales_white.png" />
+    <None Include="Resources\sales_gray.png" />
+    <None Include="Resources\home_gray.png" />
+    <None Include="Resources\home_white.png" />
+    <None Include="Resources\hide.png" />
+    <None Include="Resources\show.png" />
+    <None Include="Resources\key.png" />
+    <None Include="Resources\email.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">

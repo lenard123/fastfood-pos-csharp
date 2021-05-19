@@ -24,8 +24,6 @@ namespace FastFoodPOS
             MaximumSize = Screen.FromControl(this).WorkingArea.Size;
             FormBorderStyle = FormBorderStyle.None;
 
-            var x = Util.GetHashSHA256("lenard0727");
-
             LoadForm(new FormAdminLogin());
         }
 

@@ -12,10 +12,11 @@ namespace FastFoodPOS.Models
         public int Id { get; set; }
         public int ProductId { get; set; }
         public int Quantity { get; set; }
+        public decimal Price { get; set; }
 
         public decimal Subtotal {
             get{
-                return Quantity * GetProduct().Price;
+                return Quantity * Price;
             }
         }
 
@@ -26,6 +27,7 @@ namespace FastFoodPOS.Models
             this.product = product;
             this.ProductId = product.Id;
             this.Quantity = 1;
+            this.Price = product.Price;
         }
 
         public Order()
@@ -35,9 +37,9 @@ namespace FastFoodPOS.Models
 
         public void Save(string transaction_id)
         {
-            using (var cmd = new OleDbCommand("INSERT INTO [orders]([product_id], [transaction_id], [quantity]) VALUES (?, ?, ?)", Database.GetConnection()))
+            using (var cmd = new OleDbCommand("INSERT INTO [orders]([product_id], [transaction_id], [quantity], [price]) VALUES (?, ?, ?, ?)", Database.GetConnection()))
             {
-                Database.BindParameters(cmd, ProductId, transaction_id, Quantity);
+                Database.BindParameters(cmd, ProductId, transaction_id, Quantity, Price);
                 Database.GetConnection().Open();
                 cmd.ExecuteNonQuery();
                 Database.GetConnection().Close();
@@ -76,7 +78,8 @@ namespace FastFoodPOS.Models
             {
                 Id = reader.GetInt32(0),
                 ProductId = reader.GetInt32(1),
-                Quantity = reader.GetInt32(2)
+                Quantity = reader.GetInt32(3),
+                Price = reader.GetDecimal(4)
             };
             return result;
         }

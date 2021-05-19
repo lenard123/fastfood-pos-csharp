@@ -33,24 +33,23 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TextEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.TextPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.ButtonLogin = new Guna.UI2.WinForms.Guna2Button();
+            this.VisibilityToggler = new Guna.UI2.WinForms.Guna2Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.guna2Panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -99,16 +98,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Welcome to";
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::FastFoodPOS.Properties.Resources.mcdonalds;
-            this.pictureBox4.Location = new System.Drawing.Point(86, 73);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(178, 158);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
-            // 
             // guna2Panel1
             // 
             this.guna2Panel1.BorderRadius = 20;
@@ -120,17 +109,6 @@
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(402, 43);
             this.guna2Panel1.TabIndex = 3;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBox1.Image = global::FastFoodPOS.Properties.Resources.icon_placeholder;
-            this.pictureBox1.Location = new System.Drawing.Point(17, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
             // 
             // TextEmail
             // 
@@ -152,6 +130,7 @@
             this.TextEmail.PasswordChar = '\0';
             this.TextEmail.PlaceholderText = "Enter your email here";
             this.TextEmail.SelectedText = "";
+            this.TextEmail.SelectionStart = 17;
             this.TextEmail.ShadowDecoration.Parent = this.TextEmail;
             this.TextEmail.Size = new System.Drawing.Size(344, 33);
             this.TextEmail.TabIndex = 4;
@@ -159,7 +138,7 @@
             // guna2Panel2
             // 
             this.guna2Panel2.BorderRadius = 20;
-            this.guna2Panel2.Controls.Add(this.pictureBox3);
+            this.guna2Panel2.Controls.Add(this.VisibilityToggler);
             this.guna2Panel2.Controls.Add(this.pictureBox2);
             this.guna2Panel2.Controls.Add(this.TextPassword);
             this.guna2Panel2.FillColor = System.Drawing.SystemColors.Control;
@@ -168,28 +147,6 @@
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
             this.guna2Panel2.Size = new System.Drawing.Size(402, 43);
             this.guna2Panel2.TabIndex = 5;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBox3.Image = global::FastFoodPOS.Properties.Resources.icon_placeholder;
-            this.pictureBox3.Location = new System.Drawing.Point(372, 12);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 5;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBox2.Image = global::FastFoodPOS.Properties.Resources.icon_placeholder;
-            this.pictureBox2.Location = new System.Drawing.Point(17, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
             // 
             // TextPassword
             // 
@@ -215,6 +172,7 @@
             this.TextPassword.ShadowDecoration.Parent = this.TextPassword;
             this.TextPassword.Size = new System.Drawing.Size(318, 33);
             this.TextPassword.TabIndex = 4;
+            this.TextPassword.UseSystemPasswordChar = true;
             // 
             // ButtonLogin
             // 
@@ -233,6 +191,46 @@
             this.ButtonLogin.Text = "LOGIN";
             this.ButtonLogin.Click += new System.EventHandler(this.ButtonLogin_Click);
             // 
+            // VisibilityToggler
+            // 
+            this.VisibilityToggler.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
+            this.VisibilityToggler.CheckedState.Image = global::FastFoodPOS.Properties.Resources.hide;
+            this.VisibilityToggler.CheckedState.Parent = this.VisibilityToggler;
+            this.VisibilityToggler.CustomImages.Parent = this.VisibilityToggler;
+            this.VisibilityToggler.FillColor = System.Drawing.Color.Empty;
+            this.VisibilityToggler.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.VisibilityToggler.ForeColor = System.Drawing.Color.White;
+            this.VisibilityToggler.HoverState.Parent = this.VisibilityToggler;
+            this.VisibilityToggler.Image = global::FastFoodPOS.Properties.Resources.show;
+            this.VisibilityToggler.Location = new System.Drawing.Point(371, 12);
+            this.VisibilityToggler.Name = "VisibilityToggler";
+            this.VisibilityToggler.ShadowDecoration.Parent = this.VisibilityToggler;
+            this.VisibilityToggler.Size = new System.Drawing.Size(20, 20);
+            this.VisibilityToggler.TabIndex = 5;
+            this.VisibilityToggler.Click += new System.EventHandler(this.VisibilityToggler_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox2.Image = global::FastFoodPOS.Properties.Resources.key;
+            this.pictureBox2.Location = new System.Drawing.Point(17, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox1.Image = global::FastFoodPOS.Properties.Resources.email;
+            this.pictureBox1.Location = new System.Drawing.Point(17, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
             // guna2CirclePictureBox1
             // 
             this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
@@ -245,6 +243,16 @@
             this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2CirclePictureBox1.TabIndex = 1;
             this.guna2CirclePictureBox1.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::FastFoodPOS.Properties.Resources.mcdonalds;
+            this.pictureBox4.Location = new System.Drawing.Point(86, 73);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(178, 158);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
             // 
             // FormAdminLogin
             // 
@@ -261,13 +269,12 @@
             this.Size = new System.Drawing.Size(850, 523);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -280,7 +287,6 @@
         private Guna.UI2.WinForms.Guna2TextBox TextEmail;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private Guna.UI2.WinForms.Guna2TextBox TextPassword;
         private Guna.UI2.WinForms.Guna2Button ButtonLogin;
@@ -288,5 +294,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2Button VisibilityToggler;
     }
 }

@@ -62,5 +62,18 @@ namespace FastFoodPOS
                 Directory.CreateDirectory("images");
             }
         }
+
+        public static bool IsEmail(string text)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(text);
+                return addr.Address == text;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
     }
 }

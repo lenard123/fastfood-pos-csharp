@@ -95,10 +95,12 @@ namespace FastFoodPOS.Models
             return user;
         }
 
-        public static List<User> GetAll()
+        public static List<User> GetAll(bool include_deleted)
         {
             List<User> result = new List<User>();
-            using (var cmd = new OleDbCommand("SELECT * FROM [users] WHERE [is_deleted] = false", Database.GetConnection()))
+            string query = "SELECT * FROM [users]";
+            if (!include_deleted) query += " WHERE [is_deleted] = false";
+            using (var cmd = new OleDbCommand(query, Database.GetConnection()))
             {
                 Database.GetConnection().Open();
                 using (var reader = cmd.ExecuteReader())
@@ -108,6 +110,11 @@ namespace FastFoodPOS.Models
                 Database.GetConnection().Close();
             }
             return result;
+        }
+
+        public static List<User> GetAll()
+        {
+            return GetAll(false);
         }
 
         private static User ConvertReaderToUser(OleDbDataReader reader)

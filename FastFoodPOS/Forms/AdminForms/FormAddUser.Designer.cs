@@ -31,6 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddUser));
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.LabelConfirmPassword = new System.Windows.Forms.Label();
+            this.LabelPassword = new System.Windows.Forms.Label();
+            this.LabelEmail = new System.Windows.Forms.Label();
+            this.LabelName = new System.Windows.Forms.Label();
             this.ButtonSave = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.ButtonBack = new Guna.UI2.WinForms.Guna2Button();
@@ -66,6 +70,10 @@
             // 
             this.guna2Panel1.BorderColor = System.Drawing.Color.LightGray;
             this.guna2Panel1.BorderThickness = 1;
+            this.guna2Panel1.Controls.Add(this.LabelConfirmPassword);
+            this.guna2Panel1.Controls.Add(this.LabelPassword);
+            this.guna2Panel1.Controls.Add(this.LabelEmail);
+            this.guna2Panel1.Controls.Add(this.LabelName);
             this.guna2Panel1.Controls.Add(this.ButtonSave);
             this.guna2Panel1.Controls.Add(this.guna2Button1);
             this.guna2Panel1.Controls.Add(this.ButtonBack);
@@ -85,8 +93,48 @@
             this.guna2Panel1.Location = new System.Drawing.Point(35, 84);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(811, 566);
+            this.guna2Panel1.Size = new System.Drawing.Size(811, 584);
             this.guna2Panel1.TabIndex = 4;
+            // 
+            // LabelConfirmPassword
+            // 
+            this.LabelConfirmPassword.AutoSize = true;
+            this.LabelConfirmPassword.ForeColor = System.Drawing.Color.Red;
+            this.LabelConfirmPassword.Location = new System.Drawing.Point(303, 482);
+            this.LabelConfirmPassword.Name = "LabelConfirmPassword";
+            this.LabelConfirmPassword.Size = new System.Drawing.Size(24, 13);
+            this.LabelConfirmPassword.TabIndex = 16;
+            this.LabelConfirmPassword.Text = "red";
+            // 
+            // LabelPassword
+            // 
+            this.LabelPassword.AutoSize = true;
+            this.LabelPassword.ForeColor = System.Drawing.Color.Red;
+            this.LabelPassword.Location = new System.Drawing.Point(303, 388);
+            this.LabelPassword.Name = "LabelPassword";
+            this.LabelPassword.Size = new System.Drawing.Size(24, 13);
+            this.LabelPassword.TabIndex = 15;
+            this.LabelPassword.Text = "red";
+            // 
+            // LabelEmail
+            // 
+            this.LabelEmail.AutoSize = true;
+            this.LabelEmail.ForeColor = System.Drawing.Color.Red;
+            this.LabelEmail.Location = new System.Drawing.Point(303, 203);
+            this.LabelEmail.Name = "LabelEmail";
+            this.LabelEmail.Size = new System.Drawing.Size(24, 13);
+            this.LabelEmail.TabIndex = 15;
+            this.LabelEmail.Text = "red";
+            // 
+            // LabelName
+            // 
+            this.LabelName.AutoSize = true;
+            this.LabelName.ForeColor = System.Drawing.Color.Red;
+            this.LabelName.Location = new System.Drawing.Point(303, 104);
+            this.LabelName.Name = "LabelName";
+            this.LabelName.Size = new System.Drawing.Size(24, 13);
+            this.LabelName.TabIndex = 15;
+            this.LabelName.Text = "red";
             // 
             // ButtonSave
             // 
@@ -97,7 +145,7 @@
             this.ButtonSave.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ButtonSave.ForeColor = System.Drawing.Color.White;
             this.ButtonSave.HoverState.Parent = this.ButtonSave;
-            this.ButtonSave.Location = new System.Drawing.Point(646, 500);
+            this.ButtonSave.Location = new System.Drawing.Point(646, 518);
             this.ButtonSave.Name = "ButtonSave";
             this.ButtonSave.ShadowDecoration.Parent = this.ButtonSave;
             this.ButtonSave.Size = new System.Drawing.Size(146, 45);
@@ -116,7 +164,7 @@
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(306, 500);
+            this.guna2Button1.Location = new System.Drawing.Point(306, 518);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(146, 45);
@@ -134,7 +182,7 @@
             this.ButtonBack.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ButtonBack.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ButtonBack.HoverState.Parent = this.ButtonBack;
-            this.ButtonBack.Location = new System.Drawing.Point(476, 500);
+            this.ButtonBack.Location = new System.Drawing.Point(476, 518);
             this.ButtonBack.Name = "ButtonBack";
             this.ButtonBack.ShadowDecoration.Parent = this.ButtonBack;
             this.ButtonBack.Size = new System.Drawing.Size(146, 45);
@@ -189,6 +237,7 @@
             this.TextConfirmPassword.ShadowDecoration.Parent = this.TextConfirmPassword;
             this.TextConfirmPassword.Size = new System.Drawing.Size(486, 36);
             this.TextConfirmPassword.TabIndex = 10;
+            this.TextConfirmPassword.UseSystemPasswordChar = true;
             // 
             // TextPassword
             // 
@@ -214,6 +263,7 @@
             this.TextPassword.ShadowDecoration.Parent = this.TextPassword;
             this.TextPassword.Size = new System.Drawing.Size(486, 36);
             this.TextPassword.TabIndex = 10;
+            this.TextPassword.UseSystemPasswordChar = true;
             // 
             // TextEmail
             // 
@@ -402,5 +452,9 @@
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.OpenFileDialog OpenFileDialogChangeImage;
+        private System.Windows.Forms.Label LabelConfirmPassword;
+        private System.Windows.Forms.Label LabelPassword;
+        private System.Windows.Forms.Label LabelEmail;
+        private System.Windows.Forms.Label LabelName;
     }
 }

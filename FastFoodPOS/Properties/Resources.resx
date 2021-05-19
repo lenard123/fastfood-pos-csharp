@@ -118,19 +118,94 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="user_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mcdonalds" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mcdonalds.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FastFoodDatabase" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FastFoodDatabase.accdb;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="burger_soda_plus_gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\burger_soda_plus_gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="product_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\product_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="show" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\show.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_placeholder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_placeholder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="mcdonalds" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mcdonalds.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="burger_soda_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\burger_soda_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="product_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\product_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sign_out_right_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sign_out_right_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sign_out_gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sign_out_gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="users_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\users_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="key" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\key.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="burger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\burger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="soup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\soup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sales_gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sales_gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="email" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\email.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="home_gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home_gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="home_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="burger_soda_gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\burger_soda_gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FastFoodDatabase" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FastFoodDatabase.accdb;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="burger_soda_plus_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\burger_soda_plus_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="archive_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\archive_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sales_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sales_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="receipt_gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\receipt_gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="archive_gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\archive_gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="glass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\glass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="receipt_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\receipt_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icecream" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icecream.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="users_gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\users_gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="burger_soda_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\burger_soda_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

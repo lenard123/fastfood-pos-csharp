@@ -17,13 +17,15 @@ namespace FastFoodPOS.Forms.AdminForms
         ProductCardComponent pcc;
         Product product;
         FormManageProducts context;
+        Validator NameValidator;
         public FormUpdateProduct(FormManageProducts context, ProductCardComponent pcc)
         {
             InitializeComponent();
             this.pcc = pcc;
             this.product = pcc.product;
             this.context = context;
-            ResetData();
+            NameValidator = new Validator(TextName, LabelName, "Name", "required");
+            ResetData();            
         }
 
         void ResetData()
@@ -32,6 +34,7 @@ namespace FastFoodPOS.Forms.AdminForms
             TextName.Text = product.Name;
             ComboBoxType.Text = product.Category;
             TextPrice.Text = product.Price.ToString();
+            NameValidator.Reset();
         }
 
         private void ButtonBack_Click(object sender, EventArgs e)
@@ -46,15 +49,18 @@ namespace FastFoodPOS.Forms.AdminForms
 
         private void ButtonSave_Click(object sender, EventArgs e)
         {
-            product.Update(
-                TextName.Text,
-                ComboBoxType.Text,
-                decimal.Parse(TextPrice.Text),
-                PictureProductImage.ImageLocation
-                );
-            MessageBox.Show("Product updated successfully");
-            pcc.UpdateData();
-            ButtonBack.PerformClick();
+            if(NameValidator.IsValid())
+            {
+                product.Update(
+                    TextName.Text,
+                    ComboBoxType.Text,
+                    decimal.Parse(TextPrice.Text),
+                    PictureProductImage.ImageLocation
+                    );
+                MessageBox.Show("Product updated successfully");
+                pcc.UpdateData();
+                ButtonBack.PerformClick();
+            }
         }
 
         private void ButtonChangeImage_Click(object sender, EventArgs e)
@@ -83,6 +89,14 @@ namespace FastFoodPOS.Forms.AdminForms
             else if (next != context)
             {
                 context.Dispose();
+            }
+        }
+
+        private void TextPrice_Leave(object sender, EventArgs e)
+        {
+            if (TextPrice.Text.Length == 0)
+            {
+                TextPrice.Text = "0";
             }
         }
     }

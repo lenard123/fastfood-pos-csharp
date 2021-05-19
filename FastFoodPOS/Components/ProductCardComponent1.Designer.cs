@@ -32,9 +32,9 @@
             this.ButtonAddProduct = new Guna.UI2.WinForms.Guna2Button();
             this.LabelName = new System.Windows.Forms.Label();
             this.LabelPrice = new System.Windows.Forms.Label();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.PictureProductImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureProductImage)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -45,7 +45,7 @@
             this.guna2Panel1.Controls.Add(this.ButtonAddProduct);
             this.guna2Panel1.Controls.Add(this.LabelName);
             this.guna2Panel1.Controls.Add(this.LabelPrice);
-            this.guna2Panel1.Controls.Add(this.guna2PictureBox2);
+            this.guna2Panel1.Controls.Add(this.PictureProductImage);
             this.guna2Panel1.Location = new System.Drawing.Point(5, 5);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
@@ -74,12 +74,12 @@
             // 
             // LabelName
             // 
-            this.LabelName.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.LabelName.Location = new System.Drawing.Point(86, 14);
+            this.LabelName.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.LabelName.Location = new System.Drawing.Point(86, 10);
             this.LabelName.Name = "LabelName";
-            this.LabelName.Size = new System.Drawing.Size(164, 45);
+            this.LabelName.Size = new System.Drawing.Size(164, 47);
             this.LabelName.TabIndex = 3;
-            this.LabelName.Text = "WcFloat";
+            this.LabelName.Text = "WcFloathhhhhhhhhh hhh";
             this.LabelName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // LabelPrice
@@ -88,22 +88,22 @@
             this.LabelPrice.AutoSize = true;
             this.LabelPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.LabelPrice.ForeColor = System.Drawing.Color.Maroon;
-            this.LabelPrice.Location = new System.Drawing.Point(87, 59);
+            this.LabelPrice.Location = new System.Drawing.Point(86, 59);
             this.LabelPrice.Name = "LabelPrice";
             this.LabelPrice.Size = new System.Drawing.Size(91, 21);
             this.LabelPrice.TabIndex = 2;
             this.LabelPrice.Text = "200.25PHP";
             // 
-            // guna2PictureBox2
+            // PictureProductImage
             // 
-            this.guna2PictureBox2.Image = global::FastFoodPOS.Properties.Resources.icon_placeholder;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(10, 10);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.ShadowDecoration.Parent = this.guna2PictureBox2;
-            this.guna2PictureBox2.Size = new System.Drawing.Size(70, 70);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox2.TabIndex = 1;
-            this.guna2PictureBox2.TabStop = false;
+            this.PictureProductImage.InitialImage = global::FastFoodPOS.Properties.Resources.product_default;
+            this.PictureProductImage.Location = new System.Drawing.Point(10, 10);
+            this.PictureProductImage.Name = "PictureProductImage";
+            this.PictureProductImage.ShadowDecoration.Parent = this.PictureProductImage;
+            this.PictureProductImage.Size = new System.Drawing.Size(70, 70);
+            this.PictureProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureProductImage.TabIndex = 1;
+            this.PictureProductImage.TabStop = false;
             // 
             // ProductCardComponent1
             // 
@@ -114,9 +114,10 @@
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "ProductCardComponent1";
             this.Size = new System.Drawing.Size(275, 150);
+            this.Load += new System.EventHandler(this.ProductCardComponent1_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureProductImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -124,7 +125,7 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
+        private Guna.UI2.WinForms.Guna2PictureBox PictureProductImage;
         private System.Windows.Forms.Label LabelName;
         private System.Windows.Forms.Label LabelPrice;
         private Guna.UI2.WinForms.Guna2Button ButtonAddProduct;

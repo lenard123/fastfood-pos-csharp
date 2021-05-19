@@ -40,5 +40,10 @@ namespace FastFoodPOS.Forms
             }
         }
 
+        private void VisibilityToggler_Click(object sender, EventArgs e)
+        {
+            TextPassword.UseSystemPasswordChar = !TextPassword.UseSystemPasswordChar;
+        }
+
     }
 }

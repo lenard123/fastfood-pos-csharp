@@ -9,15 +9,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FastFoodPOS.Models;
 using FastFoodPOS.ErrorHandler;
+using FastFoodPOS.Components;
 
 namespace FastFoodPOS.Forms.AdminForms
 {
     public partial class FormAddUser : UserControl
     {
+
+        List<Validator> validators;
+
         public FormAddUser()
         {
             InitializeComponent();
             PictureUserImage.ImageLocation = User.DEFAULT_IMAGE_PATH;
+            validators = new List<Validator>();
+            validators.Add(new Validator(TextName, LabelName, "Name", "required|min:5"));
+            validators.Add(new Validator(TextEmail, LabelEmail, "Email", "required|email|unique:users,email"));
+            validators.Add(new Validator(TextPassword, LabelPassword, "Password", "required|min:8"));
+            validators.Add(new Validator(TextConfirmPassword, LabelConfirmPassword, "Confirm Password", "required|min:8|compare"){ compare_control = TextPassword});
         }
 
         private void ButtonBack_Click(object sender, EventArgs e)
@@ -37,22 +46,30 @@ namespace FastFoodPOS.Forms.AdminForms
         {
             try
             {
-                var user = new User
+                if (validators.All((validator) => validator.IsValid()))
                 {
-                    Fullname = TextName.Text,
-                    Email = TextEmail.Text,
-                    Role = ComboBoxRole.Text,
-                    Password = Util.GetHashSHA256(TextPassword.Text),
-                    Image = PictureUserImage.ImageLocation
-                };
-                user.Save();
-                MessageBox.Show("User added successfully");
-                ButtonBack.PerformClick();
+                    var user = new User
+                    {
+                        Fullname = TextName.Text,
+                        Email = TextEmail.Text,
+                        Role = ComboBoxRole.Text,
+                        Password = Util.GetHashSHA256(TextPassword.Text),
+                        Image = PictureUserImage.ImageLocation
+                    };
+                    user.Save();
+                    MessageBox.Show("User added successfully");
+                    ButtonBack.PerformClick();
+                }
             }
             catch (Level1Exception ex)
             {
                 ex.DisplayMessage();
             }
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -21,14 +21,19 @@ namespace FastFoodPOS.Components
         public ProductCardComponent1(Product product)
         {
             InitializeComponent();
-            LabelName.Text = product.Name;
-            LabelPrice.Text = product.Price + "PHP";
             this.product = product;
         }
 
         private void ButtonAddProduct_Click(object sender, EventArgs e)
         {
             if (ButtonAddProductClick != null) ButtonAddProductClick(sender, product);
+        }
+
+        private void ProductCardComponent1_Load(object sender, EventArgs e)
+        {
+            LabelName.Text = product.Name;
+            LabelPrice.Text = product.Price + "PHP";
+            PictureProductImage.ImageLocation = product.Image;
         }
     }
 }

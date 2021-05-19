@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormManageProducts));
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -153,7 +152,7 @@
             this.ButtonDesserts.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ButtonDesserts.ForeColor = System.Drawing.Color.DarkGray;
             this.ButtonDesserts.HoverState.Parent = this.ButtonDesserts;
-            this.ButtonDesserts.Image = ((System.Drawing.Image)(resources.GetObject("ButtonDesserts.Image")));
+            this.ButtonDesserts.Image = global::FastFoodPOS.Properties.Resources.icecream;
             this.ButtonDesserts.Location = new System.Drawing.Point(453, 0);
             this.ButtonDesserts.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonDesserts.Name = "ButtonDesserts";
@@ -178,7 +177,7 @@
             this.ButtonPackages.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ButtonPackages.ForeColor = System.Drawing.Color.DarkGray;
             this.ButtonPackages.HoverState.Parent = this.ButtonPackages;
-            this.ButtonPackages.Image = ((System.Drawing.Image)(resources.GetObject("ButtonPackages.Image")));
+            this.ButtonPackages.Image = global::FastFoodPOS.Properties.Resources.burger_soda_black;
             this.ButtonPackages.Location = new System.Drawing.Point(604, 0);
             this.ButtonPackages.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonPackages.Name = "ButtonPackages";
@@ -203,7 +202,7 @@
             this.ButtonSnacks.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ButtonSnacks.ForeColor = System.Drawing.Color.DarkGray;
             this.ButtonSnacks.HoverState.Parent = this.ButtonSnacks;
-            this.ButtonSnacks.Image = ((System.Drawing.Image)(resources.GetObject("ButtonSnacks.Image")));
+            this.ButtonSnacks.Image = global::FastFoodPOS.Properties.Resources.burger;
             this.ButtonSnacks.Location = new System.Drawing.Point(302, 0);
             this.ButtonSnacks.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonSnacks.Name = "ButtonSnacks";
@@ -228,7 +227,7 @@
             this.ButtonFoods.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ButtonFoods.ForeColor = System.Drawing.Color.DarkGray;
             this.ButtonFoods.HoverState.Parent = this.ButtonFoods;
-            this.ButtonFoods.Image = ((System.Drawing.Image)(resources.GetObject("ButtonFoods.Image")));
+            this.ButtonFoods.Image = global::FastFoodPOS.Properties.Resources.soup;
             this.ButtonFoods.Location = new System.Drawing.Point(0, 0);
             this.ButtonFoods.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonFoods.Name = "ButtonFoods";
@@ -253,7 +252,7 @@
             this.ButtonDrinks.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ButtonDrinks.ForeColor = System.Drawing.Color.DarkGray;
             this.ButtonDrinks.HoverState.Parent = this.ButtonDrinks;
-            this.ButtonDrinks.Image = ((System.Drawing.Image)(resources.GetObject("ButtonDrinks.Image")));
+            this.ButtonDrinks.Image = global::FastFoodPOS.Properties.Resources.glass;
             this.ButtonDrinks.Location = new System.Drawing.Point(151, 0);
             this.ButtonDrinks.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonDrinks.Name = "ButtonDrinks";
@@ -275,6 +274,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(758, 293);
             this.panel1.TabIndex = 7;
+            this.panel1.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
             // 
             // flowLayoutPanel1
             // 

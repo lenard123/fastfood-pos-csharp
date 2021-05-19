@@ -55,6 +55,7 @@ namespace FastFoodPOS.Forms
             oic.OnOrderIncrement += pcc_IncrementOrder;
             OrderComponents.Add(oic);
             PanelOrders.Controls.Add(oic);
+            oic.BringToFront();
             //Orders.Add(order);
             return oic;
         }
@@ -67,6 +68,7 @@ namespace FastFoodPOS.Forms
 
         private void ButtonFilter_Click(object sender, EventArgs e)
         {
+            PanelProducts.SuspendLayout();
             DisposeProductsPanel();
             string filter = ((Guna2Button)sender).Tag.ToString();
             AllProducts.ForEach((Product product) =>
@@ -78,6 +80,7 @@ namespace FastFoodPOS.Forms
                     PanelProducts.Controls.Add(pcc);
                 }
             });
+            PanelProducts.ResumeLayout();
         }
 
         void pcc_ButtonAddProductClick(object sender, Product e)
@@ -175,5 +178,6 @@ namespace FastFoodPOS.Forms
                 orders.Add(item._Order);
             return orders;
         }
+
     }
 }

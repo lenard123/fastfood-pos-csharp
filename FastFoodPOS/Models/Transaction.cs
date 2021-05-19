@@ -13,9 +13,13 @@ namespace FastFoodPOS.Models
         public DateTime Date { get; set; }
         public decimal Cash { get; set; }
         public int CashierId { get; set; }
+
+        private decimal _total = -1;
         public decimal Total { 
             get{
-                return Orders.Sum((Order item) => item.Subtotal);
+                if (Orders == null && _total > -1)
+                    return _total;
+                return GetOrders().Sum((Order item) => item.Subtotal);
             } 
         }
 
@@ -34,6 +38,11 @@ namespace FastFoodPOS.Models
             this.Orders = Orders;
             this.Cashier = Cashier;
             this.CashierId = Cashier.Id;
+        }
+
+        public Transaction(decimal total)
+        {
+            this._total = total;
         }
 
         public User GetCashier()
@@ -76,6 +85,33 @@ namespace FastFoodPOS.Models
         }
 
         public static DateTime today;
+
+        public static List<Transaction> GetTransactions(DateTime date)
+        {
+            var result = new List<Transaction>();
+            using (var cmd = new OleDbCommand("SELECT * FROM [TransactionsView] WHERE FIX([date_created])=?", Database.GetConnection()))
+            {
+                Database.BindParameters(cmd, date.ToShortDateString());
+                Database.GetConnection().Open();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while(reader.Read()) result.Add(ConvertReaderToTransaction(reader));
+                }
+                Database.GetConnection().Close();
+            }
+            return result;
+        }
+
+        private static Transaction ConvertReaderToTransaction(OleDbDataReader reader)
+        {
+            return new Transaction(reader.GetDecimal(4))
+            {
+                Id = reader.GetString(0),
+                CashierId = reader.GetInt16(1),
+                Date = reader.GetDateTime(2),
+                Cash = reader.GetDecimal(3)
+            };
+        }
 
         public static List<Transaction> fakeData()
         {

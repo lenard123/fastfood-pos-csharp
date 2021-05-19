@@ -26,7 +26,7 @@ namespace FastFoodPOS.Forms.AdminForms
 
         private void ButtonFilter_Click(object sender, EventArgs e)
         {
-            flowLayoutPanel1.SuspendLayout();
+            flowLayoutPanel1.Visible = false;
             DisposePanelContent();
             Guna2Button button = (Guna2Button)sender;
             AllProducts.ForEach((Product product) =>
@@ -39,7 +39,7 @@ namespace FastFoodPOS.Forms.AdminForms
                     flowLayoutPanel1.Controls.Add(pcc);
                 }
             });
-            flowLayoutPanel1.ResumeLayout();
+            flowLayoutPanel1.Visible = true;
         }
 
         void pcc_ButtonRemoveClick(object sender, ProductCardComponent e)
@@ -87,6 +87,11 @@ namespace FastFoodPOS.Forms.AdminForms
         public void OnUnMounted(ref UserControl next)
         {
 
+        }
+
+        private void panel1_MouseEnter(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Focus();
         }
     }
 }
