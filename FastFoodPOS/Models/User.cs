@@ -1,4 +1,5 @@
-﻿using FastFoodPOS.ErrorHandler;
+﻿using FastFoodPOS.DatabaseUtil;
+using FastFoodPOS.ErrorHandler;
 using System;
 using System.Collections.Generic;
 using System.Data.OleDb;

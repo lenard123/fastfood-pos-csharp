@@ -1,4 +1,5 @@
-﻿using FastFoodPOS.Models;
+﻿using FastFoodPOS.DatabaseUtil;
+using FastFoodPOS.Models;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;

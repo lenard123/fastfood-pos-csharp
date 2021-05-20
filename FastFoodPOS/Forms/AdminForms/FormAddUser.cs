@@ -46,7 +46,7 @@ namespace FastFoodPOS.Forms.AdminForms
         {
             try
             {
-                if (validators.All((validator) => validator.IsValid()))
+                if (validators.Count((validator) => validator.IsValid()) == validators.Count)
                 {
                     var user = new User
                     {
@@ -65,11 +65,6 @@ namespace FastFoodPOS.Forms.AdminForms
             {
                 ex.DisplayMessage();
             }
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
