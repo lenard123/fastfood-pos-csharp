@@ -27,10 +27,16 @@ namespace FastFoodPOS.Forms
             Instance = this;
             LoggedInUser = _LoggedInUser;
 
-            LabelUserName.Text = LoggedInUser.Fullname;
-            LabelUserRole.Text = LoggedInUser.Role;
+            Reset();
 
             ButtonDashboard.PerformClick();
+        }
+
+        private void Reset()
+        {
+            PictureUserImage.Image = Util.GetImageFromFile(LoggedInUser.Image);
+            LabelUserName.Text = LoggedInUser.Fullname;
+            LabelUserRole.Text = LoggedInUser.Role;
         }
 
         private void ButtonMenu_Click(object sender, EventArgs e)
@@ -96,6 +102,25 @@ namespace FastFoodPOS.Forms
         private void ButtonLogout_Click(object sender, EventArgs e)
         {
             MainForm.LoadForm(new FormAdminLogin());
+        }
+
+        private void ButtonUpdateInfo_Click(object sender, EventArgs e)
+        {
+            FormUpdateUser fuu = new FormUpdateUser(LoggedInUser);
+            fuu.OnUpdate_Success += fuu_OnUpdate_Success;
+            LoadFormControl(fuu);
+            foreach (Guna2Button btn in ButtonsMenuPanel.Controls)
+            {
+                if (btn.Checked) btn.Checked = false;
+            }
+        }
+
+        void fuu_OnUpdate_Success(object sender, User e)
+        {
+            this.LoggedInUser = e;
+            User.CurrentUser = e;
+            Reset();
+            ButtonDashboard.PerformClick();
         }
 
     }

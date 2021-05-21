@@ -30,7 +30,7 @@ namespace FastFoodPOS.Forms
             {
                 User loggedIn = User.Login(TextEmail.Text, TextPassword.Text);
                 if (loggedIn.Role.Equals("Cashier"))
-                    MainForm.LoadForm(new FormCashierPanel());
+                    MainForm.LoadForm(new FormCashierPanel(loggedIn));
                 else
                     MainForm.LoadForm(new FormAdminPanel(loggedIn));
             }

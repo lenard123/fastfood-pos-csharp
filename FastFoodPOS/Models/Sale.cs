@@ -2,7 +2,7 @@
 using FastFoodPOS.ErrorHandler;
 using System;
 using System.Collections.Generic;
-using System.Data.OleDb;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,12 +19,12 @@ namespace FastFoodPOS.Models
         public static List<Sale> GetSalesBetween(DateTime from, DateTime to)
         {
             List<Sale> result = new List<Sale>();
-            using (var cmd = new OleDbCommand("SELECT * FROM SalesView WHERE day BETWEEN #@@from# AND #@@to#", Database.GetConnection()))
+            using (var cmd = Database.CreateCommand(Database.GetProvider().QUERY_SALES_BETWEEN_1))
             {
                 //BindParams not working
                 //idk why
-                cmd.CommandText = cmd.CommandText.Replace("@@from", from.AddDays(-1).ToShortDateString());
-                cmd.CommandText = cmd.CommandText.Replace("@@to", to.AddDays(1).ToShortDateString());
+                cmd.CommandText = cmd.CommandText.Replace("@@from", Database.GetProvider().FormatShortDate(from.AddDays(-1)));
+                cmd.CommandText = cmd.CommandText.Replace("@@to", Database.GetProvider().FormatShortDate(to.AddDays(1)));
                 Database.GetConnection().Open();
                 
                 using (var reader = cmd.ExecuteReader())
@@ -48,9 +48,9 @@ namespace FastFoodPOS.Models
         public static Sale GetSale(DateTime day)
         {
             Sale result = new Sale() { Value = 0, Date = day, OrderCount = 0, CustomerCount = 0 };
-            using (var cmd = new OleDbCommand("SELECT * FROM SalesView WHERE day = ?", Database.GetConnection()))
+            using (var cmd = Database.CreateCommand("SELECT * FROM `SalesView` WHERE `day` = ?"))
             {
-                Database.BindParameters(cmd, day.ToShortDateString());
+                Database.BindParameters(cmd, Database.GetProvider().FormatShortDate(day));
                 Database.GetConnection().Open();
                 using (var reader = cmd.ExecuteReader())
                 {

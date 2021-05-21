@@ -1,5 +1,6 @@
 FastFoodPOS.v11.suo
-Assets/*
+Thumbs.db
+Assets/
 FastFoodPOS/bin/Debug/*
 FastFoodPOS/bin/Release/*
 FastFoodPOS/obj/*

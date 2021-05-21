@@ -29,15 +29,22 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.ButtonLogout = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.LinkLabelName = new System.Windows.Forms.LinkLabel();
+            this.PictureUserImage = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.ButtonsMenu = new System.Windows.Forms.TableLayoutPanel();
+            this.ButtonDesserts = new Guna.UI2.WinForms.Guna2Button();
+            this.ButtonPackages = new Guna.UI2.WinForms.Guna2Button();
+            this.ButtonSnacks = new Guna.UI2.WinForms.Guna2Button();
+            this.ButtonFoods = new Guna.UI2.WinForms.Guna2Button();
+            this.ButtonDrinks = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.PanelProducts = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.TextQuery = new Guna.UI2.WinForms.Guna2TextBox();
+            this.ButtonSearch = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.PanelOrders = new System.Windows.Forms.Panel();
@@ -52,17 +59,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.ButtonDesserts = new Guna.UI2.WinForms.Guna2Button();
-            this.ButtonPackages = new Guna.UI2.WinForms.Guna2Button();
-            this.ButtonSnacks = new Guna.UI2.WinForms.Guna2Button();
-            this.ButtonFoods = new Guna.UI2.WinForms.Guna2Button();
-            this.ButtonDrinks = new Guna.UI2.WinForms.Guna2Button();
-            this.ButtonLogout = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureUserImage)).BeginInit();
+            this.ButtonsMenu.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -70,15 +71,14 @@
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(15)))), ((int)(((byte)(25)))));
             this.panel1.Controls.Add(this.ButtonLogout);
-            this.panel1.Controls.Add(this.linkLabel1);
-            this.panel1.Controls.Add(this.guna2CirclePictureBox1);
+            this.panel1.Controls.Add(this.LinkLabelName);
+            this.panel1.Controls.Add(this.PictureUserImage);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -87,17 +87,42 @@
             this.panel1.Size = new System.Drawing.Size(1010, 52);
             this.panel1.TabIndex = 0;
             // 
-            // linkLabel1
+            // ButtonLogout
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.linkLabel1.LinkColor = System.Drawing.SystemColors.ControlLightLight;
-            this.linkLabel1.Location = new System.Drawing.Point(128, 16);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(176, 21);
-            this.linkLabel1.TabIndex = 6;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Lenard Mangay-ayam";
+            this.ButtonLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonLogout.CheckedState.Parent = this.ButtonLogout;
+            this.ButtonLogout.HoverState.Parent = this.ButtonLogout;
+            this.ButtonLogout.Image = global::FastFoodPOS.Properties.Resources.sign_out_right_white;
+            this.ButtonLogout.Location = new System.Drawing.Point(965, 10);
+            this.ButtonLogout.Name = "ButtonLogout";
+            this.ButtonLogout.PressedState.Parent = this.ButtonLogout;
+            this.ButtonLogout.Size = new System.Drawing.Size(31, 30);
+            this.ButtonLogout.TabIndex = 7;
+            this.ButtonLogout.Click += new System.EventHandler(this.ButtonLogout_Click);
+            // 
+            // LinkLabelName
+            // 
+            this.LinkLabelName.AutoSize = true;
+            this.LinkLabelName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.LinkLabelName.LinkColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LinkLabelName.Location = new System.Drawing.Point(128, 16);
+            this.LinkLabelName.Name = "LinkLabelName";
+            this.LinkLabelName.Size = new System.Drawing.Size(176, 21);
+            this.LinkLabelName.TabIndex = 6;
+            this.LinkLabelName.TabStop = true;
+            this.LinkLabelName.Text = "Lenard Mangay-ayam";
+            // 
+            // PictureUserImage
+            // 
+            this.PictureUserImage.Image = global::FastFoodPOS.Properties.Resources.user_default;
+            this.PictureUserImage.Location = new System.Drawing.Point(7, 6);
+            this.PictureUserImage.Name = "PictureUserImage";
+            this.PictureUserImage.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.PictureUserImage.ShadowDecoration.Parent = this.PictureUserImage;
+            this.PictureUserImage.Size = new System.Drawing.Size(40, 40);
+            this.PictureUserImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureUserImage.TabIndex = 5;
+            this.PictureUserImage.TabStop = false;
             // 
             // label3
             // 
@@ -110,27 +135,152 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Welcome,";
             // 
-            // tableLayoutPanel1
+            // ButtonsMenu
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.ButtonsMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.ButtonDesserts, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.ButtonPackages, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.ButtonSnacks, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.ButtonFoods, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.ButtonDrinks, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(515, 60);
-            this.tableLayoutPanel1.TabIndex = 7;
+            this.ButtonsMenu.ColumnCount = 5;
+            this.ButtonsMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.ButtonsMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.ButtonsMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.ButtonsMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.ButtonsMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.ButtonsMenu.Controls.Add(this.ButtonDesserts, 0, 0);
+            this.ButtonsMenu.Controls.Add(this.ButtonPackages, 0, 0);
+            this.ButtonsMenu.Controls.Add(this.ButtonSnacks, 0, 0);
+            this.ButtonsMenu.Controls.Add(this.ButtonFoods, 0, 0);
+            this.ButtonsMenu.Controls.Add(this.ButtonDrinks, 0, 0);
+            this.ButtonsMenu.Location = new System.Drawing.Point(3, 3);
+            this.ButtonsMenu.Name = "ButtonsMenu";
+            this.ButtonsMenu.RowCount = 1;
+            this.ButtonsMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.ButtonsMenu.Size = new System.Drawing.Size(515, 60);
+            this.ButtonsMenu.TabIndex = 7;
+            // 
+            // ButtonDesserts
+            // 
+            this.ButtonDesserts.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.ButtonDesserts.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.ButtonDesserts.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ButtonDesserts.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.ButtonDesserts.CheckedState.Parent = this.ButtonDesserts;
+            this.ButtonDesserts.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.ButtonDesserts.CustomImages.Parent = this.ButtonDesserts;
+            this.ButtonDesserts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonDesserts.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.ButtonDesserts.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonDesserts.ForeColor = System.Drawing.Color.DarkGray;
+            this.ButtonDesserts.HoverState.Parent = this.ButtonDesserts;
+            this.ButtonDesserts.Image = global::FastFoodPOS.Properties.Resources.icecream;
+            this.ButtonDesserts.Location = new System.Drawing.Point(309, 0);
+            this.ButtonDesserts.Margin = new System.Windows.Forms.Padding(0);
+            this.ButtonDesserts.Name = "ButtonDesserts";
+            this.ButtonDesserts.ShadowDecoration.Parent = this.ButtonDesserts;
+            this.ButtonDesserts.Size = new System.Drawing.Size(103, 60);
+            this.ButtonDesserts.TabIndex = 5;
+            this.ButtonDesserts.Tag = "Dessert";
+            this.ButtonDesserts.Text = "Desserts";
+            this.ButtonDesserts.Click += new System.EventHandler(this.ButtonFilter_Click);
+            // 
+            // ButtonPackages
+            // 
+            this.ButtonPackages.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.ButtonPackages.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.ButtonPackages.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ButtonPackages.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.ButtonPackages.CheckedState.Parent = this.ButtonPackages;
+            this.ButtonPackages.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.ButtonPackages.CustomImages.Parent = this.ButtonPackages;
+            this.ButtonPackages.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonPackages.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.ButtonPackages.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonPackages.ForeColor = System.Drawing.Color.DarkGray;
+            this.ButtonPackages.HoverState.Parent = this.ButtonPackages;
+            this.ButtonPackages.Image = global::FastFoodPOS.Properties.Resources.burger_soda_black;
+            this.ButtonPackages.Location = new System.Drawing.Point(412, 0);
+            this.ButtonPackages.Margin = new System.Windows.Forms.Padding(0);
+            this.ButtonPackages.Name = "ButtonPackages";
+            this.ButtonPackages.ShadowDecoration.Parent = this.ButtonPackages;
+            this.ButtonPackages.Size = new System.Drawing.Size(103, 60);
+            this.ButtonPackages.TabIndex = 4;
+            this.ButtonPackages.Tag = "Package";
+            this.ButtonPackages.Text = "Packages";
+            this.ButtonPackages.Click += new System.EventHandler(this.ButtonFilter_Click);
+            // 
+            // ButtonSnacks
+            // 
+            this.ButtonSnacks.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.ButtonSnacks.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.ButtonSnacks.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ButtonSnacks.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.ButtonSnacks.CheckedState.Parent = this.ButtonSnacks;
+            this.ButtonSnacks.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.ButtonSnacks.CustomImages.Parent = this.ButtonSnacks;
+            this.ButtonSnacks.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonSnacks.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.ButtonSnacks.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonSnacks.ForeColor = System.Drawing.Color.DarkGray;
+            this.ButtonSnacks.HoverState.Parent = this.ButtonSnacks;
+            this.ButtonSnacks.Image = global::FastFoodPOS.Properties.Resources.burger;
+            this.ButtonSnacks.Location = new System.Drawing.Point(206, 0);
+            this.ButtonSnacks.Margin = new System.Windows.Forms.Padding(0);
+            this.ButtonSnacks.Name = "ButtonSnacks";
+            this.ButtonSnacks.ShadowDecoration.Parent = this.ButtonSnacks;
+            this.ButtonSnacks.Size = new System.Drawing.Size(103, 60);
+            this.ButtonSnacks.TabIndex = 3;
+            this.ButtonSnacks.Tag = "Snack";
+            this.ButtonSnacks.Text = "Snacks";
+            this.ButtonSnacks.Click += new System.EventHandler(this.ButtonFilter_Click);
+            // 
+            // ButtonFoods
+            // 
+            this.ButtonFoods.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.ButtonFoods.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.ButtonFoods.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ButtonFoods.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.ButtonFoods.CheckedState.Parent = this.ButtonFoods;
+            this.ButtonFoods.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.ButtonFoods.CustomImages.Parent = this.ButtonFoods;
+            this.ButtonFoods.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonFoods.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.ButtonFoods.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonFoods.ForeColor = System.Drawing.Color.DarkGray;
+            this.ButtonFoods.HoverState.Parent = this.ButtonFoods;
+            this.ButtonFoods.Image = global::FastFoodPOS.Properties.Resources.soup;
+            this.ButtonFoods.Location = new System.Drawing.Point(0, 0);
+            this.ButtonFoods.Margin = new System.Windows.Forms.Padding(0);
+            this.ButtonFoods.Name = "ButtonFoods";
+            this.ButtonFoods.ShadowDecoration.Parent = this.ButtonFoods;
+            this.ButtonFoods.Size = new System.Drawing.Size(103, 60);
+            this.ButtonFoods.TabIndex = 2;
+            this.ButtonFoods.Tag = "Food";
+            this.ButtonFoods.Text = "Foods";
+            this.ButtonFoods.Click += new System.EventHandler(this.ButtonFilter_Click);
+            // 
+            // ButtonDrinks
+            // 
+            this.ButtonDrinks.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.ButtonDrinks.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.ButtonDrinks.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ButtonDrinks.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.ButtonDrinks.CheckedState.Parent = this.ButtonDrinks;
+            this.ButtonDrinks.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.ButtonDrinks.CustomImages.Parent = this.ButtonDrinks;
+            this.ButtonDrinks.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonDrinks.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.ButtonDrinks.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonDrinks.ForeColor = System.Drawing.Color.DarkGray;
+            this.ButtonDrinks.HoverState.Parent = this.ButtonDrinks;
+            this.ButtonDrinks.Image = global::FastFoodPOS.Properties.Resources.glass;
+            this.ButtonDrinks.Location = new System.Drawing.Point(103, 0);
+            this.ButtonDrinks.Margin = new System.Windows.Forms.Padding(0);
+            this.ButtonDrinks.Name = "ButtonDrinks";
+            this.ButtonDrinks.ShadowDecoration.Parent = this.ButtonDrinks;
+            this.ButtonDrinks.Size = new System.Drawing.Size(103, 60);
+            this.ButtonDrinks.TabIndex = 1;
+            this.ButtonDrinks.Tag = "Drink";
+            this.ButtonDrinks.Text = "Drinks";
+            this.ButtonDrinks.Click += new System.EventHandler(this.ButtonFilter_Click);
             // 
             // guna2Panel1
             // 
@@ -141,7 +291,7 @@
             this.guna2Panel1.BorderThickness = 1;
             this.guna2Panel1.Controls.Add(this.panel3);
             this.guna2Panel1.Controls.Add(this.guna2Panel3);
-            this.guna2Panel1.Controls.Add(this.tableLayoutPanel1);
+            this.guna2Panel1.Controls.Add(this.ButtonsMenu);
             this.guna2Panel1.Location = new System.Drawing.Point(7, 58);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
@@ -178,8 +328,8 @@
             this.guna2Panel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel3.BorderColor = System.Drawing.Color.Black;
             this.guna2Panel3.BorderRadius = 19;
-            this.guna2Panel3.Controls.Add(this.guna2TextBox1);
-            this.guna2Panel3.Controls.Add(this.guna2Button1);
+            this.guna2Panel3.Controls.Add(this.TextQuery);
+            this.guna2Panel3.Controls.Add(this.ButtonSearch);
             this.guna2Panel3.CustomBorderThickness = new System.Windows.Forms.Padding(1);
             this.guna2Panel3.Location = new System.Drawing.Point(13, 73);
             this.guna2Panel3.Name = "guna2Panel3";
@@ -187,47 +337,48 @@
             this.guna2Panel3.Size = new System.Drawing.Size(494, 40);
             this.guna2Panel3.TabIndex = 8;
             // 
-            // guna2TextBox1
+            // TextQuery
             // 
-            this.guna2TextBox1.Animated = true;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Location = new System.Drawing.Point(0, 0);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "Search for menu";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Size = new System.Drawing.Size(417, 40);
-            this.guna2TextBox1.TabIndex = 3;
+            this.TextQuery.Animated = true;
+            this.TextQuery.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextQuery.DefaultText = "";
+            this.TextQuery.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TextQuery.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TextQuery.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextQuery.DisabledState.Parent = this.TextQuery;
+            this.TextQuery.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextQuery.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TextQuery.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextQuery.FocusedState.Parent = this.TextQuery;
+            this.TextQuery.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextQuery.HoverState.Parent = this.TextQuery;
+            this.TextQuery.Location = new System.Drawing.Point(0, 0);
+            this.TextQuery.Margin = new System.Windows.Forms.Padding(0);
+            this.TextQuery.Name = "TextQuery";
+            this.TextQuery.PasswordChar = '\0';
+            this.TextQuery.PlaceholderText = "Search for menu";
+            this.TextQuery.SelectedText = "";
+            this.TextQuery.ShadowDecoration.Parent = this.TextQuery;
+            this.TextQuery.Size = new System.Drawing.Size(417, 40);
+            this.TextQuery.TabIndex = 3;
             // 
-            // guna2Button1
+            // ButtonSearch
             // 
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(417, 0);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(77, 40);
-            this.guna2Button1.TabIndex = 4;
-            this.guna2Button1.Text = "Search";
+            this.ButtonSearch.CheckedState.Parent = this.ButtonSearch;
+            this.ButtonSearch.CustomImages.Parent = this.ButtonSearch;
+            this.ButtonSearch.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ButtonSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.ButtonSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonSearch.ForeColor = System.Drawing.Color.Black;
+            this.ButtonSearch.HoverState.Parent = this.ButtonSearch;
+            this.ButtonSearch.Location = new System.Drawing.Point(417, 0);
+            this.ButtonSearch.Margin = new System.Windows.Forms.Padding(0);
+            this.ButtonSearch.Name = "ButtonSearch";
+            this.ButtonSearch.ShadowDecoration.Parent = this.ButtonSearch;
+            this.ButtonSearch.Size = new System.Drawing.Size(77, 40);
+            this.ButtonSearch.TabIndex = 4;
+            this.ButtonSearch.Text = "Search";
+            this.ButtonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
             // 
             // guna2Panel2
             // 
@@ -432,16 +583,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Total Price: ";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(45, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Customer Order";
-            // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.Image = global::FastFoodPOS.Properties.Resources.mcdonalds;
@@ -453,155 +594,15 @@
             this.guna2PictureBox1.TabIndex = 1;
             this.guna2PictureBox1.TabStop = false;
             // 
-            // ButtonDesserts
+            // label1
             // 
-            this.ButtonDesserts.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.ButtonDesserts.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.ButtonDesserts.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ButtonDesserts.CheckedState.ForeColor = System.Drawing.Color.Black;
-            this.ButtonDesserts.CheckedState.Parent = this.ButtonDesserts;
-            this.ButtonDesserts.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.ButtonDesserts.CustomImages.Parent = this.ButtonDesserts;
-            this.ButtonDesserts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ButtonDesserts.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.ButtonDesserts.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ButtonDesserts.ForeColor = System.Drawing.Color.DarkGray;
-            this.ButtonDesserts.HoverState.Parent = this.ButtonDesserts;
-            this.ButtonDesserts.Image = global::FastFoodPOS.Properties.Resources.icecream;
-            this.ButtonDesserts.Location = new System.Drawing.Point(309, 0);
-            this.ButtonDesserts.Margin = new System.Windows.Forms.Padding(0);
-            this.ButtonDesserts.Name = "ButtonDesserts";
-            this.ButtonDesserts.ShadowDecoration.Parent = this.ButtonDesserts;
-            this.ButtonDesserts.Size = new System.Drawing.Size(103, 60);
-            this.ButtonDesserts.TabIndex = 5;
-            this.ButtonDesserts.Tag = "Dessert";
-            this.ButtonDesserts.Text = "Desserts";
-            this.ButtonDesserts.Click += new System.EventHandler(this.ButtonFilter_Click);
-            // 
-            // ButtonPackages
-            // 
-            this.ButtonPackages.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.ButtonPackages.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.ButtonPackages.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ButtonPackages.CheckedState.ForeColor = System.Drawing.Color.Black;
-            this.ButtonPackages.CheckedState.Parent = this.ButtonPackages;
-            this.ButtonPackages.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.ButtonPackages.CustomImages.Parent = this.ButtonPackages;
-            this.ButtonPackages.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ButtonPackages.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.ButtonPackages.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ButtonPackages.ForeColor = System.Drawing.Color.DarkGray;
-            this.ButtonPackages.HoverState.Parent = this.ButtonPackages;
-            this.ButtonPackages.Image = global::FastFoodPOS.Properties.Resources.burger_soda_black;
-            this.ButtonPackages.Location = new System.Drawing.Point(412, 0);
-            this.ButtonPackages.Margin = new System.Windows.Forms.Padding(0);
-            this.ButtonPackages.Name = "ButtonPackages";
-            this.ButtonPackages.ShadowDecoration.Parent = this.ButtonPackages;
-            this.ButtonPackages.Size = new System.Drawing.Size(103, 60);
-            this.ButtonPackages.TabIndex = 4;
-            this.ButtonPackages.Tag = "Package";
-            this.ButtonPackages.Text = "Packages";
-            this.ButtonPackages.Click += new System.EventHandler(this.ButtonFilter_Click);
-            // 
-            // ButtonSnacks
-            // 
-            this.ButtonSnacks.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.ButtonSnacks.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.ButtonSnacks.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ButtonSnacks.CheckedState.ForeColor = System.Drawing.Color.Black;
-            this.ButtonSnacks.CheckedState.Parent = this.ButtonSnacks;
-            this.ButtonSnacks.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.ButtonSnacks.CustomImages.Parent = this.ButtonSnacks;
-            this.ButtonSnacks.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ButtonSnacks.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.ButtonSnacks.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ButtonSnacks.ForeColor = System.Drawing.Color.DarkGray;
-            this.ButtonSnacks.HoverState.Parent = this.ButtonSnacks;
-            this.ButtonSnacks.Image = global::FastFoodPOS.Properties.Resources.burger;
-            this.ButtonSnacks.Location = new System.Drawing.Point(206, 0);
-            this.ButtonSnacks.Margin = new System.Windows.Forms.Padding(0);
-            this.ButtonSnacks.Name = "ButtonSnacks";
-            this.ButtonSnacks.ShadowDecoration.Parent = this.ButtonSnacks;
-            this.ButtonSnacks.Size = new System.Drawing.Size(103, 60);
-            this.ButtonSnacks.TabIndex = 3;
-            this.ButtonSnacks.Tag = "Snack";
-            this.ButtonSnacks.Text = "Snacks";
-            this.ButtonSnacks.Click += new System.EventHandler(this.ButtonFilter_Click);
-            // 
-            // ButtonFoods
-            // 
-            this.ButtonFoods.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.ButtonFoods.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.ButtonFoods.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ButtonFoods.CheckedState.ForeColor = System.Drawing.Color.Black;
-            this.ButtonFoods.CheckedState.Parent = this.ButtonFoods;
-            this.ButtonFoods.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.ButtonFoods.CustomImages.Parent = this.ButtonFoods;
-            this.ButtonFoods.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ButtonFoods.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.ButtonFoods.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ButtonFoods.ForeColor = System.Drawing.Color.DarkGray;
-            this.ButtonFoods.HoverState.Parent = this.ButtonFoods;
-            this.ButtonFoods.Image = global::FastFoodPOS.Properties.Resources.soup;
-            this.ButtonFoods.Location = new System.Drawing.Point(0, 0);
-            this.ButtonFoods.Margin = new System.Windows.Forms.Padding(0);
-            this.ButtonFoods.Name = "ButtonFoods";
-            this.ButtonFoods.ShadowDecoration.Parent = this.ButtonFoods;
-            this.ButtonFoods.Size = new System.Drawing.Size(103, 60);
-            this.ButtonFoods.TabIndex = 2;
-            this.ButtonFoods.Tag = "Food";
-            this.ButtonFoods.Text = "Foods";
-            this.ButtonFoods.Click += new System.EventHandler(this.ButtonFilter_Click);
-            // 
-            // ButtonDrinks
-            // 
-            this.ButtonDrinks.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.ButtonDrinks.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.ButtonDrinks.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ButtonDrinks.CheckedState.ForeColor = System.Drawing.Color.Black;
-            this.ButtonDrinks.CheckedState.Parent = this.ButtonDrinks;
-            this.ButtonDrinks.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.ButtonDrinks.CustomImages.Parent = this.ButtonDrinks;
-            this.ButtonDrinks.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ButtonDrinks.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.ButtonDrinks.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ButtonDrinks.ForeColor = System.Drawing.Color.DarkGray;
-            this.ButtonDrinks.HoverState.Parent = this.ButtonDrinks;
-            this.ButtonDrinks.Image = global::FastFoodPOS.Properties.Resources.glass;
-            this.ButtonDrinks.Location = new System.Drawing.Point(103, 0);
-            this.ButtonDrinks.Margin = new System.Windows.Forms.Padding(0);
-            this.ButtonDrinks.Name = "ButtonDrinks";
-            this.ButtonDrinks.ShadowDecoration.Parent = this.ButtonDrinks;
-            this.ButtonDrinks.Size = new System.Drawing.Size(103, 60);
-            this.ButtonDrinks.TabIndex = 1;
-            this.ButtonDrinks.Tag = "Drink";
-            this.ButtonDrinks.Text = "Drinks";
-            this.ButtonDrinks.Click += new System.EventHandler(this.ButtonFilter_Click);
-            // 
-            // ButtonLogout
-            // 
-            this.ButtonLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonLogout.CheckedState.Parent = this.ButtonLogout;
-            this.ButtonLogout.HoverState.Parent = this.ButtonLogout;
-            this.ButtonLogout.Image = global::FastFoodPOS.Properties.Resources.sign_out_right_white;
-            this.ButtonLogout.Location = new System.Drawing.Point(965, 10);
-            this.ButtonLogout.Name = "ButtonLogout";
-            this.ButtonLogout.PressedState.Parent = this.ButtonLogout;
-            this.ButtonLogout.Size = new System.Drawing.Size(31, 30);
-            this.ButtonLogout.TabIndex = 7;
-            this.ButtonLogout.Click += new System.EventHandler(this.ButtonLogout_Click);
-            // 
-            // guna2CirclePictureBox1
-            // 
-            this.guna2CirclePictureBox1.Image = global::FastFoodPOS.Properties.Resources.user_default;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(7, 6);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.ShadowDecoration.Parent = this.guna2CirclePictureBox1;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox1.TabIndex = 5;
-            this.guna2CirclePictureBox1.TabStop = false;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(45, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(147, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Customer Order";
             // 
             // FormCashierPanel
             // 
@@ -616,7 +617,8 @@
             this.Size = new System.Drawing.Size(1010, 520);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PictureUserImage)).EndInit();
+            this.ButtonsMenu.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -628,7 +630,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -637,10 +638,10 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox PictureUserImage;
+        private System.Windows.Forms.LinkLabel LinkLabelName;
         private Guna.UI2.WinForms.Guna2ImageButton ButtonLogout;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel ButtonsMenu;
         private Guna.UI2.WinForms.Guna2Button ButtonDesserts;
         private Guna.UI2.WinForms.Guna2Button ButtonPackages;
         private Guna.UI2.WinForms.Guna2Button ButtonSnacks;
@@ -649,8 +650,8 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2TextBox TextQuery;
+        private Guna.UI2.WinForms.Guna2Button ButtonSearch;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;

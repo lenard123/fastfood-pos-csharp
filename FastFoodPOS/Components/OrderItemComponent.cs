@@ -47,18 +47,6 @@ namespace FastFoodPOS.Components
         private void ButtonMinus_Click(object sender, EventArgs e)
         {
             if (OnOrderIncrement != null) OnOrderIncrement(-1, this);
-            /*
-            if (_Order.Quantity > 1)
-            {
-                _Order.Quantity--;
-                Orders.ResetBindings();
-            }
-            else
-            {
-                _Order = null;
-                Orders.Remove(this);
-                Dispose();
-            }*/
         }
 
     }

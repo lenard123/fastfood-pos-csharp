@@ -1,7 +1,7 @@
 ﻿using FastFoodPOS.DatabaseUtil;
 using System;
 using System.Collections.Generic;
-using System.Data.OleDb;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -61,22 +61,21 @@ namespace FastFoodPOS.Models
         public void Save()
         {
             GenerateId();
-            Orders.ForEach((Order item) => item.Save(Id));
-            using (var cmd = new OleDbCommand("INSERT INTO [transactions]([id], [user_id], [cash], [date_created]) VALUES (?, ?, ?, ?)", Database.GetConnection()))
+            using (var cmd = Database.CreateCommand("INSERT INTO `transactions`(`id`, `user_id`, `cash`) VALUES (@p1, @p2, @p3)"))
             {
-                Database.BindParameters(cmd, Id, Cashier.Id, Cash, Date.ToString());
+                Database.BindParameters(cmd, Id, Cashier.Id, Cash);
                 Database.GetConnection().Open();
                 cmd.ExecuteNonQuery();
                 Database.GetConnection().Close();
             }
+            Orders.ForEach((Order item) => item.Save(Id));
         }
 
         public void GenerateId()
         {
             string result = DateTime.Now.ToString("yyyyMMdd");
-            using (var cmd = new OleDbCommand("SELECT COUNT(*) FROM [transactions] WHERE FIX([date_created])=?", Database.GetConnection()))
+            using (var cmd = Database.CreateCommand("SELECT COUNT(*) FROM `transactions` WHERE FIX(`date_created`)=FIX(NOW())"))
             {
-                Database.BindParameters(cmd, DateTime.Now.ToShortDateString());
                 Database.GetConnection().Open();
                 int count = Convert.ToInt32(cmd.ExecuteScalar()) + 1;
                 Database.GetConnection().Close();
@@ -90,9 +89,9 @@ namespace FastFoodPOS.Models
         public static List<Transaction> GetTransactions(DateTime date)
         {
             var result = new List<Transaction>();
-            using (var cmd = new OleDbCommand("SELECT * FROM [TransactionsView] WHERE FIX([date_created])=?", Database.GetConnection()))
+            using (var cmd = Database.CreateCommand("SELECT * FROM `TransactionsView` WHERE FIX(`date_created`)=@p1"))
             {
-                Database.BindParameters(cmd, date.ToShortDateString());
+                Database.BindParameters(cmd, Database.GetProvider().FormatShortDate(date));
                 Database.GetConnection().Open();
                 using (var reader = cmd.ExecuteReader())
                 {
@@ -103,7 +102,7 @@ namespace FastFoodPOS.Models
             return result;
         }
 
-        private static Transaction ConvertReaderToTransaction(OleDbDataReader reader)
+        private static Transaction ConvertReaderToTransaction(DbDataReader reader)
         {
             return new Transaction(reader.GetDecimal(4))
             {
@@ -112,14 +111,6 @@ namespace FastFoodPOS.Models
                 Date = reader.GetDateTime(2),
                 Cash = reader.GetDecimal(3)
             };
-        }
-
-        public static List<Transaction> fakeData()
-        {
-            today = new DateTime();
-            Console.WriteLine(today.ToString());
-            List<Transaction> result = new List<Transaction>();
-            return result;
         }
     }
 }

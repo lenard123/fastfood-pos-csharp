@@ -28,16 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
-            this.LabelUserRole = new System.Windows.Forms.Label();
-            this.LabelUserName = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.ButtonsMenuPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.ButtonDashboard = new Guna.UI2.WinForms.Guna2Button();
             this.ButtonAddProduct = new Guna.UI2.WinForms.Guna2Button();
             this.ButtonManageProduct = new Guna.UI2.WinForms.Guna2Button();
@@ -46,80 +43,24 @@
             this.ButtonUsers = new Guna.UI2.WinForms.Guna2Button();
             this.ButtonArchives = new Guna.UI2.WinForms.Guna2Button();
             this.ButtonLogout = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.panel1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.ButtonUpdateInfo = new Guna.UI2.WinForms.Guna2Button();
+            this.LabelUserRole = new System.Windows.Forms.Label();
+            this.LabelUserName = new System.Windows.Forms.Label();
+            this.PictureUserImage = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.ButtonsMenuPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureUserImage)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // panel5
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.panel1.Controls.Add(this.flowLayoutPanel1);
-            this.panel1.Controls.Add(this.guna2Button9);
-            this.panel1.Controls.Add(this.LabelUserRole);
-            this.panel1.Controls.Add(this.LabelUserName);
-            this.panel1.Controls.Add(this.guna2CirclePictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(340, 571);
-            this.panel1.TabIndex = 0;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.ButtonDashboard);
-            this.flowLayoutPanel1.Controls.Add(this.ButtonAddProduct);
-            this.flowLayoutPanel1.Controls.Add(this.ButtonManageProduct);
-            this.flowLayoutPanel1.Controls.Add(this.ButtonTransaction);
-            this.flowLayoutPanel1.Controls.Add(this.ButtonSales);
-            this.flowLayoutPanel1.Controls.Add(this.ButtonUsers);
-            this.flowLayoutPanel1.Controls.Add(this.ButtonArchives);
-            this.flowLayoutPanel1.Controls.Add(this.ButtonLogout);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 150);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(340, 417);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // guna2Button9
-            // 
-            this.guna2Button9.Animated = true;
-            this.guna2Button9.CheckedState.Parent = this.guna2Button9;
-            this.guna2Button9.CustomImages.Parent = this.guna2Button9;
-            this.guna2Button9.FillColor = System.Drawing.Color.Empty;
-            this.guna2Button9.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button9.ForeColor = System.Drawing.Color.White;
-            this.guna2Button9.HoverState.Parent = this.guna2Button9;
-            this.guna2Button9.Location = new System.Drawing.Point(127, 82);
-            this.guna2Button9.Name = "guna2Button9";
-            this.guna2Button9.ShadowDecoration.Parent = this.guna2Button9;
-            this.guna2Button9.Size = new System.Drawing.Size(191, 20);
-            this.guna2Button9.TabIndex = 4;
-            this.guna2Button9.Text = "Update Info";
-            // 
-            // LabelUserRole
-            // 
-            this.LabelUserRole.AutoSize = true;
-            this.LabelUserRole.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelUserRole.ForeColor = System.Drawing.Color.LightGray;
-            this.LabelUserRole.Location = new System.Drawing.Point(127, 54);
-            this.LabelUserRole.Name = "LabelUserRole";
-            this.LabelUserRole.Size = new System.Drawing.Size(106, 21);
-            this.LabelUserRole.TabIndex = 1;
-            this.LabelUserRole.Text = "Administrator";
-            // 
-            // LabelUserName
-            // 
-            this.LabelUserName.AutoSize = true;
-            this.LabelUserName.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelUserName.ForeColor = System.Drawing.Color.White;
-            this.LabelUserName.Location = new System.Drawing.Point(127, 25);
-            this.LabelUserName.Name = "LabelUserName";
-            this.LabelUserName.Size = new System.Drawing.Size(196, 25);
-            this.LabelUserName.TabIndex = 1;
-            this.LabelUserName.Text = "Lenard Mangay-ayam";
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(340, 50);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(476, 521);
+            this.panel5.TabIndex = 2;
             // 
             // panel4
             // 
@@ -156,14 +97,6 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "WcDonald\'s POS System";
             // 
-            // panel5
-            // 
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(340, 50);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(476, 521);
-            this.panel5.TabIndex = 2;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::FastFoodPOS.Properties.Resources.mcdonalds;
@@ -173,6 +106,35 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.panel1.Controls.Add(this.ButtonsMenuPanel);
+            this.panel1.Controls.Add(this.ButtonUpdateInfo);
+            this.panel1.Controls.Add(this.LabelUserRole);
+            this.panel1.Controls.Add(this.LabelUserName);
+            this.panel1.Controls.Add(this.PictureUserImage);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(340, 571);
+            this.panel1.TabIndex = 0;
+            // 
+            // ButtonsMenuPanel
+            // 
+            this.ButtonsMenuPanel.Controls.Add(this.ButtonDashboard);
+            this.ButtonsMenuPanel.Controls.Add(this.ButtonAddProduct);
+            this.ButtonsMenuPanel.Controls.Add(this.ButtonManageProduct);
+            this.ButtonsMenuPanel.Controls.Add(this.ButtonTransaction);
+            this.ButtonsMenuPanel.Controls.Add(this.ButtonSales);
+            this.ButtonsMenuPanel.Controls.Add(this.ButtonUsers);
+            this.ButtonsMenuPanel.Controls.Add(this.ButtonArchives);
+            this.ButtonsMenuPanel.Controls.Add(this.ButtonLogout);
+            this.ButtonsMenuPanel.Location = new System.Drawing.Point(0, 150);
+            this.ButtonsMenuPanel.Name = "ButtonsMenuPanel";
+            this.ButtonsMenuPanel.Size = new System.Drawing.Size(340, 417);
+            this.ButtonsMenuPanel.TabIndex = 0;
             // 
             // ButtonDashboard
             // 
@@ -385,17 +347,58 @@
             this.ButtonLogout.Text = "Logout";
             this.ButtonLogout.Click += new System.EventHandler(this.ButtonLogout_Click);
             // 
-            // guna2CirclePictureBox1
+            // ButtonUpdateInfo
             // 
-            this.guna2CirclePictureBox1.Image = global::FastFoodPOS.Properties.Resources.user_default;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(21, 25);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.ShadowDecoration.Parent = this.guna2CirclePictureBox1;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox1.TabIndex = 0;
-            this.guna2CirclePictureBox1.TabStop = false;
+            this.ButtonUpdateInfo.Animated = true;
+            this.ButtonUpdateInfo.CheckedState.Parent = this.ButtonUpdateInfo;
+            this.ButtonUpdateInfo.CustomImages.Parent = this.ButtonUpdateInfo;
+            this.ButtonUpdateInfo.FillColor = System.Drawing.Color.Empty;
+            this.ButtonUpdateInfo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonUpdateInfo.ForeColor = System.Drawing.Color.White;
+            this.ButtonUpdateInfo.HoverState.Parent = this.ButtonUpdateInfo;
+            this.ButtonUpdateInfo.Location = new System.Drawing.Point(127, 82);
+            this.ButtonUpdateInfo.Name = "ButtonUpdateInfo";
+            this.ButtonUpdateInfo.ShadowDecoration.Parent = this.ButtonUpdateInfo;
+            this.ButtonUpdateInfo.Size = new System.Drawing.Size(191, 20);
+            this.ButtonUpdateInfo.TabIndex = 4;
+            this.ButtonUpdateInfo.Text = "Update Info";
+            this.ButtonUpdateInfo.Click += new System.EventHandler(this.ButtonUpdateInfo_Click);
+            // 
+            // LabelUserRole
+            // 
+            this.LabelUserRole.AutoSize = true;
+            this.LabelUserRole.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelUserRole.ForeColor = System.Drawing.Color.LightGray;
+            this.LabelUserRole.Location = new System.Drawing.Point(127, 54);
+            this.LabelUserRole.Name = "LabelUserRole";
+            this.LabelUserRole.Size = new System.Drawing.Size(106, 21);
+            this.LabelUserRole.TabIndex = 1;
+            this.LabelUserRole.Text = "Administrator";
+            // 
+            // LabelUserName
+            // 
+            this.LabelUserName.AutoEllipsis = true;
+            this.LabelUserName.AutoSize = true;
+            this.LabelUserName.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelUserName.ForeColor = System.Drawing.Color.White;
+            this.LabelUserName.Location = new System.Drawing.Point(127, 25);
+            this.LabelUserName.MaximumSize = new System.Drawing.Size(196, 25);
+            this.LabelUserName.Name = "LabelUserName";
+            this.LabelUserName.Size = new System.Drawing.Size(196, 25);
+            this.LabelUserName.TabIndex = 1;
+            this.LabelUserName.Text = "Lenard Mangay-ayam";
+            // 
+            // PictureUserImage
+            // 
+            this.PictureUserImage.Image = global::FastFoodPOS.Properties.Resources.user_default;
+            this.PictureUserImage.Location = new System.Drawing.Point(21, 25);
+            this.PictureUserImage.Name = "PictureUserImage";
+            this.PictureUserImage.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.PictureUserImage.ShadowDecoration.Parent = this.PictureUserImage;
+            this.PictureUserImage.Size = new System.Drawing.Size(100, 100);
+            this.PictureUserImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureUserImage.TabIndex = 0;
+            this.PictureUserImage.TabStop = false;
             // 
             // FormAdminPanel
             // 
@@ -408,13 +411,13 @@
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "FormAdminPanel";
             this.Size = new System.Drawing.Size(816, 571);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.ButtonsMenuPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PictureUserImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -422,7 +425,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox PictureUserImage;
         private System.Windows.Forms.Label LabelUserRole;
         private System.Windows.Forms.Label LabelUserName;
         private System.Windows.Forms.Panel panel4;
@@ -430,8 +433,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel5;
-        private Guna.UI2.WinForms.Guna2Button guna2Button9;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private Guna.UI2.WinForms.Guna2Button ButtonUpdateInfo;
+        private System.Windows.Forms.FlowLayoutPanel ButtonsMenuPanel;
         private Guna.UI2.WinForms.Guna2Button ButtonDashboard;
         private Guna.UI2.WinForms.Guna2Button ButtonAddProduct;
         private Guna.UI2.WinForms.Guna2Button ButtonManageProduct;

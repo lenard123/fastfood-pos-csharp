@@ -21,6 +21,7 @@ namespace FastFoodPOS.Components
         private bool is_valid = false;
 
         public Guna2TextBox compare_control { get; set; }
+        public string unique_ignore { get; set; }
 
         public Validator(Guna2TextBox control, Label error_message, string name, string rules)
         {
@@ -86,8 +87,10 @@ namespace FastFoodPOS.Components
                 }
                 else if (ruleBody.Equals("unique"))
                 {
-                    string table = ruleParam.Split(',')[0];
-                    string column = ruleParam.Split(',')[1];
+                    string[] ruleParams = ruleParam.Split(',');
+                    string table = ruleParams[0];
+                    string column = ruleParams[1];
+                    if (unique_ignore.Length > 0 && unique_ignore == control.Text) continue;
                     if (Database.IsExist(table, column, text.Trim()))
                     {
                         is_valid = false;

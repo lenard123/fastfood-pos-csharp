@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
@@ -42,13 +43,21 @@ namespace FastFoodPOS
             string destination = Path.Combine("images", filename);
             if (File.Exists(destination))
             {
-                File.Replace(source, destination, destination+".bak");
+                FileReplace(source, destination);
             }
             else
             {
                 File.Copy(source, destination);
             }
             return destination;
+        }
+
+        public static void FileReplace(string source, string destination)
+        {
+            if (File.Exists(destination + ".bak")) File.Delete(destination + ".bak");
+            File.Copy(destination, destination + ".bak");
+            File.Delete(destination);
+            File.Copy(source, destination);
         }
 
         public static string GetFullPath(string path)
@@ -75,6 +84,19 @@ namespace FastFoodPOS
                 Console.WriteLine(e);
                 return false;
             }
+        }
+
+        public static Image GetImageFromFile(string source)
+        {
+            Image result = null;
+            if (File.Exists(source))
+            {
+                using (var stream = File.OpenRead(source))
+                {
+                    result = Image.FromStream(stream);
+                }
+            }
+            return result;
         }
     }
 }

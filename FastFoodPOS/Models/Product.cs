@@ -2,7 +2,7 @@
 using FastFoodPOS.DatabaseUtil;
 using System;
 using System.Collections.Generic;
-using System.Data.OleDb;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +23,7 @@ namespace FastFoodPOS.Models
 
         public void Save()
         {
-            using (var cmd = new OleDbCommand("INSERT INTO [products]([name], [category], [price], [is_available], [image]) VALUES (?, ?, ?, ?, ?)", Database.GetConnection()))
+            using (var cmd = Database.CreateCommand("INSERT INTO `products`(`name`, `category`, `price`, `is_available`, `image`) VALUES (@p1, @p2, @p3, @p4, @p5)"))
             {
                 Database.BindParameters(cmd, Name, Category, Price, IsAvailable, GetUploadedImagePath());
                 Database.GetConnection().Open();
@@ -58,10 +58,26 @@ namespace FastFoodPOS.Models
             Update(newName, newCategory, newPrice, newImage, isAvailable, IsDeleted);
         }
 
+        public bool ContainsOr(string query)
+        {
+            query = query.ToUpper();
+            string[] words = query.Split(' ');
+            string product = (Name + Category).ToUpper();
+            return words.Any((word) => product.Contains(word));
+        }
+
+        public bool ContainsAnd(string query)
+        {
+            query = query.ToUpper();
+            string[] words = query.Split(' ');
+            string product = (Name + Category).ToUpper();
+            return words.All((word) => product.Contains(word));
+        }
+
         public void Update(string newName, string newCategory, decimal newPrice, string newImage, bool isAvailable, bool isDeleted)
         {
             string uploadedImage = GetUploadedImagePath(newImage);
-            using (var cmd = new OleDbCommand("UPDATE [products] SET [name]=?, [category]=?, [price]=?, [image]=?, [is_available]=?, [is_deleted]=? WHERE [id]=?", Database.GetConnection()))
+            using (var cmd = Database.CreateCommand("UPDATE `products` SET `name`=@p1, `category`=@p2, `price`=@p3, `image`=@p4, `is_available`=@p5, `is_deleted`=@p6 WHERE `id`=@p7"))
             {
                 Database.BindParameters(cmd, newName, newCategory, newPrice, uploadedImage, isAvailable, isDeleted, Id);
                 Database.GetConnection().Open();
@@ -100,7 +116,7 @@ namespace FastFoodPOS.Models
         public static Product Find(int id)
         {
             Product result = null;
-            using (var cmd = new OleDbCommand("SELECT * FROM [products] WHERE [id]=?", Database.GetConnection()))
+            using (var cmd = Database.CreateCommand("SELECT * FROM `products` WHERE `id`=@p1"))
             {
                 Database.BindParameters(cmd, id);
                 Database.GetConnection().Open();
@@ -116,7 +132,7 @@ namespace FastFoodPOS.Models
         public static List<Product> GetAllProducts()
         {
             List<Product> result = new List<Product>();
-            using (var cmd = new OleDbCommand("SELECT * FROM [products] WHERE [is_deleted]=false", Database.GetConnection()))
+            using (var cmd = Database.CreateCommand("SELECT * FROM `products` WHERE `is_deleted`=false"))
             {
                 Database.GetConnection().Open();
                 using (var reader = cmd.ExecuteReader())
@@ -131,7 +147,7 @@ namespace FastFoodPOS.Models
             return result;
         }
 
-        public static Product ConvertReaderToProduct(OleDbDataReader reader)
+        public static Product ConvertReaderToProduct(DbDataReader reader)
         {
             Product result = new Product { 
                 Id = reader.GetInt32(0),

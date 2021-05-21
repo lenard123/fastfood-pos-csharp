@@ -20,20 +20,27 @@ namespace FastFoodPOS.Forms
         decimal Total;
         List<Product> AllProducts;
         public BindingList<OrderItemComponent> OrderComponents;
-        //public BindingList<Order> Orders;
+        User cashier_user = null;
 
-        public FormCashierPanel()
+        public FormCashierPanel(User logged_in)
         {
             InitializeComponent();
             
+            //Fetch All Products
             AllProducts = Product.GetAllProducts();
-            //Orders = new BindingList<Order>();
+            
+            //Initialized  Binding Source
             OrderComponents = new BindingList<OrderItemComponent>();
-
             OrderComponents.ListChanged += Orders_ListChanged;
 
+            cashier_user = logged_in;
+            LinkLabelName.Text = logged_in.Fullname;
+            PictureUserImage.Image = Util.GetImageFromFile(logged_in.Image);
+
+            //Reset Order
             Reset();
 
+            //Select Food
             ButtonFoods.PerformClick();
         }
 
@@ -68,6 +75,7 @@ namespace FastFoodPOS.Forms
 
         private void ButtonFilter_Click(object sender, EventArgs e)
         {
+            TextQuery.Text = "";
             PanelProducts.SuspendLayout();
             DisposeProductsPanel();
             string filter = ((Guna2Button)sender).Tag.ToString();
@@ -75,12 +83,17 @@ namespace FastFoodPOS.Forms
             {
                 if (product.Category.Equals(filter))
                 {
-                    var pcc = new ProductCardComponent1(product);
-                    pcc.ButtonAddProductClick += pcc_ButtonAddProductClick;
-                    PanelProducts.Controls.Add(pcc);
+                    AddProductComponent(product);
                 }
             });
             PanelProducts.ResumeLayout();
+        }
+
+        void AddProductComponent(Product product)
+        {
+            var pcc = new ProductCardComponent1(product);
+            pcc.ButtonAddProductClick += pcc_ButtonAddProductClick;
+            PanelProducts.Controls.Add(pcc);
         }
 
         void pcc_ButtonAddProductClick(object sender, Product e)
@@ -177,6 +190,27 @@ namespace FastFoodPOS.Forms
             foreach (var item in OrderComponents)
                 orders.Add(item._Order);
             return orders;
+        }
+
+        private void ButtonSearch_Click(object sender, EventArgs e)
+        {
+            if (TextQuery.Text.Equals("")) return;
+
+            foreach (Guna2Button menu in ButtonsMenu.Controls)
+                menu.Checked = false;
+
+            PanelProducts.SuspendLayout();
+            DisposeProductsPanel();
+            SearchResult().ForEach((product) => AddProductComponent(product));
+            PanelProducts.ResumeLayout();
+        }
+
+        private List<Product> SearchResult()
+        {
+            List<Product> result = AllProducts.FindAll((product) => product.ContainsAnd(TextQuery.Text));
+            if (result.Count == 0)
+                result = AllProducts.FindAll((product) => product.ContainsOr(TextQuery.Text));
+            return result;
         }
 
     }

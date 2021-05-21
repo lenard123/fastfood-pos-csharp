@@ -6,42 +6,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FastFoodPOS.Models
+namespace FastFoodPOS.DatabaseUtil
 {
     class Database
     {
+        private static DatabaseProvider Provider = null;
 
-        private static OleDbConnection Connection = null;
-
-        public static OleDbConnection GetConnection()
+        public static DbConnection GetConnection()
         {
-            if (Connection == null)
-            {
-                Connection = new OleDbConnection(Util.GetConfig("ConnectionString"));
-            }
-            return Connection;
+            return GetProvider().GetConnection();
         }
 
-        public static void BindParameters(OleDbCommand cmd, params object[] parameters)
+
+        public static DbCommand CreateCommand(string query)
         {
-            cmd.Parameters.Clear();
-            for(int i = 0; i < parameters.Length; i++)
+            return GetProvider().CreateCommand(query);
+        }
+
+        public static DatabaseProvider GetProvider()
+        {
+            if (Provider == null)
             {
-                cmd.Parameters.AddWithValue("p" + i, parameters[i]);
+                if (Util.GetConfig("DbProvider") == "MSACCESS")
+                {
+                    Provider = new DatabaseMSAccessProvider();
+                }
+                else if (Util.GetConfig("DbProvider") == "MYSQL")
+                {
+                    Provider = new DatabaseMySQLProvider();
+                }
             }
+            return Provider;
+        }
+        
+        public static void BindParameters(DbCommand cmd, params object[] parameters)
+        {
+            GetProvider().BindParameters(cmd, parameters);
         }
 
         public static bool IsExist(string table, string column, object value)
         {
-            bool result = false;
-            using (var cmd = new OleDbCommand("SELECT COUNT(*) FROM " + table + " WHERE " + column + " = ?", GetConnection()))
-            {
-                BindParameters(cmd, value);
-                GetConnection().Open();
-                result = int.Parse(cmd.ExecuteScalar().ToString()) > 0;
-                GetConnection().Close();
-            }
-            return result;
+            return GetProvider().IsExist(table, column, value);
         }
     }
 }

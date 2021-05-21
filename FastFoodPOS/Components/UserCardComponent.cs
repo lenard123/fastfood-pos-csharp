@@ -22,7 +22,7 @@ namespace FastFoodPOS.Components
 
             LabelNameRole.Text = user.Fullname + " (" + user.Role + ")";
             LabelEmail.Text = user.Email;
-            PictureImage.Image = Image.FromFile(user.Image);
+            PictureImage.Image = Util.GetImageFromFile(user.Image);
 
             BackColor = Color.Transparent;
             Dock = DockStyle.Top;

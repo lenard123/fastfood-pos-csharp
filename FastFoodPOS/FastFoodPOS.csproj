@@ -51,7 +51,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Guna.UI2">
-      <HintPath>../Assets/Guna.UI2.dll</HintPath>
+      <HintPath>..\lib\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
@@ -67,6 +67,9 @@
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data">
+      <HintPath>..\lib\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -115,6 +118,7 @@
     </Compile>
     <Compile Include="Components\Validator.cs" />
     <Compile Include="DatabaseUtil\DatabaseMSAccessProvider.cs" />
+    <Compile Include="DatabaseUtil\DatabaseMySQLProvider.cs" />
     <Compile Include="ErrorHandler\Level1Exception.cs" />
     <Compile Include="Forms\AdminForms\FormAddProduct.cs">
       <SubType>UserControl</SubType>
@@ -157,6 +161,12 @@
     </Compile>
     <Compile Include="Forms\AdminForms\FormUpdateProduct.Designer.cs">
       <DependentUpon>FormUpdateProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminForms\FormUpdateUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminForms\FormUpdateUser.Designer.cs">
+      <DependentUpon>FormUpdateUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AdminForms\FormUsers.cs">
       <SubType>UserControl</SubType>
@@ -246,6 +256,9 @@
     <EmbeddedResource Include="Forms\AdminForms\FormUpdateProduct.resx">
       <DependentUpon>FormUpdateProduct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminForms\FormUpdateUser.resx">
+      <DependentUpon>FormUpdateUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminForms\FormUsers.resx">
       <DependentUpon>FormUsers.cs</DependentUpon>
     </EmbeddedResource>
@@ -281,7 +294,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon_placeholder.png" />

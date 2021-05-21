@@ -1,7 +1,7 @@
 ﻿using FastFoodPOS.DatabaseUtil;
 using System;
 using System.Collections.Generic;
-using System.Data.OleDb;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,7 +38,7 @@ namespace FastFoodPOS.Models
 
         public void Save(string transaction_id)
         {
-            using (var cmd = new OleDbCommand("INSERT INTO [orders]([product_id], [transaction_id], [quantity], [price]) VALUES (?, ?, ?, ?)", Database.GetConnection()))
+            using (var cmd = Database.CreateCommand("INSERT INTO `orders`(`product_id`, `transaction_id`, `quantity`, `price`) VALUES (@p1, @p2, @p3, @p4)"))
             {
                 Database.BindParameters(cmd, ProductId, transaction_id, Quantity, Price);
                 Database.GetConnection().Open();
@@ -59,7 +59,7 @@ namespace FastFoodPOS.Models
         public static List<Order> GetAll(string id)
         {
             var result = new List<Order>();
-            using (var cmd = new OleDbCommand("SELECT * FROM [orders] WHERE [transaction_id]=?", Database.GetConnection()))
+            using (var cmd = Database.CreateCommand("SELECT * FROM `orders` WHERE `transaction_id`=@p1"))
             {
                 Database.BindParameters(cmd, id);
                 Database.GetConnection().Open();
@@ -73,7 +73,7 @@ namespace FastFoodPOS.Models
             return result;
         }
 
-        private static Order ConvertReaderToOrder(OleDbDataReader reader)
+        private static Order ConvertReaderToOrder(DbDataReader reader)
         {
             var result = new Order
             {
