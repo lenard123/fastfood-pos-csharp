@@ -31,7 +31,7 @@ namespace FastFoodPOS.Forms.AdminForms
 
         private void ButtonBack_Click(object sender, EventArgs e)
         {
-            FormAdminPanel.Instance.LoadFormControl(new FormUsers());
+            FormAdminPanel.GetInstance().LoadFormControl(new FormUsers());
         }
 
         private void ButtonChangeImage_Click(object sender, EventArgs e)

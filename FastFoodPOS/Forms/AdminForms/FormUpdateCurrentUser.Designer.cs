@@ -1,6 +1,6 @@
 ﻿namespace FastFoodPOS.Forms.AdminForms
 {
-    partial class FormUpdateUser
+    partial class FormUpdateCurrentUser
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUpdateUser));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUpdateCurrentUser));
+            this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.LabelEmail = new System.Windows.Forms.Label();
             this.LabelName = new System.Windows.Forms.Label();
@@ -41,13 +42,20 @@
             this.ButtonChangeImage = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
             this.PictureUserImage = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.LinkBack = new System.Windows.Forms.LinkLabel();
-            this.guna2VSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
             this.OpenFileDialogChangeImage = new System.Windows.Forms.OpenFileDialog();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureUserImage)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(30, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(128, 30);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Update Info";
             // 
             // guna2Panel1
             // 
@@ -64,11 +72,11 @@
             this.guna2Panel1.Controls.Add(this.ButtonChangeImage);
             this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Controls.Add(this.PictureUserImage);
-            this.guna2Panel1.Location = new System.Drawing.Point(30, 76);
+            this.guna2Panel1.Location = new System.Drawing.Point(34, 76);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(575, 576);
-            this.guna2Panel1.TabIndex = 7;
+            this.guna2Panel1.TabIndex = 5;
             // 
             // LabelEmail
             // 
@@ -76,7 +84,7 @@
             this.LabelEmail.ForeColor = System.Drawing.Color.Red;
             this.LabelEmail.Location = new System.Drawing.Point(51, 465);
             this.LabelEmail.Name = "LabelEmail";
-            this.LabelEmail.Size = new System.Drawing.Size(22, 13);
+            this.LabelEmail.Size = new System.Drawing.Size(24, 13);
             this.LabelEmail.TabIndex = 15;
             this.LabelEmail.Text = "red";
             // 
@@ -86,7 +94,7 @@
             this.LabelName.ForeColor = System.Drawing.Color.Red;
             this.LabelName.Location = new System.Drawing.Point(51, 366);
             this.LabelName.Name = "LabelName";
-            this.LabelName.Size = new System.Drawing.Size(22, 13);
+            this.LabelName.Size = new System.Drawing.Size(24, 13);
             this.LabelName.TabIndex = 15;
             this.LabelName.Text = "red";
             // 
@@ -247,35 +255,6 @@
             this.PictureUserImage.TabIndex = 8;
             this.PictureUserImage.TabStop = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 30);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Update Info";
-            // 
-            // LinkBack
-            // 
-            this.LinkBack.AutoSize = true;
-            this.LinkBack.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LinkBack.Location = new System.Drawing.Point(179, 36);
-            this.LinkBack.Name = "LinkBack";
-            this.LinkBack.Size = new System.Drawing.Size(59, 19);
-            this.LinkBack.TabIndex = 8;
-            this.LinkBack.TabStop = true;
-            this.LinkBack.Text = "Go Back";
-            this.LinkBack.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkBack_LinkClicked);
-            // 
-            // guna2VSeparator1
-            // 
-            this.guna2VSeparator1.Location = new System.Drawing.Point(164, 30);
-            this.guna2VSeparator1.Name = "guna2VSeparator1";
-            this.guna2VSeparator1.Size = new System.Drawing.Size(10, 30);
-            this.guna2VSeparator1.TabIndex = 9;
-            // 
             // OpenFileDialogChangeImage
             // 
             this.OpenFileDialogChangeImage.Filter = "JPG(*.JPG)|*.jpg";
@@ -286,13 +265,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.guna2VSeparator1);
-            this.Controls.Add(this.LinkBack);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.label1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "FormUpdateUser";
-            this.Size = new System.Drawing.Size(891, 680);
+            this.Size = new System.Drawing.Size(813, 720);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureUserImage)).EndInit();
@@ -303,6 +280,7 @@
 
         #endregion
 
+        private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Label LabelEmail;
         private System.Windows.Forms.Label LabelName;
@@ -315,10 +293,6 @@
         private Guna.UI2.WinForms.Guna2Button ButtonChangeImage;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2PictureBox PictureUserImage;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.LinkLabel LinkBack;
-        private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator1;
         private System.Windows.Forms.OpenFileDialog OpenFileDialogChangeImage;
-
     }
 }

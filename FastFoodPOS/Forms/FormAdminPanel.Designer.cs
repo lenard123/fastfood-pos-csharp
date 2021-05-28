@@ -321,6 +321,7 @@
             this.ButtonArchives.ShadowDecoration.Parent = this.ButtonArchives;
             this.ButtonArchives.Size = new System.Drawing.Size(340, 45);
             this.ButtonArchives.TabIndex = 14;
+            this.ButtonArchives.Tag = "7";
             this.ButtonArchives.Text = "Archives";
             this.ButtonArchives.Click += new System.EventHandler(this.ButtonMenu_Click);
             // 

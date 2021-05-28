@@ -26,6 +26,9 @@ namespace FastFoodPOS.Forms.AdminForms
 
         private void ButtonFilter_Click(object sender, EventArgs e)
         {
+
+            TextSearch.Text = "";
+
             flowLayoutPanel1.Visible = false;
             DisposePanelContent();
             Guna2Button button = (Guna2Button)sender;
@@ -33,10 +36,7 @@ namespace FastFoodPOS.Forms.AdminForms
             {
                 if (product.Category.Equals(button.Tag))
                 {
-                    ProductCardComponent pcc = new ProductCardComponent(product);
-                    pcc.ButtonUpdateClick += pcc_ButtonUpdateClick;
-                    pcc.ButtonRemoveClick += pcc_ButtonRemoveClick;
-                    flowLayoutPanel1.Controls.Add(pcc);
+                    AddProductComponent(product);
                 }
             });
             flowLayoutPanel1.Visible = true;
@@ -46,11 +46,11 @@ namespace FastFoodPOS.Forms.AdminForms
         {
             if (User.IsAdmin())
             {
-                DialogResult result = MessageBox.Show("Are you sure to remove this product?", "Confirm", MessageBoxButtons.YesNo);
+                DialogResult result = Dialog.ConfirmDialogBox.ShowDialog("Are you sure to remove this product?");
                 if (result == DialogResult.Yes)
                 {
                     e.product.Remove();
-                    MessageBox.Show("Product removed successfully");
+                    AlertNotification.ShowAlertMessage("Product removed successfully", AlertNotification.AlertType.SUCCESS);
                     AllProducts.Remove(e.product);
                     e.Dispose();
                 }
@@ -64,7 +64,7 @@ namespace FastFoodPOS.Forms.AdminForms
         void pcc_ButtonUpdateClick(object sender, ProductCardComponent e)
         {
             ShouldKeepForm = true;
-            FormAdminPanel.Instance.LoadFormControl(new FormUpdateProduct(this, e));
+            FormAdminPanel.GetInstance().LoadFormControl(new FormUpdateProduct(this, e));
         }
 
 
@@ -92,6 +92,41 @@ namespace FastFoodPOS.Forms.AdminForms
         private void panel1_MouseEnter(object sender, EventArgs e)
         {
             flowLayoutPanel1.Focus();
+        }
+
+        private void ButtonSearch_Click(object sender, EventArgs e)
+        {
+            if (TextSearch.Text == "") return;
+
+            foreach (Guna2Button menu in ButtonsMenu.Controls)
+                menu.Checked = false;
+
+            flowLayoutPanel1.SuspendLayout();
+            DisposePanelContent();
+            var result = SearchResult();
+            result.ForEach((product) => AddProductComponent(product));
+            flowLayoutPanel1.ResumeLayout();
+
+            AlertNotification.ShowAlertMessage(result.Count + " items found", AlertNotification.AlertType.INFO);
+
+        }
+
+        private void AddProductComponent(Product product)
+        {
+            ProductCardComponent pcc = new ProductCardComponent(product);
+            pcc.ButtonUpdateClick += pcc_ButtonUpdateClick;
+            pcc.ButtonRemoveClick += pcc_ButtonRemoveClick;
+            flowLayoutPanel1.Controls.Add(pcc);
+        }
+
+        private List<Product> SearchResult()
+        {
+            List<Product> result = AllProducts.FindAll((product) => product.ContainsAnd(TextSearch.Text));
+            if (result.Count == 0)
+                result = AllProducts.FindAll((product) => product.ContainsOr(TextSearch.Text));
+            if (result.Count >= 16)
+                result.RemoveRange(15, result.Count - 15);
+            return result;
         }
     }
 }

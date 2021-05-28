@@ -22,6 +22,10 @@ namespace FastFoodPOS.Components
         {
             InitializeComponent();
             this.product = product;
+
+            ButtonAddProduct.Visible = product.IsAvailable;
+            ButtonUnavailable.Visible = !product.IsAvailable;
+
         }
 
         private void ButtonAddProduct_Click(object sender, EventArgs e)

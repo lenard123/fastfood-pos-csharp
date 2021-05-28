@@ -14,6 +14,7 @@ namespace FastFoodPOS.DatabaseUtil
         public abstract void BindParameters(DbCommand _cmd, params object[] parameters);
         public abstract bool IsExist(string table, string column, object value);
         public abstract string FormatShortDate(DateTime day);
+        public abstract string FormatDateTime(DateTime date);
 
         public virtual string QUERY_SALES_BETWEEN_1{
             get{ return "SELECT * FROM SalesView WHERE day BETWEEN #@@from# AND #@@to#"; }

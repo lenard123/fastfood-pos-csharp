@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FastFoodPOS.Components;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,8 @@ namespace FastFoodPOS.ErrorHandler
 
         public void DisplayMessage()
         {
-            MessageBox.Show(Message);
+            //MessageBox.Show(Message);
+            AlertNotification.ShowAlertMessage(Message, AlertNotification.AlertType.ERROR);
         }
     }
 }

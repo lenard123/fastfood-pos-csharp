@@ -36,6 +36,10 @@ namespace FastFoodPOS.Forms.AdminForms
                     transaction.Total + "PHP"
                 );
             });
+            if (Transactions.Count == 0)
+            {
+                DataGridViewTransaction.Rows.Add("There is no transaction on the selected date");
+            }
         }
 
         private void DateTimeSpecifier_ValueChanged(object sender, EventArgs e)

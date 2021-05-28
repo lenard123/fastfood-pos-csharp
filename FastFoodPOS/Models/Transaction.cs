@@ -84,8 +84,6 @@ namespace FastFoodPOS.Models
             Id = result;
         }
 
-        public static DateTime today;
-
         public static List<Transaction> GetTransactions(DateTime date)
         {
             var result = new List<Transaction>();

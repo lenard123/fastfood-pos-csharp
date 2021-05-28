@@ -70,7 +70,8 @@ namespace FastFoodPOS.Forms
 
         private void ButtonLogout_Click(object sender, EventArgs e)
         {
-            MainForm.LoadForm(new FormAdminLogin());
+            if(Dialog.ConfirmDialogBox.ShowDialog("Are you sure to logout?") == DialogResult.Yes)
+                MainForm.LoadForm(new FormAdminLogin());
         }
 
         private void ButtonFilter_Click(object sender, EventArgs e)
@@ -145,15 +146,17 @@ namespace FastFoodPOS.Forms
 
         private void ButtonClear_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Are you sure to clear order?", "Confirm", MessageBoxButtons.OKCancel);
-            if (result == DialogResult.OK)
+            if (OrderComponents.Count == 0) return;
+            var result = Dialog.ConfirmDialogBox.ShowDialog("Are you sure to clear order?");
+            //var result = MessageBox.Show("Are you sure to clear order?", "Confirm", MessageBoxButtons.OKCancel);
+            if (result == DialogResult.Yes)
                 Reset();
         }
 
         private decimal GetChange()
         {
-            decimal change = decimal.Parse(TextPayment.Text) - Total;
-            if (change < 0) throw new Level1Exception("The Payment is not enough");
+            decimal change = TextPayment.Value - Total;
+            if (change < 0) throw new Level1Exception("Your payment is "+ Math.Abs(change) + "PHP short");
             return change;
         }
 
@@ -171,17 +174,25 @@ namespace FastFoodPOS.Forms
 
         private void ButtonProccess_Click(object sender, EventArgs e)
         {
-            var transaction = new Transaction(GetOrders(), User.CurrentUser)
+            if (OrderComponents.Count == 0) return;
+            try
             {
-                Date = DateTime.Now,
-                Cash = decimal.Parse(TextPayment.Text)
-            };
-            transaction.Save();
-            
-            var po = new ProcessOrder(transaction);
-            po.ShowDialog();
+                GetChange();
+                var transaction = new Transaction(GetOrders(), User.CurrentUser)
+                {
+                    Date = DateTime.Now,
+                    Cash = TextPayment.Value
+                };
+                transaction.Save();
 
-            Reset();
+                var po = new ProcessOrder(transaction);
+                po.ShowDialog();
+
+                Reset();
+            } catch(Level1Exception ex)
+            {
+                ex.DisplayMessage();
+            }
         }
 
         private List<Order> GetOrders()

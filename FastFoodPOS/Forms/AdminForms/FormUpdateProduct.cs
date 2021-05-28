@@ -39,7 +39,7 @@ namespace FastFoodPOS.Forms.AdminForms
 
         private void ButtonBack_Click(object sender, EventArgs e)
         {
-            FormAdminPanel.Instance.LoadFormControl(context);
+            FormAdminPanel.GetInstance().LoadFormControl(context);
         }
 
         private void ButtonReset_Click(object sender, EventArgs e)
@@ -51,12 +51,16 @@ namespace FastFoodPOS.Forms.AdminForms
         {
             if(NameValidator.IsValid())
             {
-                product.Update(
-                    TextName.Text,
-                    ComboBoxType.Text,
-                    decimal.Parse(TextPrice.Text),
-                    PictureProductImage.ImageLocation
-                    );
+                Product uProduct = product.Clone();
+                uProduct.Name = TextName.Text;
+                uProduct.Category = ComboBoxType.Text;
+                uProduct.Price = TextPrice.Value;
+                uProduct.newImage = PictureProductImage.ImageLocation;
+                uProduct.Update();
+                product.Copy(uProduct);
+
+                Log.AddLog("Make changes to product["+uProduct.Id+"]");
+
                 MessageBox.Show("Product updated successfully");
                 pcc.UpdateData();
                 ButtonBack.PerformClick();
@@ -97,6 +101,7 @@ namespace FastFoodPOS.Forms.AdminForms
             if (TextPrice.Text.Length == 0)
             {
                 TextPrice.Text = "0";
+                TextPrice.Value = 0;
             }
         }
     }

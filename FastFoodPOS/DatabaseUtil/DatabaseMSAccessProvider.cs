@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.OleDb;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FastFoodPOS.DatabaseUtil
 {
@@ -53,5 +49,10 @@ namespace FastFoodPOS.DatabaseUtil
             return day.ToShortDateString();
         }
 
+
+        public override string FormatDateTime(DateTime date)
+        {
+            return date.ToString();
+        }
     }
 }

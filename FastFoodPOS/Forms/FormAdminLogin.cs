@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FastFoodPOS.Models;
 using FastFoodPOS.ErrorHandler;
+using FastFoodPOS.Components;
 
 namespace FastFoodPOS.Forms
 {
@@ -29,10 +30,12 @@ namespace FastFoodPOS.Forms
             try
             {
                 User loggedIn = User.Login(TextEmail.Text, TextPassword.Text);
-                if (loggedIn.Role.Equals("Cashier"))
+                AlertNotification.ShowAlertMessage("Logged in successfully", AlertNotification.AlertType.SUCCESS);
+                if (loggedIn.Role.Equals("Cashier")){
                     MainForm.LoadForm(new FormCashierPanel(loggedIn));
-                else
+                }else
                     MainForm.LoadForm(new FormAdminPanel(loggedIn));
+
             }
             catch (Level1Exception ex)
             {

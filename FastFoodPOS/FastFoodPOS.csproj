@@ -91,6 +91,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\AlertNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\AlertNotification.Designer.cs">
+      <DependentUpon>AlertNotification.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\OrderItemComponent.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -119,7 +125,19 @@
     <Compile Include="Components\Validator.cs" />
     <Compile Include="DatabaseUtil\DatabaseMSAccessProvider.cs" />
     <Compile Include="DatabaseUtil\DatabaseMySQLProvider.cs" />
+    <Compile Include="Dialog\ConfirmDialogBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\ConfirmDialogBox.Designer.cs">
+      <DependentUpon>ConfirmDialogBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="ErrorHandler\Level1Exception.cs" />
+    <Compile Include="Forms\AdminForms\FormActivityLog.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminForms\FormActivityLog.Designer.cs">
+      <DependentUpon>FormActivityLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AdminForms\FormAddProduct.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -144,6 +162,12 @@
     <Compile Include="Forms\AdminForms\FormManageProducts.Designer.cs">
       <DependentUpon>FormManageProducts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AdminForms\FormProductArchive.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminForms\FormProductArchive.Designer.cs">
+      <DependentUpon>FormProductArchive.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AdminForms\FormSalesReport.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -162,17 +186,29 @@
     <Compile Include="Forms\AdminForms\FormUpdateProduct.Designer.cs">
       <DependentUpon>FormUpdateProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AdminForms\FormUpdateUser.cs">
+    <Compile Include="Forms\AdminForms\FormUpdateCurrentUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\AdminForms\FormUpdateUser.Designer.cs">
-      <DependentUpon>FormUpdateUser.cs</DependentUpon>
+    <Compile Include="Forms\AdminForms\FormUpdateCurrentUser.Designer.cs">
+      <DependentUpon>FormUpdateCurrentUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AdminForms\FormUsers.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\AdminForms\FormUsers.Designer.cs">
       <DependentUpon>FormUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminForms\FormUpdateUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminForms\FormUpdateUser.Designer.cs">
+      <DependentUpon>FormUpdateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminForms\FormUsersArchive.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminForms\FormUsersArchive.Designer.cs">
+      <DependentUpon>FormUsersArchive.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AdminForms\IKeepable.cs" />
     <Compile Include="Forms\BaseForm.cs">
@@ -210,6 +246,7 @@
     </Compile>
     <Compile Include="DatabaseUtil\Database.cs" />
     <Compile Include="DatabaseUtil\DatabaseProvider.cs" />
+    <Compile Include="Models\Log.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Sale.cs" />
@@ -223,6 +260,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Util.cs" />
+    <EmbeddedResource Include="Components\AlertNotification.resx">
+      <DependentUpon>AlertNotification.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\OrderItemComponent.resx">
       <DependentUpon>OrderItemComponent.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,6 +274,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Components\UserCardComponent.resx">
       <DependentUpon>UserCardComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\ConfirmDialogBox.resx">
+      <DependentUpon>ConfirmDialogBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminForms\FormActivityLog.resx">
+      <DependentUpon>FormActivityLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminForms\FormAddProduct.resx">
       <DependentUpon>FormAddProduct.cs</DependentUpon>
@@ -247,6 +293,9 @@
     <EmbeddedResource Include="Forms\AdminForms\FormManageProducts.resx">
       <DependentUpon>FormManageProducts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminForms\FormProductArchive.resx">
+      <DependentUpon>FormProductArchive.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminForms\FormSalesReport.resx">
       <DependentUpon>FormSalesReport.cs</DependentUpon>
     </EmbeddedResource>
@@ -256,11 +305,17 @@
     <EmbeddedResource Include="Forms\AdminForms\FormUpdateProduct.resx">
       <DependentUpon>FormUpdateProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AdminForms\FormUpdateUser.resx">
-      <DependentUpon>FormUpdateUser.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AdminForms\FormUpdateCurrentUser.resx">
+      <DependentUpon>FormUpdateCurrentUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminForms\FormUsers.resx">
       <DependentUpon>FormUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminForms\FormUpdateUser.resx">
+      <DependentUpon>FormUpdateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminForms\FormUsersArchive.resx">
+      <DependentUpon>FormUsersArchive.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CashierForms\ProcessOrder.resx">
       <DependentUpon>ProcessOrder.cs</DependentUpon>
@@ -321,6 +376,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="mcdonalds.ico" />
+    <None Include="Resources\info.png" />
+    <None Include="Resources\error-white.png" />
+    <None Include="Resources\check.png" />
+    <None Include="Resources\unavailable.png" />
     <None Include="Resources\burger_soda_black.png" />
     <None Include="Resources\icecream.png" />
     <None Include="Resources\burger.png" />

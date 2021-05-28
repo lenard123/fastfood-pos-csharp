@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.ButtonUnavailable = new Guna.UI2.WinForms.Guna2Button();
             this.ButtonAddProduct = new Guna.UI2.WinForms.Guna2Button();
             this.LabelName = new System.Windows.Forms.Label();
             this.LabelPrice = new System.Windows.Forms.Label();
@@ -42,6 +43,7 @@
             this.guna2Panel1.BackColor = System.Drawing.Color.White;
             this.guna2Panel1.BorderColor = System.Drawing.Color.Silver;
             this.guna2Panel1.BorderThickness = 1;
+            this.guna2Panel1.Controls.Add(this.ButtonUnavailable);
             this.guna2Panel1.Controls.Add(this.ButtonAddProduct);
             this.guna2Panel1.Controls.Add(this.LabelName);
             this.guna2Panel1.Controls.Add(this.LabelPrice);
@@ -51,6 +53,22 @@
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(265, 140);
             this.guna2Panel1.TabIndex = 0;
+            // 
+            // ButtonUnavailable
+            // 
+            this.ButtonUnavailable.CheckedState.Parent = this.ButtonUnavailable;
+            this.ButtonUnavailable.CustomImages.Parent = this.ButtonUnavailable;
+            this.ButtonUnavailable.Enabled = false;
+            this.ButtonUnavailable.FillColor = System.Drawing.Color.Gray;
+            this.ButtonUnavailable.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonUnavailable.ForeColor = System.Drawing.Color.White;
+            this.ButtonUnavailable.HoverState.Parent = this.ButtonUnavailable;
+            this.ButtonUnavailable.Location = new System.Drawing.Point(10, 92);
+            this.ButtonUnavailable.Name = "ButtonUnavailable";
+            this.ButtonUnavailable.ShadowDecoration.Parent = this.ButtonUnavailable;
+            this.ButtonUnavailable.Size = new System.Drawing.Size(240, 37);
+            this.ButtonUnavailable.TabIndex = 5;
+            this.ButtonUnavailable.Text = "Currently Not Available";
             // 
             // ButtonAddProduct
             // 
@@ -129,5 +147,6 @@
         private System.Windows.Forms.Label LabelName;
         private System.Windows.Forms.Label LabelPrice;
         private Guna.UI2.WinForms.Guna2Button ButtonAddProduct;
+        private Guna.UI2.WinForms.Guna2Button ButtonUnavailable;
     }
 }

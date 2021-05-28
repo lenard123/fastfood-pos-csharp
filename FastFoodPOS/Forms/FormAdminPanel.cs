@@ -17,8 +17,12 @@ namespace FastFoodPOS.Forms
     {
         User LoggedInUser = null;
 
-        public static FormAdminPanel Instance;
+        private static FormAdminPanel Instance;
 
+        public static FormAdminPanel GetInstance()
+        {
+            return Instance;
+        }
 
         public FormAdminPanel(User _LoggedInUser)
         {
@@ -37,6 +41,13 @@ namespace FastFoodPOS.Forms
             PictureUserImage.Image = Util.GetImageFromFile(LoggedInUser.Image);
             LabelUserName.Text = LoggedInUser.Fullname;
             LabelUserRole.Text = LoggedInUser.Role;
+
+            if (LoggedInUser.Role == "SubAdministrator")
+            {
+                ButtonUsers.Visible = false;
+                ButtonArchives.Visible = false;
+            }
+
         }
 
         private void ButtonMenu_Click(object sender, EventArgs e)
@@ -62,6 +73,9 @@ namespace FastFoodPOS.Forms
                     break;
                 case 6:
                     LoadFormControl(new FormUsers());
+                    break;
+                case 7:
+                    LoadFormControl(new FormProductArchive());
                     break;
             }
 
@@ -101,12 +115,13 @@ namespace FastFoodPOS.Forms
 
         private void ButtonLogout_Click(object sender, EventArgs e)
         {
-            MainForm.LoadForm(new FormAdminLogin());
+            if(Dialog.ConfirmDialogBox.ShowDialog("Are you sure to logout?") == DialogResult.Yes)
+                MainForm.LoadForm(new FormAdminLogin());
         }
 
         private void ButtonUpdateInfo_Click(object sender, EventArgs e)
         {
-            FormUpdateUser fuu = new FormUpdateUser(LoggedInUser);
+            FormUpdateCurrentUser fuu = new FormUpdateCurrentUser(LoggedInUser);
             fuu.OnUpdate_Success += fuu_OnUpdate_Success;
             LoadFormControl(fuu);
             foreach (Guna2Button btn in ButtonsMenuPanel.Controls)

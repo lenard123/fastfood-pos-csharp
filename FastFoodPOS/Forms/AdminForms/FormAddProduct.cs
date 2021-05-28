@@ -37,6 +37,7 @@ namespace FastFoodPOS.Forms.AdminForms
                     Image = PictureProductImage.ImageLocation
                 };
                 nProduct.Save();
+                Log.AddLog("Add new product name " + TextName.Text);
                 MessageBox.Show("Product added Successfully");
             }
         }

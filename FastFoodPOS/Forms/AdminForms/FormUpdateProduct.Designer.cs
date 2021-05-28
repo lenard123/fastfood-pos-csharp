@@ -87,6 +87,7 @@
             // 
             this.TextPrice.BackColor = System.Drawing.Color.Transparent;
             this.TextPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextPrice.DecimalPlaces = 2;
             this.TextPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.TextPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.TextPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -97,7 +98,17 @@
             this.TextPrice.FocusedState.Parent = this.TextPrice;
             this.TextPrice.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.TextPrice.Increment = new decimal(new int[] {
+            25,
+            0,
+            0,
+            131072});
             this.TextPrice.Location = new System.Drawing.Point(303, 255);
+            this.TextPrice.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.TextPrice.Name = "TextPrice";
             this.TextPrice.ShadowDecoration.Parent = this.TextPrice;
             this.TextPrice.Size = new System.Drawing.Size(384, 36);

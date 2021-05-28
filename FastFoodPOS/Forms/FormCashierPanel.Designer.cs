@@ -53,12 +53,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.ButtonProccess = new Guna.UI2.WinForms.Guna2Button();
             this.ButtonCalculateChange = new Guna.UI2.WinForms.Guna2Button();
-            this.TextPayment = new Guna.UI2.WinForms.Guna2TextBox();
             this.LabelChange = new System.Windows.Forms.Label();
             this.LabelTotal = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.TextPayment = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -70,6 +70,7 @@
             this.guna2Panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TextPayment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -451,12 +452,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.ButtonProccess);
             this.panel2.Controls.Add(this.ButtonCalculateChange);
-            this.panel2.Controls.Add(this.TextPayment);
             this.panel2.Controls.Add(this.LabelChange);
             this.panel2.Controls.Add(this.LabelTotal);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.TextPayment);
             this.panel2.Location = new System.Drawing.Point(10, 287);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(439, 153);
@@ -498,33 +499,6 @@
             this.ButtonCalculateChange.TabIndex = 2;
             this.ButtonCalculateChange.Text = "Calculate Change";
             this.ButtonCalculateChange.Click += new System.EventHandler(this.ButtonCalculateChange_Click);
-            // 
-            // TextPayment
-            // 
-            this.TextPayment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.TextPayment.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TextPayment.DefaultText = "";
-            this.TextPayment.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.TextPayment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.TextPayment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TextPayment.DisabledState.Parent = this.TextPayment;
-            this.TextPayment.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TextPayment.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextPayment.FocusedState.Parent = this.TextPayment;
-            this.TextPayment.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.TextPayment.ForeColor = System.Drawing.Color.Red;
-            this.TextPayment.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextPayment.HoverState.Parent = this.TextPayment;
-            this.TextPayment.Location = new System.Drawing.Point(95, 37);
-            this.TextPayment.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.TextPayment.Name = "TextPayment";
-            this.TextPayment.PasswordChar = '\0';
-            this.TextPayment.PlaceholderText = "";
-            this.TextPayment.SelectedText = "";
-            this.TextPayment.ShadowDecoration.Parent = this.TextPayment;
-            this.TextPayment.Size = new System.Drawing.Size(172, 36);
-            this.TextPayment.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.TextPayment.TabIndex = 1;
             // 
             // LabelChange
             // 
@@ -583,6 +557,41 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Total Price: ";
             // 
+            // TextPayment
+            // 
+            this.TextPayment.BackColor = System.Drawing.Color.Transparent;
+            this.TextPayment.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextPayment.DecimalPlaces = 2;
+            this.TextPayment.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TextPayment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TextPayment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextPayment.DisabledState.Parent = this.TextPayment;
+            this.TextPayment.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.TextPayment.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
+            this.TextPayment.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextPayment.FocusedState.Parent = this.TextPayment;
+            this.TextPayment.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.TextPayment.ForeColor = System.Drawing.Color.Red;
+            this.TextPayment.Increment = new decimal(new int[] {
+            25,
+            0,
+            0,
+            131072});
+            this.TextPayment.Location = new System.Drawing.Point(95, 37);
+            this.TextPayment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TextPayment.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.TextPayment.Name = "TextPayment";
+            this.TextPayment.ShadowDecoration.Parent = this.TextPayment;
+            this.TextPayment.Size = new System.Drawing.Size(213, 36);
+            this.TextPayment.TabIndex = 1;
+            this.TextPayment.ThousandsSeparator = true;
+            this.TextPayment.UpDownButtonBorderVisible = false;
+            this.TextPayment.UpDownButtonFillColor = System.Drawing.Color.LightGray;
+            // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.Image = global::FastFoodPOS.Properties.Resources.mcdonalds;
@@ -629,6 +638,7 @@
             this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TextPayment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -659,7 +669,6 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Button ButtonClear;
         private Guna.UI2.WinForms.Guna2Button ButtonCalculateChange;
-        private Guna.UI2.WinForms.Guna2TextBox TextPayment;
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2Button ButtonProccess;
         private System.Windows.Forms.Label LabelChange;
@@ -669,5 +678,6 @@
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel PanelOrders;
+        private Guna.UI2.WinForms.Guna2NumericUpDown TextPayment;
     }
 }

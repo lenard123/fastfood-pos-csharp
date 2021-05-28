@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserCardComponent));
             this.panel1 = new System.Windows.Forms.Panel();
             this.LabelNameRole = new System.Windows.Forms.Label();
             this.LabelEmail = new System.Windows.Forms.Label();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.ButtonRemove = new Guna.UI2.WinForms.Guna2Button();
             this.PictureImage = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.ButtonActivityLogs = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.ButtonUpdate = new Guna.UI2.WinForms.Guna2CircleButton();
             ((System.ComponentModel.ISupportInitialize)(this.PictureImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,54 +68,27 @@
             this.LabelEmail.TabIndex = 3;
             this.LabelEmail.Text = "lenard.mangayayam@gmail.com";
             // 
-            // guna2Button1
+            // ButtonRemove
             // 
-            this.guna2Button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.guna2Button1.Animated = true;
-            this.guna2Button1.AutoRoundedCorners = true;
-            this.guna2Button1.BorderRadius = 11;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(15)))), ((int)(((byte)(25)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(579, 16);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(25, 25);
-            this.guna2Button1.TabIndex = 4;
-            // 
-            // guna2CircleButton1
-            // 
-            this.guna2CircleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2CircleButton1.CheckedState.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.CustomImages.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton1.HoverState.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.Location = new System.Drawing.Point(548, 16);
-            this.guna2CircleButton1.Name = "guna2CircleButton1";
-            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton1.ShadowDecoration.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.Size = new System.Drawing.Size(25, 25);
-            this.guna2CircleButton1.TabIndex = 5;
-            // 
-            // guna2CircleButton2
-            // 
-            this.guna2CircleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2CircleButton2.CheckedState.Parent = this.guna2CircleButton2;
-            this.guna2CircleButton2.CustomImages.Parent = this.guna2CircleButton2;
-            this.guna2CircleButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.guna2CircleButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CircleButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton2.HoverState.Parent = this.guna2CircleButton2;
-            this.guna2CircleButton2.Location = new System.Drawing.Point(517, 16);
-            this.guna2CircleButton2.Name = "guna2CircleButton2";
-            this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton2.ShadowDecoration.Parent = this.guna2CircleButton2;
-            this.guna2CircleButton2.Size = new System.Drawing.Size(25, 25);
-            this.guna2CircleButton2.TabIndex = 5;
+            this.ButtonRemove.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.ButtonRemove.Animated = true;
+            this.ButtonRemove.AutoRoundedCorners = true;
+            this.ButtonRemove.BorderRadius = 14;
+            this.ButtonRemove.CheckedState.Parent = this.ButtonRemove;
+            this.ButtonRemove.CustomImages.Parent = this.ButtonRemove;
+            this.ButtonRemove.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(15)))), ((int)(((byte)(25)))));
+            this.ButtonRemove.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonRemove.ForeColor = System.Drawing.Color.White;
+            this.ButtonRemove.HoverState.Parent = this.ButtonRemove;
+            this.ButtonRemove.Image = ((System.Drawing.Image)(resources.GetObject("ButtonRemove.Image")));
+            this.ButtonRemove.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ButtonRemove.ImageSize = new System.Drawing.Size(12, 12);
+            this.ButtonRemove.Location = new System.Drawing.Point(579, 16);
+            this.ButtonRemove.Name = "ButtonRemove";
+            this.ButtonRemove.ShadowDecoration.Parent = this.ButtonRemove;
+            this.ButtonRemove.Size = new System.Drawing.Size(30, 30);
+            this.ButtonRemove.TabIndex = 4;
+            this.ButtonRemove.Click += new System.EventHandler(this.ButtonRemove_Click);
             // 
             // PictureImage
             // 
@@ -128,15 +102,54 @@
             this.PictureImage.TabIndex = 6;
             this.PictureImage.TabStop = false;
             // 
+            // ButtonActivityLogs
+            // 
+            this.ButtonActivityLogs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonActivityLogs.CheckedState.Parent = this.ButtonActivityLogs;
+            this.ButtonActivityLogs.CustomImages.Parent = this.ButtonActivityLogs;
+            this.ButtonActivityLogs.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.ButtonActivityLogs.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonActivityLogs.ForeColor = System.Drawing.Color.White;
+            this.ButtonActivityLogs.HoverState.Parent = this.ButtonActivityLogs;
+            this.ButtonActivityLogs.Image = ((System.Drawing.Image)(resources.GetObject("ButtonActivityLogs.Image")));
+            this.ButtonActivityLogs.ImageSize = new System.Drawing.Size(15, 15);
+            this.ButtonActivityLogs.Location = new System.Drawing.Point(511, 16);
+            this.ButtonActivityLogs.Name = "ButtonActivityLogs";
+            this.ButtonActivityLogs.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.ButtonActivityLogs.ShadowDecoration.Parent = this.ButtonActivityLogs;
+            this.ButtonActivityLogs.Size = new System.Drawing.Size(30, 30);
+            this.ButtonActivityLogs.TabIndex = 5;
+            this.ButtonActivityLogs.Click += new System.EventHandler(this.ButtonActivityLogs_Click);
+            // 
+            // ButtonUpdate
+            // 
+            this.ButtonUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonUpdate.CheckedState.Parent = this.ButtonUpdate;
+            this.ButtonUpdate.CustomImages.Parent = this.ButtonUpdate;
+            this.ButtonUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonUpdate.ForeColor = System.Drawing.Color.White;
+            this.ButtonUpdate.HoverState.Parent = this.ButtonUpdate;
+            this.ButtonUpdate.Image = ((System.Drawing.Image)(resources.GetObject("ButtonUpdate.Image")));
+            this.ButtonUpdate.ImageOffset = new System.Drawing.Point(1, 0);
+            this.ButtonUpdate.ImageSize = new System.Drawing.Size(15, 15);
+            this.ButtonUpdate.Location = new System.Drawing.Point(545, 16);
+            this.ButtonUpdate.Name = "ButtonUpdate";
+            this.ButtonUpdate.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.ButtonUpdate.ShadowDecoration.Parent = this.ButtonUpdate;
+            this.ButtonUpdate.Size = new System.Drawing.Size(30, 30);
+            this.ButtonUpdate.TabIndex = 5;
+            this.ButtonUpdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ButtonUpdate.Click += new System.EventHandler(this.ButtonUpdate_Click);
+            // 
             // UserCardComponent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.PictureImage);
-            this.Controls.Add(this.guna2CircleButton2);
-            this.Controls.Add(this.guna2CircleButton1);
-            this.Controls.Add(this.guna2Button1);
+            this.Controls.Add(this.ButtonActivityLogs);
+            this.Controls.Add(this.ButtonUpdate);
+            this.Controls.Add(this.ButtonRemove);
             this.Controls.Add(this.LabelEmail);
             this.Controls.Add(this.LabelNameRole);
             this.Controls.Add(this.panel1);
@@ -156,9 +169,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label LabelNameRole;
         private System.Windows.Forms.Label LabelEmail;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
+        private Guna.UI2.WinForms.Guna2Button ButtonRemove;
         private Guna.UI2.WinForms.Guna2CirclePictureBox PictureImage;
+        private Guna.UI2.WinForms.Guna2CircleButton ButtonActivityLogs;
+        private Guna.UI2.WinForms.Guna2CircleButton ButtonUpdate;
     }
 }

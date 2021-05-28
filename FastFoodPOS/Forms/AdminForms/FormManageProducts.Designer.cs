@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.TextSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.ButtonSearch = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.ButtonsMenu = new System.Windows.Forms.TableLayoutPanel();
             this.ButtonDesserts = new Guna.UI2.WinForms.Guna2Button();
             this.ButtonPackages = new Guna.UI2.WinForms.Guna2Button();
             this.ButtonSnacks = new Guna.UI2.WinForms.Guna2Button();
@@ -43,7 +43,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.ButtonsMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,8 +65,8 @@
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderColor = System.Drawing.Color.Black;
             this.guna2Panel1.BorderRadius = 19;
-            this.guna2Panel1.Controls.Add(this.guna2TextBox1);
-            this.guna2Panel1.Controls.Add(this.guna2Button1);
+            this.guna2Panel1.Controls.Add(this.TextSearch);
+            this.guna2Panel1.Controls.Add(this.ButtonSearch);
             this.guna2Panel1.CustomBorderThickness = new System.Windows.Forms.Padding(1);
             this.guna2Panel1.Location = new System.Drawing.Point(34, 156);
             this.guna2Panel1.Name = "guna2Panel1";
@@ -74,69 +74,70 @@
             this.guna2Panel1.Size = new System.Drawing.Size(759, 40);
             this.guna2Panel1.TabIndex = 4;
             // 
-            // guna2TextBox1
+            // TextSearch
             // 
-            this.guna2TextBox1.Animated = true;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Location = new System.Drawing.Point(0, 0);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "Search for menu";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Size = new System.Drawing.Size(682, 40);
-            this.guna2TextBox1.TabIndex = 3;
+            this.TextSearch.Animated = true;
+            this.TextSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextSearch.DefaultText = "";
+            this.TextSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TextSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TextSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextSearch.DisabledState.Parent = this.TextSearch;
+            this.TextSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TextSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextSearch.FocusedState.Parent = this.TextSearch;
+            this.TextSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextSearch.HoverState.Parent = this.TextSearch;
+            this.TextSearch.Location = new System.Drawing.Point(0, 0);
+            this.TextSearch.Margin = new System.Windows.Forms.Padding(0);
+            this.TextSearch.Name = "TextSearch";
+            this.TextSearch.PasswordChar = '\0';
+            this.TextSearch.PlaceholderText = "Search for menu";
+            this.TextSearch.SelectedText = "";
+            this.TextSearch.ShadowDecoration.Parent = this.TextSearch;
+            this.TextSearch.Size = new System.Drawing.Size(682, 40);
+            this.TextSearch.TabIndex = 3;
             // 
-            // guna2Button1
+            // ButtonSearch
             // 
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(682, 0);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(77, 40);
-            this.guna2Button1.TabIndex = 4;
-            this.guna2Button1.Text = "Search";
+            this.ButtonSearch.CheckedState.Parent = this.ButtonSearch;
+            this.ButtonSearch.CustomImages.Parent = this.ButtonSearch;
+            this.ButtonSearch.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ButtonSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.ButtonSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonSearch.ForeColor = System.Drawing.Color.Black;
+            this.ButtonSearch.HoverState.Parent = this.ButtonSearch;
+            this.ButtonSearch.Location = new System.Drawing.Point(682, 0);
+            this.ButtonSearch.Margin = new System.Windows.Forms.Padding(0);
+            this.ButtonSearch.Name = "ButtonSearch";
+            this.ButtonSearch.ShadowDecoration.Parent = this.ButtonSearch;
+            this.ButtonSearch.Size = new System.Drawing.Size(77, 40);
+            this.ButtonSearch.TabIndex = 4;
+            this.ButtonSearch.Text = "Search";
+            this.ButtonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
             // 
-            // tableLayoutPanel1
+            // ButtonsMenu
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.ButtonsMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.ButtonDesserts, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.ButtonPackages, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.ButtonSnacks, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.ButtonFoods, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.ButtonDrinks, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(35, 79);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(758, 60);
-            this.tableLayoutPanel1.TabIndex = 6;
+            this.ButtonsMenu.ColumnCount = 5;
+            this.ButtonsMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.ButtonsMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.ButtonsMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.ButtonsMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.ButtonsMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.ButtonsMenu.Controls.Add(this.ButtonDesserts, 0, 0);
+            this.ButtonsMenu.Controls.Add(this.ButtonPackages, 0, 0);
+            this.ButtonsMenu.Controls.Add(this.ButtonSnacks, 0, 0);
+            this.ButtonsMenu.Controls.Add(this.ButtonFoods, 0, 0);
+            this.ButtonsMenu.Controls.Add(this.ButtonDrinks, 0, 0);
+            this.ButtonsMenu.Location = new System.Drawing.Point(35, 79);
+            this.ButtonsMenu.Name = "ButtonsMenu";
+            this.ButtonsMenu.RowCount = 1;
+            this.ButtonsMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.ButtonsMenu.Size = new System.Drawing.Size(758, 60);
+            this.ButtonsMenu.TabIndex = 6;
             // 
             // ButtonDesserts
             // 
@@ -293,14 +294,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.ButtonsMenu);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "FormManageProducts";
             this.Size = new System.Drawing.Size(837, 535);
             this.guna2Panel1.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.ButtonsMenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -312,10 +313,10 @@
 
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2TextBox TextSearch;
+        private Guna.UI2.WinForms.Guna2Button ButtonSearch;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel ButtonsMenu;
         private Guna.UI2.WinForms.Guna2Button ButtonDrinks;
         private Guna.UI2.WinForms.Guna2Button ButtonPackages;
         private Guna.UI2.WinForms.Guna2Button ButtonSnacks;

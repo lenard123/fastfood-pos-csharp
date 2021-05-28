@@ -49,6 +49,18 @@ namespace FastFoodPOS.Models
             };
         }
 
+        public void Recover()
+        {
+            IsDeleted = false;
+            Update();
+        }
+
+        public void Remove()
+        {
+            IsDeleted = true;
+            Update();
+        }
+
         public void Update()
         {
             string uploaded_image_path = GetUploadedImagePath(newImage);
@@ -65,10 +77,14 @@ namespace FastFoodPOS.Models
         private string GetUploadedImagePath(string source)
         {
             string fileName = Image;
-            if (source.Length == 0) return Image;
-            if (source.Equals(DEFAULT_IMAGE_PATH)) return DEFAULT_IMAGE_PATH;
-            if (source.Equals(Image)) return Image;
-            if (Image.Equals(DEFAULT_IMAGE_PATH)) fileName = "user-" + DateTime.Now.Ticks + ".jpg";
+
+            if (source == null || source.Length == 0 || source.Equals(Image)) 
+                return Image;//Previous Page
+            if (source.Equals(DEFAULT_IMAGE_PATH)) 
+                return DEFAULT_IMAGE_PATH;//Default Image
+            if (Image.Equals(DEFAULT_IMAGE_PATH)) 
+                fileName = "user-" + DateTime.Now.Ticks + ".jpg";//New Image
+
             return Util.CopyImage(source, fileName);
         }
 
@@ -78,6 +94,24 @@ namespace FastFoodPOS.Models
             if (DEFAULT_IMAGE_PATH.Equals(Image))
                 return DEFAULT_IMAGE_PATH;
             return Util.CopyImage(Image, filename);
+        }
+
+        public static List<User> GetAllDeleted()
+        {
+            var result = new List<User>();
+            using (var cmd = Database.CreateCommand("SELECT * FROM `users` WHERE `is_deleted`=true"))
+            {
+                Database.GetConnection().Open();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        result.Add(ConvertReaderToUser(reader));
+                    }
+                }
+                Database.GetConnection().Close();
+            }
+            return result;
         }
 
         private static User Find(string email)

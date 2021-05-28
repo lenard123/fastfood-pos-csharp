@@ -63,20 +63,20 @@ namespace FastFoodPOS.Components
             DialogResult result = ShowConfirmDialog();
             if (result == DialogResult.Yes)
             {
+                if (product.IsAvailable) Log.AddLog("Set product[" + product.Id + "] to Unavailable");
+                else Log.AddLog("Set product[" + product.Id + "] to Available");
                 product.ToggleAvailability();
-                MessageBox.Show("Updated Successfully");
+                AlertNotification.ShowAlertMessage("Product updated successfully", AlertNotification.AlertType.SUCCESS);
                 UpdateData();
             }
         }
 
         private DialogResult ShowConfirmDialog()
         {
-            return MessageBox.Show(
+            return Dialog.ConfirmDialogBox.ShowDialog(
                 product.IsAvailable
                     ? "Are you sure to make this product Unavailable"
-                    : "Are you sure to make this product Available",
-                "Confirm",
-                MessageBoxButtons.YesNo);
+                    : "Are you sure to make this product Available");
         }
 
         private void ButtonRemove_Click(object sender, EventArgs e)

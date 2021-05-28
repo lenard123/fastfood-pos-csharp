@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Data.Common;
 
@@ -63,6 +59,11 @@ namespace FastFoodPOS.DatabaseUtil
 
         public override string QUERY_SALES_BETWEEN_1{
             get{ return "SELECT * FROM SalesView WHERE day BETWEEN  CAST('@@from' AS DATE) AND CAST('@@to' AS DATE)"; }
+        }
+
+        public override string FormatDateTime(DateTime date)
+        {
+            return date.ToString("YYYY-MM-DD HH:MM:SS");
         }
     }
 }
