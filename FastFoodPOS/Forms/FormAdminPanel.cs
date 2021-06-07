@@ -31,6 +31,11 @@ namespace FastFoodPOS.Forms
             Instance = this;
             LoggedInUser = _LoggedInUser;
 
+
+        }
+
+        public override void OnLoad()
+        {
             Reset();
 
             ButtonDashboard.PerformClick();
@@ -83,6 +88,7 @@ namespace FastFoodPOS.Forms
 
         public void LoadFormControl(UserControl uc)
         {
+            ParentForm.AcceptButton = null;
             DisposeAdminForm(ref uc);
 
             IKeepable ucKeepable = uc as IKeepable;

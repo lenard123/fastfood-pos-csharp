@@ -13,5 +13,7 @@ namespace FastFoodPOS.Forms
         {
             return true;
         }
+
+        public virtual void OnLoad() { }
     }
 }

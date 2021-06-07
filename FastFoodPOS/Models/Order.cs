@@ -12,6 +12,7 @@ namespace FastFoodPOS.Models
     {
         public int Id { get; set; }
         public int ProductId { get; set; }
+        public string TransactionId { get; set; }
         public int Quantity { get; set; }
         public decimal Price { get; set; }
 
@@ -56,6 +57,22 @@ namespace FastFoodPOS.Models
             return product;
         }
 
+        public static List<Order> GetAll()
+        {
+            var result = new List<Order>();
+            using (var cmd = Database.CreateCommand("SELECT * FROM `orders`"))
+            {
+                Database.GetConnection().Open();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                        result.Add(ConvertReaderToOrder(reader));
+                }
+                Database.GetConnection().Close();
+            }
+            return result;
+        }
+
         public static List<Order> GetAll(string id)
         {
             var result = new List<Order>();
@@ -78,8 +95,9 @@ namespace FastFoodPOS.Models
             var result = new Order
             {
                 Id = reader.GetInt32(0),
-                ProductId = reader.GetInt32(1),
-                Quantity = reader.GetInt32(3),
+                ProductId = reader.GetInt16(1),
+                TransactionId = reader.GetString(2),
+                Quantity = reader.GetInt16(3),
                 Price = reader.GetDecimal(4)
             };
             return result;

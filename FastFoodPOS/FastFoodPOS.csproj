@@ -50,20 +50,32 @@
     <ApplicationIcon>mcdonalds.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.95.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.0.10.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\ExcelNumberFormat.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI2">
       <HintPath>..\lib\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
-      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\LiveCharts.dll</HintPath>
     </Reference>
     <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
-      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\LiveCharts.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
-      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\LiveCharts.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
@@ -125,6 +137,12 @@
     <Compile Include="Components\Validator.cs" />
     <Compile Include="DatabaseUtil\DatabaseMSAccessProvider.cs" />
     <Compile Include="DatabaseUtil\DatabaseMySQLProvider.cs" />
+    <Compile Include="Dialog\BackupDialogBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\BackupDialogBox.Designer.cs">
+      <DependentUpon>BackupDialogBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialog\ConfirmDialogBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +293,9 @@
     <EmbeddedResource Include="Components\UserCardComponent.resx">
       <DependentUpon>UserCardComponent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\BackupDialogBox.resx">
+      <DependentUpon>BackupDialogBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialog\ConfirmDialogBox.resx">
       <DependentUpon>ConfirmDialogBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -337,7 +358,6 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

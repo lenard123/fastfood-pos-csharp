@@ -23,7 +23,7 @@ namespace FastFoodPOS.Forms.AdminForms
             InitializeComponent();
             PictureUserImage.ImageLocation = User.DEFAULT_IMAGE_PATH;
             validators = new List<Validator>();
-            validators.Add(new Validator(TextName, LabelName, "Name", "required|min:5"));
+            validators.Add(new Validator(TextName, LabelName, "Name", "required|min:5|name"));
             validators.Add(new Validator(TextEmail, LabelEmail, "Email", "required|email|unique:users,email"));
             validators.Add(new Validator(TextPassword, LabelPassword, "Password", "required|min:8"));
             validators.Add(new Validator(TextConfirmPassword, LabelConfirmPassword, "Confirm Password", "required|min:8|compare"){ compare_control = TextPassword});

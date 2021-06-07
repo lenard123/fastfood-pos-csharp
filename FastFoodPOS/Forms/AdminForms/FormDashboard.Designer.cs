@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDashboard));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,6 +44,7 @@
             this.CartesianChartWeekSales = new LiveCharts.WinForms.CartesianChart();
             this.label10 = new System.Windows.Forms.Label();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.BtnBackupData = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -220,11 +222,31 @@
             this.guna2Panel4.Size = new System.Drawing.Size(968, 280);
             this.guna2Panel4.TabIndex = 4;
             // 
+            // BtnBackupData
+            // 
+            this.BtnBackupData.CheckedState.Parent = this.BtnBackupData;
+            this.BtnBackupData.CustomImages.Parent = this.BtnBackupData;
+            this.BtnBackupData.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(15)))), ((int)(((byte)(25)))));
+            this.BtnBackupData.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BtnBackupData.ForeColor = System.Drawing.Color.White;
+            this.BtnBackupData.HoverState.Parent = this.BtnBackupData;
+            this.BtnBackupData.Image = ((System.Drawing.Image)(resources.GetObject("BtnBackupData.Image")));
+            this.BtnBackupData.ImageOffset = new System.Drawing.Point(-2, 0);
+            this.BtnBackupData.ImageSize = new System.Drawing.Size(15, 15);
+            this.BtnBackupData.Location = new System.Drawing.Point(32, 556);
+            this.BtnBackupData.Name = "BtnBackupData";
+            this.BtnBackupData.ShadowDecoration.Parent = this.BtnBackupData;
+            this.BtnBackupData.Size = new System.Drawing.Size(180, 41);
+            this.BtnBackupData.TabIndex = 14;
+            this.BtnBackupData.Text = "Backup Data";
+            this.BtnBackupData.Click += new System.EventHandler(this.BtnBackupData_Click);
+            // 
             // FormDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.BtnBackupData);
             this.Controls.Add(this.guna2Panel4);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.guna2Panel3);
@@ -263,5 +285,6 @@
         private LiveCharts.WinForms.CartesianChart CartesianChartWeekSales;
         private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
+        private Guna.UI2.WinForms.Guna2Button BtnBackupData;
     }
 }

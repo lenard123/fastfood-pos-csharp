@@ -327,7 +327,6 @@
             // 
             // ButtonLogout
             // 
-            this.ButtonLogout.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.ButtonLogout.CheckedState.FillColor = System.Drawing.Color.Transparent;
             this.ButtonLogout.CheckedState.ForeColor = System.Drawing.Color.White;
             this.ButtonLogout.CheckedState.Parent = this.ButtonLogout;

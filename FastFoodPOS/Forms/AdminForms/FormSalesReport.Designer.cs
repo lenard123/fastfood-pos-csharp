@@ -53,7 +53,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label2.Location = new System.Drawing.Point(39, 81);
+            this.label2.Location = new System.Drawing.Point(39, 87);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 19);
             this.label2.TabIndex = 4;
@@ -68,7 +68,7 @@
             this.DateTimeStart.ForeColor = System.Drawing.Color.Black;
             this.DateTimeStart.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.DateTimeStart.HoverState.Parent = this.DateTimeStart;
-            this.DateTimeStart.Location = new System.Drawing.Point(119, 79);
+            this.DateTimeStart.Location = new System.Drawing.Point(119, 83);
             this.DateTimeStart.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DateTimeStart.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.DateTimeStart.Name = "DateTimeStart";
@@ -91,7 +91,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label3.Location = new System.Drawing.Point(726, 83);
+            this.label3.Location = new System.Drawing.Point(726, 87);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 19);
             this.label3.TabIndex = 4;
@@ -107,7 +107,7 @@
             this.DateTimeEnd.ForeColor = System.Drawing.Color.Black;
             this.DateTimeEnd.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.DateTimeEnd.HoverState.Parent = this.DateTimeEnd;
-            this.DateTimeEnd.Location = new System.Drawing.Point(806, 81);
+            this.DateTimeEnd.Location = new System.Drawing.Point(806, 83);
             this.DateTimeEnd.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DateTimeEnd.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.DateTimeEnd.Name = "DateTimeEnd";

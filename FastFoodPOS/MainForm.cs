@@ -31,6 +31,7 @@ namespace FastFoodPOS
 
         public static void LoadForm(BaseForm form)
         {
+            Instance.AcceptButton = null;
             DisposeContent();
             if (form.IsFullScreen())
             {
@@ -44,6 +45,7 @@ namespace FastFoodPOS
             }
             form.Dock = DockStyle.Fill;
             Instance.Controls.Add(form);
+            form.OnLoad();
         }
 
         private static void DisposeContent()

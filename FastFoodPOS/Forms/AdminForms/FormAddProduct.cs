@@ -72,5 +72,10 @@ namespace FastFoodPOS.Forms.AdminForms
                 TextPrice.Text = "0";
             }
         }
+
+        private void FormAddProduct_Load(object sender, EventArgs e)
+        {
+            ParentForm.AcceptButton = ButtonSave;
+        }
     }
 }

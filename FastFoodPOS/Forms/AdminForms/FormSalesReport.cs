@@ -70,5 +70,10 @@ namespace FastFoodPOS.Forms.AdminForms
                 Values = new ChartValues<decimal>(values)
             });
         }
+
+        private void BtnBackupData_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -76,5 +76,10 @@ namespace FastFoodPOS.Forms.AdminForms
                 LabelFormatter = value => value.ToString() + "PHP"
             });
         }
+
+        private void BtnBackupData_Click(object sender, EventArgs e)
+        {
+            (new Dialog.BackupDialogBox()).ShowDialog();
+        }
     }
 }

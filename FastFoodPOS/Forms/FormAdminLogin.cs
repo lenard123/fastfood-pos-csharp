@@ -25,6 +25,12 @@ namespace FastFoodPOS.Forms
             InitializeComponent();
         }
 
+        public override void OnLoad()
+        {
+            TextEmail.Focus();
+            ParentForm.AcceptButton = ButtonLogin;
+        }
+
         private void ButtonLogin_Click(object sender, EventArgs e)
         {
             try
@@ -40,6 +46,7 @@ namespace FastFoodPOS.Forms
             catch (Level1Exception ex)
             {
                 ex.DisplayMessage();
+                TextEmail.Focus();
             }
         }
 

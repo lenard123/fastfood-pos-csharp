@@ -211,7 +211,7 @@
             this.ComboBoxRole.ShadowDecoration.Parent = this.ComboBoxRole;
             this.ComboBoxRole.Size = new System.Drawing.Size(486, 36);
             this.ComboBoxRole.StartIndex = 0;
-            this.ComboBoxRole.TabIndex = 11;
+            this.ComboBoxRole.TabIndex = 2;
             // 
             // TextConfirmPassword
             // 
@@ -230,13 +230,14 @@
             this.TextConfirmPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextConfirmPassword.HoverState.Parent = this.TextConfirmPassword;
             this.TextConfirmPassword.Location = new System.Drawing.Point(306, 443);
+            this.TextConfirmPassword.MaxLength = 100;
             this.TextConfirmPassword.Name = "TextConfirmPassword";
             this.TextConfirmPassword.PasswordChar = '\0';
             this.TextConfirmPassword.PlaceholderText = "Type the same password to confirm";
             this.TextConfirmPassword.SelectedText = "";
             this.TextConfirmPassword.ShadowDecoration.Parent = this.TextConfirmPassword;
             this.TextConfirmPassword.Size = new System.Drawing.Size(486, 36);
-            this.TextConfirmPassword.TabIndex = 10;
+            this.TextConfirmPassword.TabIndex = 4;
             this.TextConfirmPassword.UseSystemPasswordChar = true;
             // 
             // TextPassword
@@ -256,13 +257,14 @@
             this.TextPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextPassword.HoverState.Parent = this.TextPassword;
             this.TextPassword.Location = new System.Drawing.Point(306, 349);
+            this.TextPassword.MaxLength = 100;
             this.TextPassword.Name = "TextPassword";
             this.TextPassword.PasswordChar = '\0';
             this.TextPassword.PlaceholderText = "Must be atleast 8 characters";
             this.TextPassword.SelectedText = "";
             this.TextPassword.ShadowDecoration.Parent = this.TextPassword;
             this.TextPassword.Size = new System.Drawing.Size(486, 36);
-            this.TextPassword.TabIndex = 10;
+            this.TextPassword.TabIndex = 3;
             this.TextPassword.UseSystemPasswordChar = true;
             // 
             // TextEmail
@@ -282,13 +284,14 @@
             this.TextEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextEmail.HoverState.Parent = this.TextEmail;
             this.TextEmail.Location = new System.Drawing.Point(306, 164);
+            this.TextEmail.MaxLength = 100;
             this.TextEmail.Name = "TextEmail";
             this.TextEmail.PasswordChar = '\0';
             this.TextEmail.PlaceholderText = "(e.g. johndoe@domain.com)";
             this.TextEmail.SelectedText = "";
             this.TextEmail.ShadowDecoration.Parent = this.TextEmail;
             this.TextEmail.Size = new System.Drawing.Size(486, 36);
-            this.TextEmail.TabIndex = 10;
+            this.TextEmail.TabIndex = 1;
             // 
             // label6
             // 
@@ -317,13 +320,14 @@
             this.TextName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextName.HoverState.Parent = this.TextName;
             this.TextName.Location = new System.Drawing.Point(306, 65);
+            this.TextName.MaxLength = 50;
             this.TextName.Name = "TextName";
             this.TextName.PasswordChar = '\0';
             this.TextName.PlaceholderText = "(e.g. John Doe)";
             this.TextName.SelectedText = "";
             this.TextName.ShadowDecoration.Parent = this.TextName;
             this.TextName.Size = new System.Drawing.Size(486, 36);
-            this.TextName.TabIndex = 10;
+            this.TextName.TabIndex = 0;
             // 
             // label5
             // 

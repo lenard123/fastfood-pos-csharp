@@ -119,7 +119,7 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(402, 43);
-            this.guna2Panel1.TabIndex = 3;
+            this.guna2Panel1.TabIndex = 0;
             // 
             // pictureBox1
             // 
@@ -154,7 +154,7 @@
             this.TextEmail.SelectedText = "";
             this.TextEmail.ShadowDecoration.Parent = this.TextEmail;
             this.TextEmail.Size = new System.Drawing.Size(344, 33);
-            this.TextEmail.TabIndex = 4;
+            this.TextEmail.TabIndex = 0;
             // 
             // guna2Panel2
             // 
@@ -168,7 +168,7 @@
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
             this.guna2Panel2.Size = new System.Drawing.Size(402, 43);
-            this.guna2Panel2.TabIndex = 5;
+            this.guna2Panel2.TabIndex = 1;
             // 
             // VisibilityToggler
             // 
@@ -226,7 +226,7 @@
             this.TextPassword.SelectedText = "";
             this.TextPassword.ShadowDecoration.Parent = this.TextPassword;
             this.TextPassword.Size = new System.Drawing.Size(318, 33);
-            this.TextPassword.TabIndex = 4;
+            this.TextPassword.TabIndex = 0;
             this.TextPassword.UseSystemPasswordChar = true;
             // 
             // ButtonLogin
@@ -242,7 +242,7 @@
             this.ButtonLogin.Name = "ButtonLogin";
             this.ButtonLogin.ShadowDecoration.Parent = this.ButtonLogin;
             this.ButtonLogin.Size = new System.Drawing.Size(402, 45);
-            this.ButtonLogin.TabIndex = 6;
+            this.ButtonLogin.TabIndex = 2;
             this.ButtonLogin.Text = "LOGIN";
             this.ButtonLogin.Click += new System.EventHandler(this.ButtonLogin_Click);
             // 

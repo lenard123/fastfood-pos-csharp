@@ -100,6 +100,21 @@ namespace FastFoodPOS.Models
             return result;
         }
 
+        public static List<Transaction> GetAllTransactions()
+        {
+            var result = new List<Transaction>();
+            using (var cmd = Database.CreateCommand("SELECT * FROM `TransactionsView`"))
+            {
+                Database.GetConnection().Open();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read()) result.Add(ConvertReaderToTransaction(reader));
+                }
+                Database.GetConnection().Close();
+            }
+            return result;
+        }
+
         private static Transaction ConvertReaderToTransaction(DbDataReader reader)
         {
             return new Transaction(reader.GetDecimal(4))

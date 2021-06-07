@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddProduct));
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.TextPrice = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.LabelName = new System.Windows.Forms.Label();
             this.ButtonReset = new Guna.UI2.WinForms.Guna2Button();
             this.ButtonSave = new Guna.UI2.WinForms.Guna2Button();
             this.ButtonChangeImage = new Guna.UI2.WinForms.Guna2Button();
@@ -44,11 +46,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.TextName = new Guna.UI2.WinForms.Guna2TextBox();
             this.OpenFileDialogChangeImage = new System.Windows.Forms.OpenFileDialog();
-            this.LabelName = new System.Windows.Forms.Label();
-            this.TextPrice = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureProductImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextPrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureProductImage)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -84,6 +84,49 @@
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(712, 418);
             this.guna2Panel1.TabIndex = 3;
+            // 
+            // TextPrice
+            // 
+            this.TextPrice.BackColor = System.Drawing.Color.Transparent;
+            this.TextPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextPrice.DecimalPlaces = 2;
+            this.TextPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TextPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TextPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextPrice.DisabledState.Parent = this.TextPrice;
+            this.TextPrice.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.TextPrice.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
+            this.TextPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextPrice.FocusedState.Parent = this.TextPrice;
+            this.TextPrice.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.TextPrice.Increment = new decimal(new int[] {
+            25,
+            0,
+            0,
+            131072});
+            this.TextPrice.Location = new System.Drawing.Point(303, 240);
+            this.TextPrice.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.TextPrice.Name = "TextPrice";
+            this.TextPrice.ShadowDecoration.Parent = this.TextPrice;
+            this.TextPrice.Size = new System.Drawing.Size(384, 36);
+            this.TextPrice.TabIndex = 9;
+            this.TextPrice.UpDownButtonFillColor = System.Drawing.Color.LightGray;
+            this.TextPrice.Leave += new System.EventHandler(this.TextPrice_Leave);
+            // 
+            // LabelName
+            // 
+            this.LabelName.AutoSize = true;
+            this.LabelName.ForeColor = System.Drawing.Color.Red;
+            this.LabelName.Location = new System.Drawing.Point(300, 103);
+            this.LabelName.Name = "LabelName";
+            this.LabelName.Size = new System.Drawing.Size(38, 13);
+            this.LabelName.TabIndex = 8;
+            this.LabelName.Text = "label2";
             // 
             // ButtonReset
             // 
@@ -283,49 +326,6 @@
             this.OpenFileDialogChangeImage.Filter = "Image Files|*.jpg;*.png;*.jpeg";
             this.OpenFileDialogChangeImage.RestoreDirectory = true;
             // 
-            // LabelName
-            // 
-            this.LabelName.AutoSize = true;
-            this.LabelName.ForeColor = System.Drawing.Color.Red;
-            this.LabelName.Location = new System.Drawing.Point(300, 103);
-            this.LabelName.Name = "LabelName";
-            this.LabelName.Size = new System.Drawing.Size(38, 13);
-            this.LabelName.TabIndex = 8;
-            this.LabelName.Text = "label2";
-            // 
-            // TextPrice
-            // 
-            this.TextPrice.BackColor = System.Drawing.Color.Transparent;
-            this.TextPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TextPrice.DecimalPlaces = 2;
-            this.TextPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.TextPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.TextPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TextPrice.DisabledState.Parent = this.TextPrice;
-            this.TextPrice.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            this.TextPrice.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
-            this.TextPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextPrice.FocusedState.Parent = this.TextPrice;
-            this.TextPrice.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.TextPrice.Increment = new decimal(new int[] {
-            25,
-            0,
-            0,
-            131072});
-            this.TextPrice.Location = new System.Drawing.Point(303, 240);
-            this.TextPrice.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.TextPrice.Name = "TextPrice";
-            this.TextPrice.ShadowDecoration.Parent = this.TextPrice;
-            this.TextPrice.Size = new System.Drawing.Size(384, 36);
-            this.TextPrice.TabIndex = 9;
-            this.TextPrice.UpDownButtonFillColor = System.Drawing.Color.LightGray;
-            this.TextPrice.Leave += new System.EventHandler(this.TextPrice_Leave);
-            // 
             // FormAddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -336,10 +336,11 @@
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "FormAddProduct";
             this.Size = new System.Drawing.Size(786, 740);
+            this.Load += new System.EventHandler(this.FormAddProduct_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureProductImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextPrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureProductImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -257,10 +257,10 @@
             // 
             // OpenFileDialogChangeImage
             // 
-            this.OpenFileDialogChangeImage.Filter = "JPG(*.JPG)|*.jpg";
+            this.OpenFileDialogChangeImage.Filter = "Image Files|*.jpg;*.png;*.jpeg";
             this.OpenFileDialogChangeImage.RestoreDirectory = true;
             // 
-            // FormUpdateUser
+            // FormUpdateCurrentUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -268,7 +268,7 @@
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "FormUpdateUser";
+            this.Name = "FormUpdateCurrentUser";
             this.Size = new System.Drawing.Size(813, 720);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
