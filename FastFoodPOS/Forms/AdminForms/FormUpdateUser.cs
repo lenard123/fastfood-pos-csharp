@@ -65,5 +65,10 @@ namespace FastFoodPOS.Forms.AdminForms
                 PictureUserImage.ImageLocation = OpenFileDialogChangeImage.FileName;
             }
         }
+
+        private void ButtonChangePassword_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

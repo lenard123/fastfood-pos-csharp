@@ -283,6 +283,16 @@ namespace FastFoodPOS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap question_circle_gray {
+            get {
+                object obj = ResourceManager.GetObject("question_circle_gray", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap receipt_gray {
             get {
                 object obj = ResourceManager.GetObject("receipt_gray", resourceCulture);
@@ -316,6 +326,16 @@ namespace FastFoodPOS.Properties {
         internal static System.Drawing.Bitmap sales_white {
             get {
                 object obj = ResourceManager.GetObject("sales_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search_gray {
+            get {
+                object obj = ResourceManager.GetObject("search_gray", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

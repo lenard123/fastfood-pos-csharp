@@ -36,7 +36,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.ButtonsMenuPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.ButtonDashboard = new Guna.UI2.WinForms.Guna2Button();
-            this.ButtonAddProduct = new Guna.UI2.WinForms.Guna2Button();
             this.ButtonManageProduct = new Guna.UI2.WinForms.Guna2Button();
             this.ButtonTransaction = new Guna.UI2.WinForms.Guna2Button();
             this.ButtonSales = new Guna.UI2.WinForms.Guna2Button();
@@ -124,7 +123,6 @@
             // ButtonsMenuPanel
             // 
             this.ButtonsMenuPanel.Controls.Add(this.ButtonDashboard);
-            this.ButtonsMenuPanel.Controls.Add(this.ButtonAddProduct);
             this.ButtonsMenuPanel.Controls.Add(this.ButtonManageProduct);
             this.ButtonsMenuPanel.Controls.Add(this.ButtonTransaction);
             this.ButtonsMenuPanel.Controls.Add(this.ButtonSales);
@@ -163,33 +161,6 @@
             this.ButtonDashboard.Text = "Dashboard";
             this.ButtonDashboard.Click += new System.EventHandler(this.ButtonMenu_Click);
             // 
-            // ButtonAddProduct
-            // 
-            this.ButtonAddProduct.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.ButtonAddProduct.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(192)))), ((int)(((byte)(7)))));
-            this.ButtonAddProduct.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.ButtonAddProduct.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.ButtonAddProduct.CheckedState.Image = global::FastFoodPOS.Properties.Resources.burger_soda_plus_white;
-            this.ButtonAddProduct.CheckedState.Parent = this.ButtonAddProduct;
-            this.ButtonAddProduct.CustomBorderThickness = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.ButtonAddProduct.CustomImages.Parent = this.ButtonAddProduct;
-            this.ButtonAddProduct.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.ButtonAddProduct.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.ButtonAddProduct.ForeColor = System.Drawing.Color.Gray;
-            this.ButtonAddProduct.HoverState.Parent = this.ButtonAddProduct;
-            this.ButtonAddProduct.Image = global::FastFoodPOS.Properties.Resources.burger_soda_plus_gray;
-            this.ButtonAddProduct.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.ButtonAddProduct.ImageOffset = new System.Drawing.Point(20, 0);
-            this.ButtonAddProduct.Location = new System.Drawing.Point(0, 45);
-            this.ButtonAddProduct.Margin = new System.Windows.Forms.Padding(0);
-            this.ButtonAddProduct.Name = "ButtonAddProduct";
-            this.ButtonAddProduct.ShadowDecoration.Parent = this.ButtonAddProduct;
-            this.ButtonAddProduct.Size = new System.Drawing.Size(340, 45);
-            this.ButtonAddProduct.TabIndex = 10;
-            this.ButtonAddProduct.Tag = "2";
-            this.ButtonAddProduct.Text = "Add Product";
-            this.ButtonAddProduct.Click += new System.EventHandler(this.ButtonMenu_Click);
-            // 
             // ButtonManageProduct
             // 
             this.ButtonManageProduct.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
@@ -207,7 +178,7 @@
             this.ButtonManageProduct.Image = global::FastFoodPOS.Properties.Resources.burger_soda_gray;
             this.ButtonManageProduct.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.ButtonManageProduct.ImageOffset = new System.Drawing.Point(20, 0);
-            this.ButtonManageProduct.Location = new System.Drawing.Point(0, 90);
+            this.ButtonManageProduct.Location = new System.Drawing.Point(0, 45);
             this.ButtonManageProduct.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonManageProduct.Name = "ButtonManageProduct";
             this.ButtonManageProduct.ShadowDecoration.Parent = this.ButtonManageProduct;
@@ -234,7 +205,7 @@
             this.ButtonTransaction.Image = global::FastFoodPOS.Properties.Resources.receipt_gray;
             this.ButtonTransaction.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.ButtonTransaction.ImageOffset = new System.Drawing.Point(20, 0);
-            this.ButtonTransaction.Location = new System.Drawing.Point(0, 135);
+            this.ButtonTransaction.Location = new System.Drawing.Point(0, 90);
             this.ButtonTransaction.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonTransaction.Name = "ButtonTransaction";
             this.ButtonTransaction.ShadowDecoration.Parent = this.ButtonTransaction;
@@ -261,7 +232,7 @@
             this.ButtonSales.Image = global::FastFoodPOS.Properties.Resources.sales_gray;
             this.ButtonSales.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.ButtonSales.ImageOffset = new System.Drawing.Point(20, 0);
-            this.ButtonSales.Location = new System.Drawing.Point(0, 180);
+            this.ButtonSales.Location = new System.Drawing.Point(0, 135);
             this.ButtonSales.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonSales.Name = "ButtonSales";
             this.ButtonSales.ShadowDecoration.Parent = this.ButtonSales;
@@ -288,7 +259,7 @@
             this.ButtonUsers.Image = global::FastFoodPOS.Properties.Resources.users_gray;
             this.ButtonUsers.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.ButtonUsers.ImageOffset = new System.Drawing.Point(20, 0);
-            this.ButtonUsers.Location = new System.Drawing.Point(0, 225);
+            this.ButtonUsers.Location = new System.Drawing.Point(0, 180);
             this.ButtonUsers.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonUsers.Name = "ButtonUsers";
             this.ButtonUsers.ShadowDecoration.Parent = this.ButtonUsers;
@@ -315,7 +286,7 @@
             this.ButtonArchives.Image = global::FastFoodPOS.Properties.Resources.archive_gray;
             this.ButtonArchives.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.ButtonArchives.ImageOffset = new System.Drawing.Point(20, 0);
-            this.ButtonArchives.Location = new System.Drawing.Point(0, 270);
+            this.ButtonArchives.Location = new System.Drawing.Point(0, 225);
             this.ButtonArchives.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonArchives.Name = "ButtonArchives";
             this.ButtonArchives.ShadowDecoration.Parent = this.ButtonArchives;
@@ -338,7 +309,7 @@
             this.ButtonLogout.Image = global::FastFoodPOS.Properties.Resources.sign_out_gray;
             this.ButtonLogout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.ButtonLogout.ImageOffset = new System.Drawing.Point(20, 0);
-            this.ButtonLogout.Location = new System.Drawing.Point(0, 315);
+            this.ButtonLogout.Location = new System.Drawing.Point(0, 270);
             this.ButtonLogout.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonLogout.Name = "ButtonLogout";
             this.ButtonLogout.ShadowDecoration.Parent = this.ButtonLogout;
@@ -436,7 +407,6 @@
         private Guna.UI2.WinForms.Guna2Button ButtonUpdateInfo;
         private System.Windows.Forms.FlowLayoutPanel ButtonsMenuPanel;
         private Guna.UI2.WinForms.Guna2Button ButtonDashboard;
-        private Guna.UI2.WinForms.Guna2Button ButtonAddProduct;
         private Guna.UI2.WinForms.Guna2Button ButtonManageProduct;
         private Guna.UI2.WinForms.Guna2Button ButtonTransaction;
         private Guna.UI2.WinForms.Guna2Button ButtonSales;

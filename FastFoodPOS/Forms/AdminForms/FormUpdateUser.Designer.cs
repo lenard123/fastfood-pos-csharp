@@ -34,7 +34,6 @@
             this.LabelName = new System.Windows.Forms.Label();
             this.ButtonSave = new Guna.UI2.WinForms.Guna2Button();
             this.ButtonReset = new Guna.UI2.WinForms.Guna2Button();
-            this.ButtonChangePassword = new Guna.UI2.WinForms.Guna2Button();
             this.TextEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.TextName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -57,7 +56,6 @@
             this.guna2Panel1.Controls.Add(this.LabelName);
             this.guna2Panel1.Controls.Add(this.ButtonSave);
             this.guna2Panel1.Controls.Add(this.ButtonReset);
-            this.guna2Panel1.Controls.Add(this.ButtonChangePassword);
             this.guna2Panel1.Controls.Add(this.TextEmail);
             this.guna2Panel1.Controls.Add(this.TextName);
             this.guna2Panel1.Controls.Add(this.label3);
@@ -118,31 +116,13 @@
             this.ButtonReset.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ButtonReset.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ButtonReset.HoverState.Parent = this.ButtonReset;
-            this.ButtonReset.Location = new System.Drawing.Point(54, 505);
+            this.ButtonReset.Location = new System.Drawing.Point(242, 505);
             this.ButtonReset.Name = "ButtonReset";
             this.ButtonReset.ShadowDecoration.Parent = this.ButtonReset;
             this.ButtonReset.Size = new System.Drawing.Size(146, 45);
             this.ButtonReset.TabIndex = 13;
             this.ButtonReset.Text = "Reset";
             this.ButtonReset.Click += new System.EventHandler(this.ButtonReset_Click);
-            // 
-            // ButtonChangePassword
-            // 
-            this.ButtonChangePassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ButtonChangePassword.BorderColor = System.Drawing.Color.DarkGray;
-            this.ButtonChangePassword.BorderThickness = 1;
-            this.ButtonChangePassword.CheckedState.Parent = this.ButtonChangePassword;
-            this.ButtonChangePassword.CustomImages.Parent = this.ButtonChangePassword;
-            this.ButtonChangePassword.FillColor = System.Drawing.Color.White;
-            this.ButtonChangePassword.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ButtonChangePassword.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ButtonChangePassword.HoverState.Parent = this.ButtonChangePassword;
-            this.ButtonChangePassword.Location = new System.Drawing.Point(224, 505);
-            this.ButtonChangePassword.Name = "ButtonChangePassword";
-            this.ButtonChangePassword.ShadowDecoration.Parent = this.ButtonChangePassword;
-            this.ButtonChangePassword.Size = new System.Drawing.Size(146, 45);
-            this.ButtonChangePassword.TabIndex = 13;
-            this.ButtonChangePassword.Text = "Change Password";
             // 
             // TextEmail
             // 
@@ -308,7 +288,6 @@
         private System.Windows.Forms.Label LabelName;
         private Guna.UI2.WinForms.Guna2Button ButtonSave;
         private Guna.UI2.WinForms.Guna2Button ButtonReset;
-        private Guna.UI2.WinForms.Guna2Button ButtonChangePassword;
         private Guna.UI2.WinForms.Guna2TextBox TextEmail;
         private Guna.UI2.WinForms.Guna2TextBox TextName;
         private System.Windows.Forms.Label label3;

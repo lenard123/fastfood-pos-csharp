@@ -28,12 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.TextSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.ButtonSearch = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.ButtonsMenu = new System.Windows.Forms.TableLayoutPanel();
             this.ButtonDesserts = new Guna.UI2.WinForms.Guna2Button();
             this.ButtonPackages = new Guna.UI2.WinForms.Guna2Button();
@@ -42,7 +37,8 @@
             this.ButtonDrinks = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.guna2Panel1.SuspendLayout();
+            this.TextSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.ButtonAddProduct = new Guna.UI2.WinForms.Guna2Button();
             this.ButtonsMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -56,66 +52,6 @@
             this.label1.Size = new System.Drawing.Size(182, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "Manage Products";
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Panel1.AutoRoundedCorners = true;
-            this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel1.BorderColor = System.Drawing.Color.Black;
-            this.guna2Panel1.BorderRadius = 19;
-            this.guna2Panel1.Controls.Add(this.TextSearch);
-            this.guna2Panel1.Controls.Add(this.ButtonSearch);
-            this.guna2Panel1.CustomBorderThickness = new System.Windows.Forms.Padding(1);
-            this.guna2Panel1.Location = new System.Drawing.Point(34, 156);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(759, 40);
-            this.guna2Panel1.TabIndex = 4;
-            // 
-            // TextSearch
-            // 
-            this.TextSearch.Animated = true;
-            this.TextSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TextSearch.DefaultText = "";
-            this.TextSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.TextSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.TextSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TextSearch.DisabledState.Parent = this.TextSearch;
-            this.TextSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TextSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TextSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextSearch.FocusedState.Parent = this.TextSearch;
-            this.TextSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextSearch.HoverState.Parent = this.TextSearch;
-            this.TextSearch.Location = new System.Drawing.Point(0, 0);
-            this.TextSearch.Margin = new System.Windows.Forms.Padding(0);
-            this.TextSearch.Name = "TextSearch";
-            this.TextSearch.PasswordChar = '\0';
-            this.TextSearch.PlaceholderText = "Search for menu";
-            this.TextSearch.SelectedText = "";
-            this.TextSearch.ShadowDecoration.Parent = this.TextSearch;
-            this.TextSearch.Size = new System.Drawing.Size(682, 40);
-            this.TextSearch.TabIndex = 3;
-            // 
-            // ButtonSearch
-            // 
-            this.ButtonSearch.CheckedState.Parent = this.ButtonSearch;
-            this.ButtonSearch.CustomImages.Parent = this.ButtonSearch;
-            this.ButtonSearch.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ButtonSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.ButtonSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ButtonSearch.ForeColor = System.Drawing.Color.Black;
-            this.ButtonSearch.HoverState.Parent = this.ButtonSearch;
-            this.ButtonSearch.Location = new System.Drawing.Point(682, 0);
-            this.ButtonSearch.Margin = new System.Windows.Forms.Padding(0);
-            this.ButtonSearch.Name = "ButtonSearch";
-            this.ButtonSearch.ShadowDecoration.Parent = this.ButtonSearch;
-            this.ButtonSearch.Size = new System.Drawing.Size(77, 40);
-            this.ButtonSearch.TabIndex = 4;
-            this.ButtonSearch.Text = "Search";
-            this.ButtonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
             // 
             // ButtonsMenu
             // 
@@ -271,9 +207,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.flowLayoutPanel1);
-            this.panel1.Location = new System.Drawing.Point(35, 214);
+            this.panel1.Location = new System.Drawing.Point(35, 209);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(758, 293);
+            this.panel1.Size = new System.Drawing.Size(758, 298);
             this.panel1.TabIndex = 7;
             this.panel1.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
             // 
@@ -288,19 +224,71 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(735, 0);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
+            // TextSearch
+            // 
+            this.TextSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextSearch.Animated = true;
+            this.TextSearch.AutoRoundedCorners = true;
+            this.TextSearch.BorderRadius = 19;
+            this.TextSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextSearch.DefaultText = "";
+            this.TextSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TextSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TextSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextSearch.DisabledState.Parent = this.TextSearch;
+            this.TextSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextSearch.FocusedState.Parent = this.TextSearch;
+            this.TextSearch.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.TextSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextSearch.HoverState.Parent = this.TextSearch;
+            this.TextSearch.IconLeft = global::FastFoodPOS.Properties.Resources.search_gray;
+            this.TextSearch.IconLeftOffset = new System.Drawing.Point(10, 0);
+            this.TextSearch.IconLeftSize = new System.Drawing.Size(15, 15);
+            this.TextSearch.Location = new System.Drawing.Point(467, 154);
+            this.TextSearch.Margin = new System.Windows.Forms.Padding(0);
+            this.TextSearch.Name = "TextSearch";
+            this.TextSearch.PasswordChar = '\0';
+            this.TextSearch.PlaceholderText = "Search for menu";
+            this.TextSearch.SelectedText = "";
+            this.TextSearch.ShadowDecoration.Parent = this.TextSearch;
+            this.TextSearch.Size = new System.Drawing.Size(326, 40);
+            this.TextSearch.TabIndex = 8;
+            this.TextSearch.TextOffset = new System.Drawing.Point(10, 0);
+            // 
+            // ButtonAddProduct
+            // 
+            this.ButtonAddProduct.AutoRoundedCorners = true;
+            this.ButtonAddProduct.BorderRadius = 19;
+            this.ButtonAddProduct.CheckedState.Parent = this.ButtonAddProduct;
+            this.ButtonAddProduct.CustomImages.Parent = this.ButtonAddProduct;
+            this.ButtonAddProduct.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(185)))), ((int)(((byte)(129)))));
+            this.ButtonAddProduct.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonAddProduct.ForeColor = System.Drawing.Color.White;
+            this.ButtonAddProduct.HoverState.Parent = this.ButtonAddProduct;
+            this.ButtonAddProduct.Image = global::FastFoodPOS.Properties.Resources.burger_soda_plus_white;
+            this.ButtonAddProduct.ImageOffset = new System.Drawing.Point(-2, 0);
+            this.ButtonAddProduct.Location = new System.Drawing.Point(34, 154);
+            this.ButtonAddProduct.Name = "ButtonAddProduct";
+            this.ButtonAddProduct.ShadowDecoration.Parent = this.ButtonAddProduct;
+            this.ButtonAddProduct.Size = new System.Drawing.Size(161, 40);
+            this.ButtonAddProduct.TabIndex = 9;
+            this.ButtonAddProduct.Text = "Add Products";
+            this.ButtonAddProduct.Click += new System.EventHandler(this.ButtonAddProduct_Click);
+            // 
             // FormManageProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.ButtonAddProduct);
+            this.Controls.Add(this.TextSearch);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ButtonsMenu);
-            this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "FormManageProducts";
             this.Size = new System.Drawing.Size(837, 535);
-            this.guna2Panel1.ResumeLayout(false);
             this.ButtonsMenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -312,10 +300,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2TextBox TextSearch;
-        private Guna.UI2.WinForms.Guna2Button ButtonSearch;
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.TableLayoutPanel ButtonsMenu;
         private Guna.UI2.WinForms.Guna2Button ButtonDrinks;
         private Guna.UI2.WinForms.Guna2Button ButtonPackages;
@@ -324,5 +308,7 @@
         private Guna.UI2.WinForms.Guna2Button ButtonDesserts;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private Guna.UI2.WinForms.Guna2TextBox TextSearch;
+        private Guna.UI2.WinForms.Guna2Button ButtonAddProduct;
     }
 }

@@ -49,6 +49,26 @@
   <PropertyGroup>
     <ApplicationIcon>mcdonalds.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="ClosedXML, Version=0.95.4.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -149,6 +169,12 @@
     <Compile Include="Dialog\ConfirmDialogBox.Designer.cs">
       <DependentUpon>ConfirmDialogBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialog\HelpDialogBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\HelpDialogBox.Designer.cs">
+      <DependentUpon>HelpDialogBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="ErrorHandler\Level1Exception.cs" />
     <Compile Include="Forms\AdminForms\FormActivityLog.cs">
       <SubType>UserControl</SubType>
@@ -167,6 +193,12 @@
     </Compile>
     <Compile Include="Forms\AdminForms\FormAddUser.Designer.cs">
       <DependentUpon>FormAddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminForms\FormChangePassword.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminForms\FormChangePassword.Designer.cs">
+      <DependentUpon>FormChangePassword.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AdminForms\FormDashboard.cs">
       <SubType>UserControl</SubType>
@@ -232,6 +264,12 @@
     <Compile Include="Forms\BaseForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Forms\CashierForms\FormUpdatePassword.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\CashierForms\FormUpdatePassword.Designer.cs">
+      <DependentUpon>FormUpdatePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CashierForms\ProcessOrder.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -250,11 +288,29 @@
     <Compile Include="Forms\FormAdminPanel.Designer.cs">
       <DependentUpon>FormAdminPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CashierForms\FormPOS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\CashierForms\FormPOS.Designer.cs">
+      <DependentUpon>FormPOS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormCashierPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\FormCashierPanel.Designer.cs">
       <DependentUpon>FormCashierPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormLoading.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLoading.Designer.cs">
+      <DependentUpon>FormLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormRegistration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRegistration.Designer.cs">
+      <DependentUpon>FormRegistration.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -299,6 +355,9 @@
     <EmbeddedResource Include="Dialog\ConfirmDialogBox.resx">
       <DependentUpon>ConfirmDialogBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\HelpDialogBox.resx">
+      <DependentUpon>HelpDialogBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminForms\FormActivityLog.resx">
       <DependentUpon>FormActivityLog.cs</DependentUpon>
     </EmbeddedResource>
@@ -307,6 +366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminForms\FormAddUser.resx">
       <DependentUpon>FormAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminForms\FormChangePassword.resx">
+      <DependentUpon>FormChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminForms\FormDashboard.resx">
       <DependentUpon>FormDashboard.cs</DependentUpon>
@@ -338,6 +400,9 @@
     <EmbeddedResource Include="Forms\AdminForms\FormUsersArchive.resx">
       <DependentUpon>FormUsersArchive.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CashierForms\FormUpdatePassword.resx">
+      <DependentUpon>FormUpdatePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CashierForms\ProcessOrder.resx">
       <DependentUpon>ProcessOrder.cs</DependentUpon>
     </EmbeddedResource>
@@ -347,8 +412,17 @@
     <EmbeddedResource Include="Forms\FormAdminPanel.resx">
       <DependentUpon>FormAdminPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CashierForms\FormPOS.resx">
+      <DependentUpon>FormPOS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCashierPanel.resx">
       <DependentUpon>FormCashierPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLoading.resx">
+      <DependentUpon>FormLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRegistration.resx">
+      <DependentUpon>FormRegistration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -396,6 +470,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="mcdonalds.ico" />
+    <None Include="Resources\search_gray.png" />
+    <None Include="Resources\question_circle_gray.png" />
     <None Include="Resources\info.png" />
     <None Include="Resources\error-white.png" />
     <None Include="Resources\check.png" />

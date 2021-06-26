@@ -119,6 +119,7 @@
             this.ButtonActivityLogs.ShadowDecoration.Parent = this.ButtonActivityLogs;
             this.ButtonActivityLogs.Size = new System.Drawing.Size(30, 30);
             this.ButtonActivityLogs.TabIndex = 5;
+            this.ButtonActivityLogs.Visible = false;
             this.ButtonActivityLogs.Click += new System.EventHandler(this.ButtonActivityLogs_Click);
             // 
             // ButtonUpdate

@@ -46,6 +46,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.TextName = new Guna.UI2.WinForms.Guna2TextBox();
             this.OpenFileDialogChangeImage = new System.Windows.Forms.OpenFileDialog();
+            this.guna2VSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
+            this.LinkBack = new System.Windows.Forms.LinkLabel();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TextPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureProductImage)).BeginInit();
@@ -326,11 +328,32 @@
             this.OpenFileDialogChangeImage.Filter = "Image Files|*.jpg;*.png;*.jpeg";
             this.OpenFileDialogChangeImage.RestoreDirectory = true;
             // 
+            // guna2VSeparator1
+            // 
+            this.guna2VSeparator1.Location = new System.Drawing.Point(220, 30);
+            this.guna2VSeparator1.Name = "guna2VSeparator1";
+            this.guna2VSeparator1.Size = new System.Drawing.Size(10, 30);
+            this.guna2VSeparator1.TabIndex = 4;
+            // 
+            // LinkBack
+            // 
+            this.LinkBack.AutoSize = true;
+            this.LinkBack.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LinkBack.Location = new System.Drawing.Point(246, 30);
+            this.LinkBack.Name = "LinkBack";
+            this.LinkBack.Size = new System.Drawing.Size(92, 30);
+            this.LinkBack.TabIndex = 5;
+            this.LinkBack.TabStop = true;
+            this.LinkBack.Text = "Go Back";
+            this.LinkBack.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkBack_LinkClicked);
+            // 
             // FormAddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.LinkBack);
+            this.Controls.Add(this.guna2VSeparator1);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -365,5 +388,7 @@
         private System.Windows.Forms.OpenFileDialog OpenFileDialogChangeImage;
         private Guna.UI2.WinForms.Guna2NumericUpDown TextPrice;
         private System.Windows.Forms.Label LabelName;
+        private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator1;
+        private System.Windows.Forms.LinkLabel LinkBack;
     }
 }

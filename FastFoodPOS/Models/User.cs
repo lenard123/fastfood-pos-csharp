@@ -91,7 +91,7 @@ namespace FastFoodPOS.Models
         private string GetUploadedImagePath()
         {
             string filename = "user-" + DateTime.Now.Ticks + ".jpg";
-            if (DEFAULT_IMAGE_PATH.Equals(Image))
+            if (Image == null || DEFAULT_IMAGE_PATH.Equals(Image))
                 return DEFAULT_IMAGE_PATH;
             return Util.CopyImage(Image, filename);
         }
@@ -125,6 +125,19 @@ namespace FastFoodPOS.Models
                 {
                     if (reader.Read()) result = ConvertReaderToUser(reader);
                 }
+                Database.GetConnection().Close();
+            }
+            return result;
+        }
+
+        public static bool HasAdminUser()
+        {
+            bool result = false;
+            using (var cmd = Database.CreateCommand("SELECT COUNT(*) FROM `users` WHERE `role`='Administrator'"))
+            {
+                Database.GetConnection().Open();
+                var x = Convert.ToInt32(cmd.ExecuteScalar());
+                result = Convert.ToInt32(cmd.ExecuteScalar()) > 0;
                 Database.GetConnection().Close();
             }
             return result;

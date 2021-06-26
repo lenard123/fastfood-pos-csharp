@@ -48,5 +48,20 @@ namespace FastFoodPOS.DatabaseUtil
         {
             return GetProvider().IsExist(table, column, value);
         }
+
+        public static bool IsValidConnection()
+        {
+            try
+            {
+                GetConnection().Open();
+                GetConnection().Close();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+        }
     }
 }

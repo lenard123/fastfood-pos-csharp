@@ -26,7 +26,7 @@ namespace FastFoodPOS
 
             guna2ShadowForm1.SetShadowForm(this);
 
-            LoadForm(new FormAdminLogin());
+            LoadForm(new FormLoading());
         }
 
         public static void LoadForm(BaseForm form)

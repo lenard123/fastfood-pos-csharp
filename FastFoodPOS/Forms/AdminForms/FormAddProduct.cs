@@ -15,10 +15,15 @@ namespace FastFoodPOS.Forms.AdminForms
     public partial class FormAddProduct : UserControl
     {
         List<Validator> validators;
-        public FormAddProduct()
+        string category;
+        public FormAddProduct(string from)
         {
             InitializeComponent();
             PictureProductImage.ImageLocation = Product.DEFAULT_IMAGE_PATH;
+
+            category = from;
+
+            ComboBoxType.Text = category;
 
             validators = new List<Validator>();
             validators.Add(new Validator(TextName, LabelName, "Name", "required"));
@@ -37,8 +42,10 @@ namespace FastFoodPOS.Forms.AdminForms
                     Image = PictureProductImage.ImageLocation
                 };
                 nProduct.Save();
+                category = ComboBoxType.Text;
                 Log.AddLog("Add new product name " + TextName.Text);
-                MessageBox.Show("Product added Successfully");
+                AlertNotification.ShowAlertMessage("Product added Successfully", AlertNotification.AlertType.SUCCESS);
+                LinkBack_LinkClicked(null, null);
             }
         }
 
@@ -76,6 +83,11 @@ namespace FastFoodPOS.Forms.AdminForms
         private void FormAddProduct_Load(object sender, EventArgs e)
         {
             ParentForm.AcceptButton = ButtonSave;
+        }
+
+        private void LinkBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FormAdminPanel.GetInstance().LoadFormControl(new FormManageProducts(category));
         }
     }
 }

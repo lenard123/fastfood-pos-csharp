@@ -16,14 +16,14 @@ namespace FastFoodPOS.Forms.AdminForms
     {
         ProductCardComponent pcc;
         Product product;
-        FormManageProducts context;
         Validator NameValidator;
-        public FormUpdateProduct(FormManageProducts context, ProductCardComponent pcc)
+        string category;
+        public FormUpdateProduct(ProductCardComponent pcc)
         {
             InitializeComponent();
             this.pcc = pcc;
             this.product = pcc.product;
-            this.context = context;
+            this.category = pcc.product.Category;
             NameValidator = new Validator(TextName, LabelName, "Name", "required");
             ResetData();            
         }
@@ -39,7 +39,7 @@ namespace FastFoodPOS.Forms.AdminForms
 
         private void ButtonBack_Click(object sender, EventArgs e)
         {
-            FormAdminPanel.GetInstance().LoadFormControl(context);
+            FormAdminPanel.GetInstance().LoadFormControl(new FormManageProducts(category));
         }
 
         private void ButtonReset_Click(object sender, EventArgs e)
@@ -61,8 +61,10 @@ namespace FastFoodPOS.Forms.AdminForms
 
                 Log.AddLog("Make changes to product["+uProduct.Id+"]");
 
-                MessageBox.Show("Product updated successfully");
-                pcc.UpdateData();
+                AlertNotification.ShowAlertMessage("Product updated successfully", AlertNotification.AlertType.SUCCESS);
+
+                category = ComboBoxType.Text;
+
                 ButtonBack.PerformClick();
             }
         }
@@ -84,16 +86,7 @@ namespace FastFoodPOS.Forms.AdminForms
 
         public void OnUnMounted(ref UserControl next)
         {
-            context.ShouldKeepForm = false;
-            if (next is FormManageProducts && next != context)
-            {
-                next.Dispose();
-                next = context;
-            }
-            else if (next != context)
-            {
-                context.Dispose();
-            }
+
         }
 
         private void TextPrice_Leave(object sender, EventArgs e)

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FastFoodPOS.Components;
 using FastFoodPOS.Models;
+using System.Drawing.Printing;
 
 namespace FastFoodPOS.Forms.CashierForms
 {
@@ -22,7 +23,6 @@ namespace FastFoodPOS.Forms.CashierForms
             InitializeComponent();
             this.transaction = transaction;
             Dock = DockStyle.Fill;
-            printDocument1.PrintPage +=printDocument1_PrintPage;
         }
 
         private void ButtonClose_Click(object sender, EventArgs e)
@@ -45,14 +45,64 @@ namespace FastFoodPOS.Forms.CashierForms
 
         private void ButtonPrint_Click(object sender, EventArgs e)
         {
-            printPreviewDialog1.ShowDialog();
+            PrintForm printForm1 = new PrintForm(this);
+            printForm1.Show();
         }
 
-        void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        class PrintForm : Form
         {
-            Bitmap img = new Bitmap(guna2Panel1.Size.Width, guna2Panel1.Size.Height);
-            guna2Panel1.DrawToBitmap(img, guna2Panel1.DisplayRectangle);
-            e.Graphics.DrawImage(img, new Point(100, 100));
+
+            PrintPreviewDialog printDialog1;
+            PrintDocument printDocument1;
+            ProcessOrder parent;
+            Point oldPosition;
+            Guna.UI2.WinForms.Guna2HtmlLabel content;
+
+            public PrintForm(ProcessOrder parent)
+            {
+                content = parent.guna2HtmlLabel1;
+
+                this.parent = parent;
+                this.oldPosition = new Point(content.Location.X, content.Location.Y);
+
+                this.BackColor = Color.White;
+                ShowInTaskbar = false;
+                FormBorderStyle = FormBorderStyle.None;
+                StartPosition = FormStartPosition.CenterScreen;
+                Size = new Size(content.Size.Width + 15, content.Size.Height + 30);
+                Controls.Add(content);
+                content.Location = new Point(15, 15);
+
+                printDialog1 = new PrintPreviewDialog();
+                printDocument1 = new PrintDocument();
+
+                printDialog1.Document = printDocument1;
+                printDocument1.PrintPage += printDocument1_PrintPage;
+
+                this.Load += PrintForm_Load;
+
+                //printDialog1.ShowDialog();
+            }
+
+            void PrintForm_Load(object sender, EventArgs e)
+            {
+                printDialog1.ShowDialog();
+
+                parent.guna2Panel1.Controls.Add(content);
+
+                content.Location = oldPosition;
+
+                Dispose();
+
+            }
+
+            void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+            {
+                Bitmap img = new Bitmap(this.Size.Width, this.Size.Height);
+                this.DrawToBitmap(img, this.DisplayRectangle);
+                e.Graphics.DrawImage(img, new Point(100, 100));
+            }
         }
+
     }
 }

@@ -40,7 +40,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -73,7 +73,7 @@
             // 
             this.ButtonYes.CheckedState.Parent = this.ButtonYes;
             this.ButtonYes.CustomImages.Parent = this.ButtonYes;
-            this.ButtonYes.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.ButtonYes.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.ButtonYes.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.ButtonYes.ForeColor = System.Drawing.Color.White;
             this.ButtonYes.HoverState.Parent = this.ButtonYes;

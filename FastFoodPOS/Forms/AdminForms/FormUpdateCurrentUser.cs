@@ -76,5 +76,10 @@ namespace FastFoodPOS.Forms.AdminForms
         {
             Reset();
         }
+
+        private void ButtonChangePassword_Click(object sender, EventArgs e)
+        {
+            FormAdminPanel.GetInstance().LoadFormControl(new FormChangePassword());
+        }
     }
 }

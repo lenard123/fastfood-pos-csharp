@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using FastFoodPOS.Models;
 using FastFoodPOS.ErrorHandler;
 using FastFoodPOS.Components;
+using FastFoodPOS.Forms.CashierForms;
 
 namespace FastFoodPOS.Forms
 {
@@ -53,6 +54,11 @@ namespace FastFoodPOS.Forms
         private void VisibilityToggler_Click(object sender, EventArgs e)
         {
             TextPassword.UseSystemPasswordChar = !TextPassword.UseSystemPasswordChar;
+        }
+
+        private void ButtonHelp_Click(object sender, EventArgs e)
+        {
+            Dialog.HelpDialogBox.ShowHelpDialog();
         }
 
     }

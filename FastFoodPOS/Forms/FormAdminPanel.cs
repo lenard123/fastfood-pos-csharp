@@ -64,9 +64,6 @@ namespace FastFoodPOS.Forms
                 case 1:
                     LoadFormControl(new FormDashboard());
                     break;
-                case 2:
-                    LoadFormControl(new FormAddProduct());
-                    break;
                 case 3:
                     LoadFormControl(new FormManageProducts());
                     break;

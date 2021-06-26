@@ -151,6 +151,7 @@
             this.ButtonChangePassword.Size = new System.Drawing.Size(146, 45);
             this.ButtonChangePassword.TabIndex = 13;
             this.ButtonChangePassword.Text = "Change Password";
+            this.ButtonChangePassword.Click += new System.EventHandler(this.ButtonChangePassword_Click);
             // 
             // TextEmail
             // 

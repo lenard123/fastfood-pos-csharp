@@ -78,7 +78,7 @@ namespace FastFoodPOS.Dialog
             products.ForEach(product => productsTable.Rows.Add(product.Id, product.Name, product.Category, product.Price, product.IsAvailable, product.IsDeleted));
 
             string filename = GetFileName();
-            string filenamedb = filename + ".accdb";
+            //string filenamedb = filename + ".accdb";
 
             XLWorkbook wb = new XLWorkbook();
             wb.Worksheets.Add(usersTable, "users");

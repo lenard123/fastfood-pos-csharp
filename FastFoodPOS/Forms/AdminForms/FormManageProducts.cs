@@ -16,12 +16,39 @@ namespace FastFoodPOS.Forms.AdminForms
     partial class FormManageProducts : UserControl, IKeepable
     {
         List<Product> AllProducts;
-        
+        Button submit;
+        string selected = "Food";
+
         public FormManageProducts()
         {
+            init();
+        }
+
+        public FormManageProducts(string selected)
+        {
+            this.selected = selected;
+            init();
+        }
+
+        void init()
+        {
             InitializeComponent();
+            submit = new Button();
+            submit.Click += ButtonSearch_Click;
             AllProducts = Product.GetAllProducts();
-            ButtonFoods.PerformClick();
+            loadSelected();
+        }
+
+        void loadSelected()
+        {
+            foreach (Guna2Button control in ButtonsMenu.Controls)
+            {
+                if (control.Tag.ToString() == selected)
+                {
+                    control.PerformClick();
+                    break;
+                }
+            }
         }
 
         private void ButtonFilter_Click(object sender, EventArgs e)
@@ -32,6 +59,9 @@ namespace FastFoodPOS.Forms.AdminForms
             flowLayoutPanel1.Visible = false;
             DisposePanelContent();
             Guna2Button button = (Guna2Button)sender;
+
+            selected = button.Tag.ToString();
+
             AllProducts.ForEach((Product product) =>
             {
                 if (product.Category.Equals(button.Tag))
@@ -44,27 +74,19 @@ namespace FastFoodPOS.Forms.AdminForms
 
         void pcc_ButtonRemoveClick(object sender, ProductCardComponent e)
         {
-            if (User.IsAdmin())
+            DialogResult result = Dialog.ConfirmDialogBox.ShowDialog("Are you sure to remove this product?");
+            if (result == DialogResult.Yes)
             {
-                DialogResult result = Dialog.ConfirmDialogBox.ShowDialog("Are you sure to remove this product?");
-                if (result == DialogResult.Yes)
-                {
-                    e.product.Remove();
-                    AlertNotification.ShowAlertMessage("Product removed successfully", AlertNotification.AlertType.SUCCESS);
-                    AllProducts.Remove(e.product);
-                    e.Dispose();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Only Administrator can remove a data");
+                e.product.Remove();
+                AlertNotification.ShowAlertMessage("Product removed successfully", AlertNotification.AlertType.SUCCESS);
+                AllProducts.Remove(e.product);
+                e.Dispose();
             }
         }
 
         void pcc_ButtonUpdateClick(object sender, ProductCardComponent e)
         {
-            ShouldKeepForm = true;
-            FormAdminPanel.GetInstance().LoadFormControl(new FormUpdateProduct(this, e));
+            FormAdminPanel.GetInstance().LoadFormControl(new FormUpdateProduct(e));
         }
 
 
@@ -81,7 +103,7 @@ namespace FastFoodPOS.Forms.AdminForms
 
         public void OnMounted()
         {
-
+            ParentForm.AcceptButton = submit;
         }
 
         public void OnUnMounted(ref UserControl next)
@@ -127,6 +149,11 @@ namespace FastFoodPOS.Forms.AdminForms
             if (result.Count >= 16)
                 result.RemoveRange(15, result.Count - 15);
             return result;
+        }
+
+        private void ButtonAddProduct_Click(object sender, EventArgs e)
+        {
+            FormAdminPanel.GetInstance().LoadFormControl(new FormAddProduct(selected));
         }
     }
 }
