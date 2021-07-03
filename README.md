@@ -10,5 +10,10 @@
 3. On the solution explorer open App.config and enter the password.
 4. Press F5 to compile and run
 
+## Issues
+1. If you encounter an error saying "Please try the other variant or install Microsoft Access 2010 redistributable"
+    - Try to change the build to x86 instead of Any CPU
+    - If it still don't work, install [Microsoft Access 2010 redistributable](https://www.microsoft.com/en-US/download/details.aspx?id=13255)
+
 Contact me here at my email lenard.mangayayam@gmail.com
 to get the password
