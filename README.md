@@ -15,5 +15,9 @@
     - Try to change the build to x86 instead of Any CPU
     - If it still don't work, install [Microsoft Access 2010 redistributable](https://www.microsoft.com/en-US/download/details.aspx?id=13255)
 
+## Binary
+1. If you don't have Visual Studio and just want to download the system directly. Click [here](https://github.com/lenard123/fastfood-pos-csharp/releases/download/v1.0.0/v1.0.0.rar)
+2. Then Run the FastFoodPOS.exe
+
 Contact me here at my email lenard.mangayayam@gmail.com
 to get the password

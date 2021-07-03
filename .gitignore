@@ -3,5 +3,7 @@ Thumbs.db
 Assets/
 FastFoodPOS/bin/Debug/*
 FastFoodPOS/bin/Release/*
+FastFoodPOS/bin/x86/*
+FastFoodPOS/bin/x64/*
 FastFoodPOS/obj/*
 FastFoodPOS/Resources/Thumbs.db
