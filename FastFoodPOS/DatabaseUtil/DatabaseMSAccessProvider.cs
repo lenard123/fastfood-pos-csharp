@@ -11,9 +11,14 @@ namespace FastFoodPOS.DatabaseUtil
         {
             if (connection == null)
             {
-                connection = new OleDbConnection(Util.GetConfig("ConnectionString"));
+                connection = new OleDbConnection(GetConnectionString());
             }
             return connection;
+        }
+
+        private static string GetConnectionString()
+        {
+            return Util.GetConfig("ConnectionString") + ";Jet OLEDB:Database Password=" + Util.GetConfig("Password");
         }
 
         public override DbCommand CreateCommand(string query)

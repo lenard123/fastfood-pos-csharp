@@ -16,6 +16,8 @@ namespace FastFoodPOS.Forms
         enum Result
         {
             SUCCESS,
+            INVALID_DATABASE_VERION,
+            WRONG_PASSWORD,
             DATABASE_ERROR,
             NO_USER
         }
@@ -38,9 +40,12 @@ namespace FastFoodPOS.Forms
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             System.Threading.Thread.Sleep(2500); //delay a little bit
-            //Check database
-            if (DatabaseUtil.Database.IsValidConnection())
+
+            try
             {
+                DatabaseUtil.Database.GetConnection().Open();
+                DatabaseUtil.Database.GetConnection().Close();
+
                 if (Models.User.HasAdminUser())
                 {
                     //Cache Data
@@ -53,10 +58,41 @@ namespace FastFoodPOS.Forms
                     e.Result = Result.NO_USER;
                 }
             }
-            else
+            catch (System.InvalidOperationException ex)
             {
-                e.Result = Result.DATABASE_ERROR;
+                e.Result = Result.INVALID_DATABASE_VERION;
             }
+            catch (System.Data.OleDb.OleDbException ex)
+            {
+                if (ex.Message.Equals("Not a valid password."))
+                {
+                    e.Result = Result.WRONG_PASSWORD;
+                }
+                else
+                {
+                    e.Result = Result.DATABASE_ERROR;
+                }
+            }
+
+            //////Check database
+            ////if (DatabaseUtil.Database.IsValidConnection())
+            ////{
+            ////    if (Models.User.HasAdminUser())
+            ////    {
+            ////        //Cache Data
+            ////        Models.User.GetAll();
+            ////        Models.Product.GetAllProducts();
+            ////        e.Result = Result.SUCCESS;
+            ////    }
+            ////    else
+            ////    {
+            ////        e.Result = Result.NO_USER;
+            ////    }
+            ////}
+            ////else
+            ////{
+            ////    e.Result = Result.DATABASE_ERROR;
+            ////}
         }
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -69,6 +105,15 @@ namespace FastFoodPOS.Forms
                     break;
                 case Result.NO_USER:
                     MainForm.LoadForm(new FormRegistration());
+                    break;
+                case Result.INVALID_DATABASE_VERION:
+                    MessageBox.Show("Please try the other variant or install Microsoft Access 2010 redistributable");
+                    Application.Exit();
+                    break;
+                case Result.WRONG_PASSWORD:
+                    MessageBox.Show("Wrong Password!");
+                    MessageBox.Show("Contact me here at my email lenard.mangayayam@gmail.com" + Environment.NewLine + "to get the password");
+                    Application.Exit();
                     break;
                 case Result.DATABASE_ERROR:
                     MessageBox.Show("Oops!! Theres a problem while connecting to the database.");
