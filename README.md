@@ -4,7 +4,7 @@
 - Visual Studio
 - MS Access
 
-## Installation
+## How to download?
 1. First Download the source code using git or using this direct [link](https://github.com/lenard123/fastfood-pos-csharp/archive/refs/heads/main.zip)
 2. Open the FastFoodPOS.sln using Visual Studio
 3. On the solution explorer open App.config and enter the password.
