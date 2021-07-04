@@ -19,5 +19,9 @@
 1. If you don't have Visual Studio and just want to download the system directly. Click [here](https://github.com/lenard123/fastfood-pos-csharp/releases/download/v1.0.0/v1.0.0.rar)
 2. Then Run the FastFoodPOS.exe
 
+## License
+
+See the [LICENSE](LICENSE.md) file for license rights and limitations (MIT).
+
 Contact me here at my email lenard.mangayayam@gmail.com
 to get the password
