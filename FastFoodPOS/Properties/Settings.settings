@@ -10,5 +10,68 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\FastFoodDatabase.accdb;Persist Security Info=True</Value>
     </Setting>
+    <Setting Name="MySQLTables" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CREATE TABLE IF NOT EXISTS `orders` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) NOT NULL,
+  `transaction_id` varchar(256) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  PRIMARY KEY(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE IF NOT EXISTS `products` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(256) NOT NULL,
+  `category` varchar(256) NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `is_available` tinyint(1) NOT NULL,
+  `image` varchar(256) NOT NULL,
+  `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE IF NOT EXISTS `transactions` (
+  `id` varchar(256) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `date_created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `cash` decimal(10,2) NOT NULL,
+  PRIMARY KEY(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `fullname` varchar(256) NOT NULL,
+  `email` varchar(256) NOT NULL,
+  `role` varchar(256) NOT NULL,
+  `password` varchar(256) NOT NULL,
+  `image` varchar(256) NOT NULL,
+  `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE OR REPLACE VIEW `OrderTotal` AS
+SELECT transaction_id, SUM(price*quantity) AS total, Sum(quantity) AS orders
+FROM orders
+GROUP BY transaction_id;
+
+
+CREATE OR REPLACE VIEW `TransactionsView` AS
+SELECT transactions.*, OrderTotal.total, OrderTotal.orders
+FROM transactions INNER JOIN OrderTotal ON transactions.id=OrderTotal.transaction_id;
+
+
+CREATE OR REPLACE VIEW `SalesView` AS
+SELECT Sum(TransactionsView.total) AS Sale, date_created AS day, Sum(TransactionsView.orders) AS total_order, Count(TransactionsView.id) AS total_customer
+FROM TransactionsView
+GROUP BY day
+ORDER BY day;
+
+</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

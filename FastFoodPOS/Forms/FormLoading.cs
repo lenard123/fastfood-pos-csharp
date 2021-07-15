@@ -46,6 +46,9 @@ namespace FastFoodPOS.Forms
                 DatabaseUtil.Database.GetConnection().Open();
                 DatabaseUtil.Database.GetConnection().Close();
 
+                //Import tables
+                DatabaseUtil.Database.GetProvider().ImportTables();
+
                 if (Models.User.HasAdminUser())
                 {
                     //Cache Data

@@ -16,8 +16,18 @@ namespace FastFoodPOS.DatabaseUtil
         public abstract string FormatShortDate(DateTime day);
         public abstract string FormatDateTime(DateTime date);
 
+        public virtual void ImportTables() { }
+
         public virtual string QUERY_SALES_BETWEEN_1{
             get{ return "SELECT * FROM SalesView WHERE day BETWEEN #@@from# AND #@@to#"; }
+        }
+
+        public virtual string QUERY_GET_TRANSACTIONS {
+            get { return "SELECT * FROM `TransactionsView` WHERE FIX(`date_created`)=@p1"; }
+        }
+
+        public virtual string QUERY_GENERATE_TRANSACTION_ID {
+            get { return "SELECT COUNT(*) FROM `transactions` WHERE FIX(`date_created`)=FIX(NOW())"; }
         }
     }
 }

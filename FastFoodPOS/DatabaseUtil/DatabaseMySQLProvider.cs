@@ -52,6 +52,16 @@ namespace FastFoodPOS.DatabaseUtil
             return result;
         }
 
+        public override void ImportTables()
+        {
+            using (var cmd = CreateCommand(Properties.Settings.Default.MySQLTables))
+            {
+                GetConnection().Open();
+                cmd.ExecuteNonQuery();
+                GetConnection().Close();
+            }
+        }
+
         public override string FormatShortDate(DateTime day)
         {
             return day.ToString("yyyy-MM-dd");
@@ -64,6 +74,14 @@ namespace FastFoodPOS.DatabaseUtil
         public override string FormatDateTime(DateTime date)
         {
             return date.ToString("YYYY-MM-DD HH:MM:SS");
+        }
+
+        public override string QUERY_GET_TRANSACTIONS{
+            get { return "SELECT * FROM `TransactionsView` WHERE DATE(`date_created`)=@p1"; }
+        }
+
+        public override string QUERY_GENERATE_TRANSACTION_ID {
+            get { return "SELECT COUNT(*) FROM `transactions` WHERE DATE(`date_created`)=DATE(NOW())"; }
         }
     }
 }

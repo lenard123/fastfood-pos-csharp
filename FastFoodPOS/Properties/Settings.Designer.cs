@@ -33,5 +33,39 @@ namespace FastFoodPOS.Properties {
                 return ((string)(this["FastFoodDatabaseConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("CREATE TABLE IF NOT EXISTS `orders` (\r\n  `id` int(11) NOT NULL AUTO_INCREMENT,\r\n " +
+            " `product_id` int(11) NOT NULL,\r\n  `transaction_id` varchar(256) NOT NULL,\r\n  `q" +
+            "uantity` int(11) NOT NULL,\r\n  `price` decimal(10,2) NOT NULL,\r\n  PRIMARY KEY(id)" +
+            "\r\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;\r\n\r\n\r\nCREAT" +
+            "E TABLE IF NOT EXISTS `products` (\r\n  `id` int(11) NOT NULL AUTO_INCREMENT,\r\n  `" +
+            "name` varchar(256) NOT NULL,\r\n  `category` varchar(256) NOT NULL,\r\n  `price` dec" +
+            "imal(10,2) NOT NULL,\r\n  `is_available` tinyint(1) NOT NULL,\r\n  `image` varchar(2" +
+            "56) NOT NULL,\r\n  `is_deleted` tinyint(1) NOT NULL DEFAULT \'0\',\r\n  PRIMARY KEY(id" +
+            ")\r\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;\r\n\r\n\r\nCREA" +
+            "TE TABLE IF NOT EXISTS `transactions` (\r\n  `id` varchar(256) NOT NULL,\r\n  `user_" +
+            "id` int(11) NOT NULL,\r\n  `date_created` datetime NOT NULL DEFAULT CURRENT_TIMEST" +
+            "AMP,\r\n  `cash` decimal(10,2) NOT NULL,\r\n  PRIMARY KEY(id)\r\n) ENGINE=InnoDB DEFAU" +
+            "LT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;\r\n\r\n\r\nCREATE TABLE IF NOT EXISTS `" +
+            "users` (\r\n  `id` int(11) NOT NULL AUTO_INCREMENT,\r\n  `fullname` varchar(256) NOT" +
+            " NULL,\r\n  `email` varchar(256) NOT NULL,\r\n  `role` varchar(256) NOT NULL,\r\n  `pa" +
+            "ssword` varchar(256) NOT NULL,\r\n  `image` varchar(256) NOT NULL,\r\n  `is_deleted`" +
+            " tinyint(1) NOT NULL DEFAULT \'0\',\r\n  PRIMARY KEY(id)\r\n) ENGINE=InnoDB DEFAULT CH" +
+            "ARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;\r\n\r\n\r\nCREATE OR REPLACE VIEW `OrderTota" +
+            "l` AS\r\nSELECT transaction_id, SUM(price*quantity) AS total, Sum(quantity) AS ord" +
+            "ers\r\nFROM orders\r\nGROUP BY transaction_id;\r\n\r\n\r\nCREATE OR REPLACE VIEW `Transact" +
+            "ionsView` AS\r\nSELECT transactions.*, OrderTotal.total, OrderTotal.orders\r\nFROM t" +
+            "ransactions INNER JOIN OrderTotal ON transactions.id=OrderTotal.transaction_id;\r" +
+            "\n\r\n\r\nCREATE OR REPLACE VIEW `SalesView` AS\r\nSELECT Sum(TransactionsView.total) A" +
+            "S Sale, date_created AS day, Sum(TransactionsView.orders) AS total_order, Count(" +
+            "TransactionsView.id) AS total_customer\r\nFROM TransactionsView\r\nGROUP BY day\r\nORD" +
+            "ER BY day;\r\n\r\n")]
+        public string MySQLTables {
+            get {
+                return ((string)(this["MySQLTables"]));
+            }
+        }
     }
 }

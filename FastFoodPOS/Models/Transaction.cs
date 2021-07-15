@@ -74,7 +74,8 @@ namespace FastFoodPOS.Models
         public void GenerateId()
         {
             string result = DateTime.Now.ToString("yyyyMMdd");
-            using (var cmd = Database.CreateCommand("SELECT COUNT(*) FROM `transactions` WHERE FIX(`date_created`)=FIX(NOW())"))
+            //using (var cmd = Database.CreateCommand("SELECT COUNT(*) FROM `transactions` WHERE FIX(`date_created`)=FIX(NOW())"))
+            using (var cmd = Database.CreateCommand(Database.GetProvider().QUERY_GENERATE_TRANSACTION_ID))
             {
                 Database.GetConnection().Open();
                 int count = Convert.ToInt32(cmd.ExecuteScalar()) + 1;
@@ -87,7 +88,8 @@ namespace FastFoodPOS.Models
         public static List<Transaction> GetTransactions(DateTime date)
         {
             var result = new List<Transaction>();
-            using (var cmd = Database.CreateCommand("SELECT * FROM `TransactionsView` WHERE FIX(`date_created`)=@p1"))
+            //using (var cmd = Database.CreateCommand("SELECT * FROM `TransactionsView` WHERE FIX(`date_created`)=@p1"))
+            using (var cmd = Database.CreateCommand(Database.GetProvider().QUERY_GET_TRANSACTIONS))
             {
                 Database.BindParameters(cmd, Database.GetProvider().FormatShortDate(date));
                 Database.GetConnection().Open();
